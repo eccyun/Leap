@@ -5,7 +5,7 @@ public class MenuParts : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		
 	}
 
 	// Update is called once per frame
@@ -19,7 +19,13 @@ public class MenuParts : MonoBehaviour {
 			if(hit){
 				Bounds rect = hit.collider.bounds;
 				if(rect.Contains(worldPoint)){
-					Debug.Log(hit.collider.gameObject.name);
+					if(hit.collider.gameObject.name=="START"){
+						Debug.Log("START");
+					}else if(hit.collider.gameObject.name=="QUICK_START"){
+						Debug.Log("QUICKSTART");
+					}else if(hit.collider.gameObject.name=="LOAD"){
+						Debug.Log("LOAD");
+					}
 				}
 			}
 
