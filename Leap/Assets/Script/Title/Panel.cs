@@ -21,7 +21,7 @@ public class Panel : MonoBehaviour {
 	void Update () {
 		if(isFade){
 			GetComponent<Image>().color = new Color(red, green, blue, alfa);
-			alfa += (alfa==1.0f)? -0.05f:0.05f;
+			alfa += (alfa>=1.0f)? -0.05f:0.05f;
 
 			if(alfa>=1.0f||alfa<=0.0f){
 				isFade = false;
