@@ -15,6 +15,10 @@ public class TitleManager : MonoBehaviour {
 	}
 
 	void Update () {
+		if(sceneComponent.getSceneCount() == 2){
+			return;
+		}
+
 		if(!action_flg){
 			if(Input.touchCount > 0){
 				Touch   _touch     = Input.GetTouch(0);
@@ -26,12 +30,14 @@ public class TitleManager : MonoBehaviour {
 					Bounds rect = hit.collider.bounds;
 					if(rect.Contains(worldPoint)){
 						moveSceneName = hit.collider.gameObject.name;
-						if(moveSceneName=="START" || moveSceneName=="QUICK_START" || moveSceneName=="LOAD") {
+						if(moveSceneName=="START" || moveSceneName=="QUICK_START") {
 							if(moveSceneName=="START"){
 								moveSceneName = "Introduction";
 							}
 							sceneComponent.fade();
 							action_flg = true;
+						}else if(moveSceneName=="LOAD"){
+							sceneComponent.pushScene("SaveLoad");
 						}
 					}
 				}
