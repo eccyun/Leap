@@ -43,7 +43,7 @@ public class TitleManager : MonoBehaviour {
 				}
 			}
 		}else{
-			if(!sceneComponent.panel.GetComponent<Panel>().isFade){
+			if(!sceneComponent.panel.GetComponent<PanelComponent>().isFade){
 				sceneComponent.moveScene(moveSceneName);
 			}
 		}

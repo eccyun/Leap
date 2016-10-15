@@ -7,7 +7,6 @@ public class SceneComponent : MonoBehaviour {
 	public GameObject panel;
 
 	public void Start(){
-		panel = GameObject.FindGameObjectWithTag("EffectBoard");
 	}
 
 	/*
@@ -15,8 +14,11 @@ public class SceneComponent : MonoBehaviour {
 		フェードイン
 		wait ... フェード時間
 	*/
-	public void fade(){
-		panel.GetComponent<Panel> ().isFade = true;
+	public void fade(string mode="normal"){
+		if(mode=="out"){
+			panel.GetComponent<PanelComponent> ().setAlfa(1.0f);
+		}
+		panel.GetComponent<PanelComponent> ().isFade = true;
 	}
 
 	/*
