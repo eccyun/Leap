@@ -26,16 +26,26 @@ public class IntroductionManager : MonoBehaviour {
 				SpriteRenderer renderer  = drawSprite.GetComponent<SpriteRenderer>();
 				MainImage      mainImage = drawSprite.GetComponent<MainImage>();
 
-				sceneComponent.fade("out");
-				mainImage.GetComponent<SpriteRenderer>().sprite = null;
-				
+				if(moveCount < 3){
+					sceneComponent.fade("out");
+					mainImage.GetComponent<SpriteRenderer>().sprite = null;
+				}
+
 				if(moveCount==1){
 					mainImage.GetComponent<SpriteRenderer>().sprite = mainImage.navigation_2;
 				}else if(moveCount==2){
 					mainImage.GetComponent<SpriteRenderer>().sprite = mainImage.navigation_3;
+				}else if(moveCount==3){
+					sceneComponent.fade();
+					StartCoroutine(moveScene());
 				}
 				moveCount++;
 			}
 		}
+	}
+
+	IEnumerator moveScene(){
+		yield return new WaitForSeconds(4);
+		sceneComponent.moveScene("MainGame");
 	}
 }

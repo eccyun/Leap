@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class PanelComponent : MonoBehaviour {
 
 	public bool   isFade;
-
 	float  red;
 	float  blue;
 	float  green;
@@ -15,6 +14,10 @@ public class PanelComponent : MonoBehaviour {
 	public void setAlfa(float value){
 		alfa = value;
 		GetComponent<Image>().color = new Color(red, green, blue, alfa);
+	}
+
+	public void setRange(float value){
+		range = value;
 	}
 
 	void Start () {
@@ -38,7 +41,7 @@ public class PanelComponent : MonoBehaviour {
 			if(alfa>=1.0f || alfa<=0.0f){
 				isFade = false;
 				alfa   = 0.0f;
-				range  = 0.01f;
+				range  = range*-1;
 			}
 		}
 	}

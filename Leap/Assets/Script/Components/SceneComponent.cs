@@ -14,11 +14,12 @@ public class SceneComponent : MonoBehaviour {
 		フェードイン
 		wait ... フェード時間
 	*/
-	public void fade(string mode="normal"){
+	public void fade(string mode="normal", float range = 0.01f){
 		if(mode=="out"){
 			panel.GetComponent<PanelComponent> ().setAlfa(1.0f);
 		}
 		panel.GetComponent<PanelComponent> ().isFade = true;
+		panel.GetComponent<PanelComponent> ().setRange(range);
 	}
 
 	/*
