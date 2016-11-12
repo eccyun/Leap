@@ -8,10 +8,18 @@ public class TitleManager : MonoBehaviour {
 	bool           action_flg;
 	string         moveSceneName;
 
+	GameObject startBtn;
+	GameObject quickStartBtn;
+	GameObject continueBtn;
+
 	void Start () {
 		sceneComponent = GetComponent<SceneComponent> ();
 		action_flg     = false;
 		moveSceneName  = "";
+
+		startBtn      = GameObject.FindGameObjectWithTag("startBtn");
+		quickStartBtn = GameObject.FindGameObjectWithTag("quickStartBtn");
+		continueBtn   = GameObject.FindGameObjectWithTag("continueBtn");
 	}
 
 	void Update () {
@@ -20,26 +28,21 @@ public class TitleManager : MonoBehaviour {
 		}
 
 		if(!action_flg){
-			if(Input.touchCount > 0){
-				Touch   _touch     = Input.GetTouch(0);
-				Vector2 worldPoint = Camera.main.ScreenToWorldPoint(_touch.position);
+			Camera     main     = GameObject.Find("Main Camera").GetComponent<Camera>();
+			Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
+			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
-				// タップ位置にオブジェクトがあるか
-				RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
-				if(hit){
-					Bounds rect = hit.collider.bounds;
-					if(rect.Contains(worldPoint)){
-						moveSceneName = hit.collider.gameObject.name;
-						if(moveSceneName=="START" || moveSceneName=="QUICK_START") {
-							if(moveSceneName=="START"){
-								moveSceneName = "Introduction";
-							}
-							sceneComponent.fade();
-							action_flg = true;
-						}else if(moveSceneName=="LOAD"){
-							sceneComponent.pushScene("SaveLoad");
-						}
-					}
+			if(Input.GetMouseButtonDown(0)){
+				if(col == startBtn.GetComponent<Collider2D>()){
+					moveSceneName = "Introduction";
+					sceneComponent.fade();
+					action_flg = true;
+				}else if(col == quickStartBtn.GetComponent<Collider2D>()){
+					moveSceneName = "QUICK_START";
+					sceneComponent.fade();
+					action_flg = true;
+				}else if(col == continueBtn.GetComponent<Collider2D>()){
+					sceneComponent.pushScene("SaveLoad");
 				}
 			}
 		}else{
