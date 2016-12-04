@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScriptManager : SingletonMonoBehaviour<AudioManager> {
-
-    public void Awake(){
+public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
+	public void Awake(){
         if(this != Instance){
             Destroy(this);
             return;
@@ -11,4 +10,8 @@ public class ScriptManager : SingletonMonoBehaviour<AudioManager> {
 
         DontDestroyOnLoad(this.gameObject);
     }
+
+	void Update () {
+
+	}
 }
