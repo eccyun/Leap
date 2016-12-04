@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ScriptManager : MonoBehaviour {
+public class ScriptManager : SingletonMonoBehaviour<AudioManager> {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void Awake(){
+        if(this != Instance){
+            Destroy(this);
+            return;
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+    }
 }
