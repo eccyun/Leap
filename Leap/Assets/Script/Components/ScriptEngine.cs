@@ -7,32 +7,23 @@ using System.Collections.Generic;
 
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	private List<string> listScript; // スクリプトファイルから読み込んだ命令群を格納
-	private int          cnt;         // スクリプトのカウンタ
+	private int          cnt;        // スクリプトのカウンタ
+	public  bool         stop_flg;   // テキストの読みこみを止めるかを判定 trueなら止める
+	public  string       fileName;   // ファイルネーム
 
 	public void Awake(){
         if(this != Instance){
             Destroy(this);
             return;
         }
-
-		//変数の初期化
-		listScript = new List<string>();
-		cnt         = 0;
-
-		// スクリプトファイルを配列にセットする
-		readScenarioFile("script01.txt");
-
         DontDestroyOnLoad(this.gameObject);
     }
 
-	void Update () {
-		if(Input.GetMouseButtonDown(0)){
-			Debug.Log(listScript[cnt]);
-			cnt++;
-		}
-	}
+	public void readScenarioFile(string fileName){
+		// 変数の初期化
+		listScript = new List<string>();
+		cnt        = 0;
 
-	void readScenarioFile(string fileName){
 		FileInfo f = new FileInfo(Application.streamingAssetsPath+"/Scenario/"+fileName);
 
 		try{
@@ -45,12 +36,25 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
             }
 		}catch (Exception e){
 			// エラー処理
-
 		}
 	}
 
+	public string[] readScript(){
+		if(stop_flg) return null;
+
+		string ret = listScript[cnt];
+		cnt++;
+
+		if(ret == "STOP;"){
+			stop_flg = true;
+			return null;
+		}
+
+		return ret.Split(':');
+	}
+
 	// 改行コード処理
-    string SetDefaultText(){
+    private string SetDefaultText(){
         return "C#あ\n";
     }
 }
