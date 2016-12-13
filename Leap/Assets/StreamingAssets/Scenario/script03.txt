@@ -1,8 +1,8 @@
 # BGM:on-a-bench.mp3:REFRESH
 # BGM:fest-leap.mp3:REFRESH
 # BGM:on-a-bench.mp3:PLAY
-# BG:rest.png
-# IMG:aruku_normal.png:center
+# BG:rest
+# IMG:aruku_normal:center
 # MSG:「そろそろ、良い時間になってきたね」:歩
 STOP;
 # MSG:「うん、そうだね」:照
@@ -11,39 +11,39 @@ STOP;
 STOP;
 # MSG:会場の所々では片付けが既にはじまっているようで、夏祭りの終わりが近付いてきているのを感じさせる。
 STOP;
-# IMG:aruku_laugh2_up.png:center
+# IMG:aruku_laugh2_up:center
 # MSG:「今年の夏祭りが一番楽しかったかも。一人も良いけど、誰かと行くのもいいね。」:歩
 STOP;
-# IMG:aruku_laugh_up.png:center
+# IMG:aruku_laugh_up:center
 # MSG:「それもこれも照くんが一緒に来てくれたからだよ、ありがとう！」:歩
 STOP;
 # MSG:何の恥ずかし気もない彼女の一言に、なんだかどぎまぎとしてしまう。
 STOP;
 # MSG:「そっか、それは良かった」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「それで、照くんはどうだった？楽しかった？」:歩
 STOP;
 # MSG:「正直、最初はどうなるかと思ったけれど」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「うん」:歩
 STOP;
 # MSG:「僕も楽しかったよ、久しぶりに来てみるとこういうお祭りも良いね」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「そっか、良かった」:歩
 STOP;
 # MSG:「もしも、面白くないと思ってたらどうしようと思って」:歩
 STOP;
 # MSG:「意外だな、そういうことはあんまり気にしない子だと思ってた」:照
 STOP;
-# IMG:aruku_anger.png:center
+# IMG:aruku_anger:center
 # MSG:「なんだよ、失礼だなあ。私だってちゃんと考えてるよ」:歩
 STOP;
 # MSG:「ははは、冗談だよ…」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:高台で絵を描いていて彼女に誘われてからここまで、あっと言う間に時間が過ぎていった。
 STOP;
 # MSG:最初はどうなるか心配だったけれど、彼女と夏祭りに行くことが出来て良かったと思う。
@@ -53,14 +53,14 @@ STOP;
 # MSG:もともと、彼女と夏祭りに行くきっかけになった出来事で、彼女が高台で言っていたことだ。
 STOP;
 # BLACK;
-# BG:upland_evening.png
-# STILL-IMG:01-teru-04.png:122:left:1
-# STILL-IMG:01-aruku-01.png:116:right:2
+# BG:upland_evening
+# STILL-IMG:01-teru-04:122:left:1
+# STILL-IMG:01-aruku-01:116:right:2
 # MSG:「やっぱり、私のこと覚えてない？」:歩
 STOP;
 # BLACK;
-# BG:rest.png
-# IMG:aruku_normal.png:center
+# BG:rest
+# IMG:aruku_normal:center
 # MSG:あれは、どういうことだったんだろう。
 STOP;
 # MSG:それを聞こうと思って、結局聞けていないままだった。
@@ -71,7 +71,7 @@ STOP;
 STOP;
 # MSG:それにこれまでの印象だと、彼女がそんなことをするようにも思えなかった。
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「あのさ」:歩
 STOP;
 # MSG:「うん、なに？」:照
@@ -80,17 +80,17 @@ STOP;
 STOP;
 # MSG:「えっ、そうなんだ。僕はここで夏祭りがあるってことしか知らなかったから…」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「もうそろそろ時間だと思うんだよね」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「だからさ、最後に花火観ようよ。高台まで行ってさ！」:歩
 STOP;
 # MSG:「うん、良いよ」:照
 STOP;
 # MSG:「それじゃあ、また高台まで歩こうか」:照
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「わーい、ありがとう！」:歩
 STOP;
 # MSG:花火を観ることが決まって、彼女はとても嬉しそうだ。
@@ -104,10 +104,10 @@ STOP;
 # BLACK;
 # BGM:on-a-bench.mp3:STOP
 # BGM:fest-leap.mp3:PLAY
-# BG:park_festa.png
+# BG:park_festa
 # MSG:「かなり、混んでるなあ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「今年は、今までで一番人が多いかもしれないね」:歩
 STOP;
 # MSG:高台までの道すがら、道中は多くの人達でとても混み合っていた。
@@ -116,12 +116,12 @@ STOP;
 STOP;
 # MSG:「もう少し早めに移動しておいた方が良かったかな」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「そうだね、確かにそうするべきだったかも。失敗したな」:歩
 STOP;
 # MSG:「花火まで間に合うと良いんだけど、どうだろう？」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「時間まで少し余裕もあるし、今のペースで進めば大丈夫だよ」:歩
 STOP;
 # MSG:「そうなんだ、それだったら良いんだけど」:照

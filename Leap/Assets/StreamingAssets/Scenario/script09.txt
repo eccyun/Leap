@@ -1,20 +1,20 @@
 # BGM:shoot.mp3:REFRESH
 # BGM:fest-leap.mp3:REFRESH
 # BGM:fest-leap.mp3:PLAY
-# BG:park_festa.png
-# IMG:aruku_normal.png:center
+# BG:park_festa
+# IMG:aruku_normal:center
 # MSG:「今年も、賑わってるな」:歩
 STOP;
 # MSG:僕達は、ふもとの公園の夏祭りへとやってきた。会場はあいかわらず多くの人達で賑わっている。
 STOP;
 # BLACK;
-# STILL-IMG:01-cut-01.png:122:right:3
-# STILL-IMG:01-cut-02.png:122:left:4
+# STILL-IMG:01-cut-01:122:right:3
+# STILL-IMG:01-cut-02:122:left:4
 # MSG:「だって、私達がはじめて会ったのってさ、夏祭りの時なんだよ。ここの」:歩
 STOP;
 # BLACK;
-# BG:park_festa.png
-# IMG:aruku_normal.png:center
+# BG:park_festa
+# IMG:aruku_normal:center
 # MSG:僕達がはじめて会ったのは、ここの夏祭りらしいことが分かった。
 STOP;
 # MSG:小さかった頃に僕も家族と一緒に行っていたことがある。
@@ -27,7 +27,7 @@ STOP;
 STOP;
 # MSG:そんなことを考えながら、一人もやもやとしていた。
 STOP;
-# IMG:aruku_anger.png:center
+# IMG:aruku_anger:center
 # MSG:「照くん、聞いてる？」:歩
 STOP;
 # MSG:「あ、ごめん。ちょっと考えごとをしてた…」:照
@@ -40,9 +40,9 @@ STOP;
 STOP;
 # BGM:fest-leap.mp3:STOP
 # BLACK;
-# BG:02-shoot-01.png
+# BG:02-shoot-01
 # BGM:shoot.mp3:PLAY
-# STILL-IMG:02-child-01.png:122:left:1
+# STILL-IMG:02-child-01:122:left:1
 # MSG:「照くん、あれやろうよ」:歩
 STOP;
 # MSG:それまで出店の連なりを横目に歩いていたけれど、彼女の一言に僕達は足を止めた。
@@ -93,27 +93,27 @@ STOP;
 # MSG:「照くんもやる気だね、それじゃ最初に練習で何度かやってそこからやろう！」:歩
 STOP;
 # BLACK;
-# BG:park_festa.png
+# BG:park_festa
 # MSG:「いらっしゃい！」
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「おじさん、5回ずつでお願いします！」:歩
 STOP;
 # MSG:「お、今年も来てくれたんだな、ありがとう」
 STOP;
 # MSG:「それじゃあ、準備をするからちょっとだけ待ってな」
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「はーい」:歩
 STOP;
 # MSG:そう言って店主のおじさんはスペースの奥の方へと行き、準備をはじめた。
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「最初の2回が練習で残りの3回で取った景品の数を競おうと思うんだけど、それで良いよね？」:歩
 STOP;
 # MSG:「うん、それで良いよ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:となると、最初の練習に使える2回で、射的のやり方をどの程度思い出せるかが肝になりそうだ。
 STOP;
 # MSG:まあ、負けた時は負けた時でその時は仕方ない。気持ちを楽にして挑もう。
@@ -124,10 +124,10 @@ STOP;
 STOP;
 # MSG:僕達はそれぞれコルク銃を手に取って、銃にコルクを詰めていく。
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「あ、そうだ」:歩
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「負けたら、罰ゲームだからね。よろしく！」:歩
 STOP;
 # MSG:「えぇっ…」:照

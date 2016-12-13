@@ -1,7 +1,7 @@
 # BGM:on-a-bench.mp3:REFRESH
 # BGM:on-a-bench.mp3:PLAY
-# BG:rest.png
-# IMG:aruku_normal.png:center
+# BG:rest
+# IMG:aruku_normal:center
 # MSG:「照くん、こっちこっち」:歩
 STOP;
 # MSG:「ごめん、遅くなった」:照
@@ -16,7 +16,7 @@ STOP;
 STOP;
 # MSG:僕は、ビニールの袋からたこ焼きを取り出して彼女に手渡した。
 STOP;
-# IMG:aruku_puzzle3.png:center
+# IMG:aruku_puzzle3:center
 # MSG:「あれ、１パックだけにしたんだ」:歩
 STOP;
 # MSG:「うっ…そ、そうだね」:照
@@ -25,41 +25,41 @@ STOP;
 STOP;
 # MSG:なんて、そんなことは恥ずかしくて言えなかった。
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「そっか、じゃあ一緒に食べよう？」:歩
 STOP;
 # MSG:「うん、そうだね」:照
 STOP;
 # BLACK;
-# BG:rest.png
-# IMG:aruku_laugh2.png:center
+# BG:rest
+# IMG:aruku_laugh2:center
 # MSG:「お店の列だけど長かったよね、結構並んだ？」:歩
 STOP;
 # MSG:「そうだね、思ってた以上に時間が掛かったよ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「ごめんごめん。でも、やっぱりあそこじゃないと駄目なんだよね」:歩
 STOP;
 # MSG:「思ったんだけど、どうしてあそこじゃないと駄目だったの？」:照
 STOP;
 # MSG:「それこそ、たこ焼き屋なんて他にもあったと思うんだけど」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「えっとね、私も最初の頃は他のところで買ってたんだよ」:歩
 STOP;
 # MSG:「ああ、そうなんだ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「でも、その頃から毎年長い列が出来るたこ焼き屋があるなって気になってたんだよね」:歩
 STOP;
 # MSG:「それで、一昨年くらいの夏祭りの時だったかな。並んでみたことがあって」:歩
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「これが食べてみたら中はふわふわしてて、とても美味しくて！」:歩
 STOP;
 # MSG:「それじゃあ、それから並んで買うようになったんだ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「うん、そうだよ」:歩
 STOP;
 # REMOVE-IMG:center
@@ -77,14 +77,14 @@ STOP;
 STOP;
 # MSG:その様子を見ていると、僕も不思議と楽しい気持ちになってくる。
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「だから、照くんも食べてみたらわかるよ。ね、冷めないうちに食べよう！」:歩
 STOP;
 # MSG:パックの中には楊枝がちょうど二つ入っていた。
 STOP;
 # MSG:その内の一つを使って、彼女に促されるまま一つ食べてみる。
 STOP;
-# IMG:aruku_puzzle2.png:center
+# IMG:aruku_puzzle2:center
 # MSG:「どう？」:歩
 STOP;
 # MSG:「お、これは確かに美味しい」:照
@@ -93,15 +93,15 @@ STOP;
 STOP;
 # MSG:これは、彼女の言う通り並んでみるだけの価値はあるかもしれない。
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「へへっ、良かった〜」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「ここまで言っておいてなんだけど、受けが悪かったらどうしようと思って」:歩
 STOP;
 # MSG:彼女も僕と同じように、楊枝を取ってたこ焼きを食べていた。
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「うん、夏祭りと言ったらやっぱりこれだよね」:歩
 STOP;
 # REMOVE-IMG:center
@@ -110,7 +110,7 @@ STOP;
 # MSG:1パックに12個入っていたたこ焼きは、あっという間に無くなってしまった。
 STOP;
 # BLACK;
-# BG:rest.png
+# BG:rest
 # MSG:気付けば、夏祭りも終盤に差し掛かってきている。
 STOP;
 # MSG:深夜の公園から時間を遡ってきて、ここまであっと言う間だった。
@@ -121,25 +121,25 @@ STOP;
 STOP;
 # MSG:「あのさ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「どうしたの？」:歩
 STOP;
 # MSG:「僕達が、前に会ったことあるって話なんだけど」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「ああ、もしかして思い出したの？」:歩
 STOP;
 # MSG:「いや、それがやっぱり思い出せなくて」:照
 STOP;
 # MSG:「ははは、そっか。そりゃあ、そうだよね」:歩
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「そうだね、そろそろ答え合わせをしてもいいかな…」:歩
 STOP;
 # BGM:on-a-bench.mp3:STOP
 # MSG:「あのね、今から6年前にもここで夏祭りがあったんだよ」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「はじめて会った時のこと、覚えてない？」:歩
 STOP;
 # MSG:「私達が、まだ小学生の頃だったと思うんだけど」:歩
@@ -152,7 +152,7 @@ STOP;
 # MSG:6年前と言えば、両親に連れられてよくここの夏祭りに来ていた頃だ。
 STOP;
 # WHITE;
-# BG:park_festa.png
+# BG:park_festa
 # MSG:家族と行動するのは最初だけで、途中からは一人で行動することが多かった。
 STOP;
 # MSG:いつもと違う夏祭りの雰囲気に活気づいた公園の中を一人で歩く。
@@ -169,7 +169,7 @@ STOP;
 # MSG:言われてみれば、そんなことがあったかもしれない。
 STOP;
 # WHITE;
-# BG:07-aruku-01.png
+# BG:07-aruku-01
 # WAIT:5
 # MSG:…ああ、そうだ。
 STOP;
@@ -178,20 +178,20 @@ STOP;
 # MSG:「本当？」:歩
 STOP;
 # BLACK;
-# BG:rest.png
-# IMG:aruku_normal.png:center
+# BG:rest
+# IMG:aruku_normal:center
 # MSG:「ちょうど、この場所で迷子の女の子に会ったことが一度だけあるんだけど」:照
 STOP;
 # MSG:「もしかして、その時の女の子？」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「えっと、断定は出来ないけど、おそらくそうかな？」:歩
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「やっと、思い出してくれたんだね」:歩
 STOP;
 # BLACK;
-# BG:07-aruku-01.png
+# BG:07-aruku-01
 # MSG:「お父さんと、お母さんとはぐれたんだっけ」:照
 STOP;
 # MSG:「うん、そうだよ」:歩
@@ -208,15 +208,15 @@ STOP;
 STOP;
 # MSG:「なかなか見つからなかったから、探すのも諦めてとうとう泣き出しちゃった」:歩
 STOP;
-# BG:07-aruku-03.png
+# BG:07-aruku-03
 # MSG:「それから少ししてからだったかな、照くんが私に声を掛けてくれたのは」:歩
 STOP;
 # BLACK;
-# BG:rest.png
-# IMG:aruku_normal.png:center
+# BG:rest
+# IMG:aruku_normal:center
 # MSG:「単純に『どうしたのかな』って、それで声を掛けたと思う」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「うん」:歩
 STOP;
 # MSG:「周りの人達は当たり前なんだけど、とても楽しそうにしていて」:歩
@@ -227,29 +227,29 @@ STOP;
 STOP;
 # MSG:僕も、そんな感覚に陥ることが何度かあって、その時の彼女の気持ちが分かる気がした。
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「照くんが声を掛けてくれた時は嬉しかったな。ヒーローが現れたような、そんな気持ち」:歩
 STOP;
 # MSG:「そんな、大袈裟だよ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「でもね、思えばそれからだったんだよ」:歩
 STOP;
 # MSG:「お父さんとお母さんが見つかって、夏祭りも終わったんだけど」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「照くんは気付いたら居なくなってて、その時にお礼を言えなかったことがずっと気になってたんだ」:歩
 STOP;
 # MSG:「だからまた会えたら、その時にはちゃんとお礼を言おうと思ってたの」:歩
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「翌年もその翌年も…。夏祭りに毎年行くようになったのはそれがあったからなんだ」:歩
 STOP;
 # MSG:「毎年行けば、どこかで照くんに会えるんじゃないかなって思って」:歩
 STOP;
 # MSG:「そうか、毎年行ってたのにはそんな理由があったんだ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「うん、もちろん夏祭りが楽しかったっていうのもあったんだけどね」:歩
 STOP;
 # MSG:僕が彼女のことを探していたように、彼女もまた僕のことを探していたようだった。
@@ -262,7 +262,7 @@ STOP;
 STOP;
 # MSG:「それってさ、途中で『もうやめよう』って考えることはなかったの？」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「それは、もちろん思うときもあったよ？」:歩
 STOP;
 # MSG:「小さい頃の出来事に、どうしてこんなになってるんだろうって」:歩
@@ -273,7 +273,7 @@ STOP;
 # MSG:立ち上がった彼女は無言のままで、こちらから彼女の様子は分からない。
 STOP;
 # BLACK;
-# BG:12-aruku-01.png
+# BG:12-aruku-01
 # MSG:「でも、それはとても簡単なことだった」:歩
 STOP;
 # MSG:彼女は振り返って、僕のことを真っすぐに見て話をはじめた。

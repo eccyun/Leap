@@ -1,9 +1,9 @@
 # BGM:fest-leap.mp3:REFRESH
 # BGM:fest-leap.mp3:PLAY
-# BG:park_festa.png
+# BG:park_festa
 # MSG:「混んでるなぁ」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「そうだね、やっぱり今年は去年よりも人が多いよ」:歩
 STOP;
 # MSG:僕達は、花火を観るために来た道を引き返して、再び高台を目指していた。
@@ -16,7 +16,7 @@ STOP;
 STOP;
 # MSG:人の流れに上手く乗って進んでいかないと、そのまま流されてしまいそうだ。
 STOP;
-# IMG:aruku_puzzle3.png:center
+# IMG:aruku_puzzle3:center
 # MSG:「なかなか、前に進めないね」:歩
 STOP;
 # MSG:「そうだね。…こんなに多かったかな」:照
@@ -26,19 +26,19 @@ STOP;
 STOP;
 # MSG:早く抜け出したいその一心で、僕達は流れに合わせて歩き続ける。
 STOP;
-# IMG:aruku_puzzle.png:center
+# IMG:aruku_puzzle:center
 # MSG:「あいたっ！」:歩
 STOP;
 # MSG:彼女が転びそうになったところを慌てて支える。
 STOP;
-# IMG:aruku_puzzle_up.png:center
+# IMG:aruku_puzzle_up:center
 # MSG:そのまま僕に寄りかかるような姿勢になった。
 STOP;
 # MSG:「大丈夫？」:照
 STOP;
 # MSG:「いたた…。う、うん、ありがとう」:歩
 STOP;
-# IMG:aruku_puzzle3.png:center
+# IMG:aruku_puzzle3:center
 # MSG:一緒に歩いていて、彼女は人にぶつかられることが多かった。
 STOP;
 # MSG:比較的小柄なこともあって、来る人達の目に付きにくいからだろうか。
@@ -55,7 +55,7 @@ STOP;
 STOP;
 # MSG:もしかしたら、考えすぎかもしれないし気のせいかもしれない。
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「こんなところで急に立ち止まってどうしたの？また何か考えごと？」:歩
 STOP;
 # MSG:「…」:照
@@ -63,7 +63,7 @@ STOP;
 # BLACK;
 # BGM:on-a-bench.mp3:REFRESH
 # BGM:on-a-bench.mp3:PLAY
-# BG:14-aruku-01.png
+# BG:14-aruku-01
 # MSG:「わっ、わわわ。何、急に！？」:歩
 STOP;
 # MSG:「この人ごみの中で、君がまた迷子にでもなったら困ると思って」:照
@@ -72,10 +72,10 @@ STOP;
 STOP;
 # MSG:手をつなぐなんて、とてもじゃないけれど普段の僕にはこんなことは出来ない。
 STOP;
-# BG:14-aruku-04.png
+# BG:14-aruku-04
 # MSG:「な、なんだよ。ちゃんと気をつけてるから、心配しなくても大丈夫だよ！」:歩
 STOP;
-# BG:14-aruku-03.png
+# BG:14-aruku-03
 # MSG:「でも…ありがとう。へへっ」:歩
 STOP;
 # MSG:彼女はそう言って、僕の手を握り返してくれた。
@@ -94,24 +94,24 @@ STOP;
 # BGM:on-a-bench.mp3:STOP
 # BGM:road_theme.mp3:REFRESH
 # BGM:road_theme.mp3:PLAY
-# BG:upland_night.png
-# IMG:aruku_normal.png:center
+# BG:upland_night
+# IMG:aruku_normal:center
 # MSG:「思っていたより、人が少ないね」:照
 STOP;
 # MSG:あれだけの人ごみの中を移動してきたのに、高台には思っていたほど人がいなかった。
 STOP;
 # MSG:「花火の観覧席は公園内にも設けられてたはずだったから、大半がそっちに行ったのかな」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「こっちに来たのは正解だったね。人も少ないし、景色も綺麗だし」:歩
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「先に場所だけ取っておこうよ、今だったらまだ前の方でも観れそうだよ！」:歩
 STOP;
 # MSG:彼女は僕の手を取ってくる、僕はそれについていくことにした。
 STOP;
 # BLACK;
-# BG:14-fire-01.png
+# BG:14-fire-01
 # MSG:「今日は、空も綺麗だね」:歩
 STOP;
 # MSG:見上げると、そこには綺麗な星空が広がっていた。
@@ -133,13 +133,13 @@ STOP;
 # BGM:road_theme.mp3:STOP
 # MSG:「…あっ！」:歩
 STOP;
-# BG:14-fire-02.png
+# BG:14-fire-02
 # EFFECT:fire_1.mp3:PLAY
 # WAIT:2
 STOP;
 # MSG:それは、一瞬の出来事だった。
 STOP;
-# BG:14-fire-03.png
+# BG:14-fire-03
 # EFFECT:fire_2.mp3:PLAY
 # WAIT:2
 STOP;
@@ -147,7 +147,7 @@ STOP;
 STOP;
 # MSG:あちこちから、そんな歓声や拍手の音が聞こえてくる。
 STOP;
-# STILL-IMG:14-fire-04.png:145:left:1
+# STILL-IMG:14-fire-04:145:left:1
 # BGM:on-a-bench.mp3:REFRESH
 # BGM:on-a-bench.mp3:PLAY
 # MSG:「照くん、はじまった！」:歩
@@ -165,13 +165,13 @@ STOP;
 # MSG:僕も彼女もしばらくの間、夜空を彩る花火に魅入っていた。
 STOP;
 # BLACK;
-# BG:upland_night.png
-# IMG:aruku_laugh2.png:center
+# BG:upland_night
+# IMG:aruku_laugh2:center
 # MSG:「照くん、今日はありがとうね」:歩
 STOP;
 # MSG:「どうしたの、急に」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「こうして夏祭りに誘ったのも急だったし、ちゃんと言っておこうと思って」:歩
 STOP;
 # MSG:「それだったら、僕の方こそ」:照
@@ -180,17 +180,17 @@ STOP;
 STOP;
 # MSG:「君と一緒にこうして夏祭りに行くことが出来て、楽しかったよ」:照
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「私も、楽しかったな。今年の夏祭りが一番楽しかった」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「最後に、照くんと一緒に行くことが出来て本当に良かった。…ありがとうね」:歩
 STOP;
 # MSG:彼女はそう言いながら、小さくお辞儀をする。
 STOP;
 # MSG:「ちょっと待って、最後ってどういうこと？」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「私ね、明日にはここを引っ越すことになってるの」:歩
 STOP;
 # MSG:「もともと、お父さんの仕事の都合で引っ越すことが多くて」:歩
@@ -199,7 +199,7 @@ STOP;
 STOP;
 # MSG:彼女と再び会うことが出来なかったのは、このことが原因だったのかもしれない。
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「こっちに引っ越してきたのは、7年くらい前のことだったかな」:歩
 STOP;
 # MSG:「今までで一番長く住んだ場所だから、その分愛着もあったんだけどね。寂しくなるなあ」:歩
@@ -212,7 +212,7 @@ STOP;
 STOP;
 # MSG:「そんなに愛着があるんだったら、いつかまた遊びに来るといいよ」:照
 STOP;
-# IMG:aruku_puzzle3.png:center
+# IMG:aruku_puzzle3:center
 # MSG:「えっ？」:歩
 STOP;
 # MSG:「僕達はまだ若いし、そう簡単にはいかないかもしれないけれど」:照
@@ -221,34 +221,34 @@ STOP;
 STOP;
 # MSG:「その時はまた、一緒に夏祭りに行こう」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「照くん…」:歩
 STOP;
 # MSG:「うん。うん…そうだね」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「また、会った時には…その時はよろしくね」:歩
 STOP;
 # MSG:「うん」:照
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「…照くんは、優しいなあ」:歩
 STOP;
 # MSG:「どうなんだろう、自分ではよく分からないよ」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「こういうのは人によって、印象が変わるものだからね」:歩
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「だから、自分では気付きにくいんだよ、きっと」:歩
 STOP;
 # MSG:「そういうもんなのかな」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「そういうもんだよ」:歩
 STOP;
 # BLACK;
-# BG:14-fire-03.png
+# BG:14-fire-03
 # MSG:「…ずっと、この時間が続いたら良いんだけどな」:歩
 STOP;
 # MSG:「うん？」:照

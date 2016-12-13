@@ -2,7 +2,7 @@
 # BGM:forest.mp3:REFRESH
 # BGM:road_theme.mp3:REFRESH
 # BGM:road_theme.mp3:PLAY
-# BG:road.png
+# BG:road
 # MSG:家に帰る途中、僕はさっき見た夢のことで頭がいっぱいになっていた。
 STOP;
 # MSG:僕の前に突然現れて、突然いなくなってしまった女の子。
@@ -26,7 +26,7 @@ STOP;
 # MSG:どうして、今になって夢に出てきたのだろう。
 STOP;
 # BLACK;
-# BG:park_night.png
+# BG:park_night
 # MSG:そんなことを考えながら歩いている内に、僕は公園の入り口まで来ていた。
 STOP;
 # MSG:6年前の夏の日、さっき夢に見た夏祭りが行われた公園だ。
@@ -38,7 +38,7 @@ STOP;
 # MSG:僕は、そのままの足で公園の中をまわってみることにした。
 STOP;
 # BLACK;
-# BG:park.png
+# BG:park
 # BGM:road_theme.mp3:STOP
 # BGM:forest.mp3:PLAY
 # MSG:夜の公園は街灯もまばらで、とても薄暗かった。
@@ -56,7 +56,7 @@ STOP;
 # MSG:若干の怖い気持ちを堪えながら、公園の奥へ奥へと歩いていった。
 STOP;
 # BLACK;
-# BG:upland_night.png
+# BG:upland_night
 # MSG:そうして、公園内を一通り歩いたところで、最後に高台の方までやってきた。
 STOP;
 # MSG:高台には木で出来たテーブルとベンチが設置されていて、そこから先にはとても綺麗な景色が広がっている。
@@ -70,8 +70,8 @@ STOP;
 # MSG:そのままベンチに腰掛けて、6年前に絵を描いていた時のことを思い出す。
 STOP;
 # BLACK;
-# BG:upland_evening.png
-# STILL-IMG:01-teru-01.png:122:left:1
+# BG:upland_evening
+# STILL-IMG:01-teru-01:122:left:1
 # MSG:夏休みの時期に、毎日通ってはこのベンチに座って絵を描いていた。
 STOP;
 # MSG:僕以外に人がやってくることはあまりなくて、そういうところも気に入っていた。
@@ -84,13 +84,13 @@ STOP;
 STOP;
 # MSG:それがしばらく続いて、夏休みも終盤に差し掛かった頃。
 STOP;
-# STILL-IMG:01-aruku-01.png:116:right:2
+# STILL-IMG:01-aruku-01:116:right:2
 # MSG:「おお、すごい！」:歩
 STOP;
 # MSG:はじめて彼女と会ったのは、そんな時だった。
 STOP;
 # BLACK;
-# BG:upland_night.png
+# BG:upland_night
 # MSG:きっかけは些細なもので、半ば強引な形で夏祭りに行くことにはなったけれど。
 STOP;
 # MSG:ふとした時に、僕は彼女と一緒に夏祭りを楽しんでいることに気が付いた。
@@ -149,7 +149,7 @@ STOP;
 STOP;
 # MSG:「…って、えっ？」:照
 STOP;
-# IMG:mary_normal.png:center
+# IMG:mary_normal:center
 # MSG:驚いて声のする方へと振り返ると、そこには一人の女の子が立っていた。
 STOP;
 LOADING;

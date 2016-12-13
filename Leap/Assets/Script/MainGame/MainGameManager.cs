@@ -8,10 +8,11 @@ public class MainGameManager : MonoBehaviour {
 	public  Text         text;
 
 	void Start () {
+		// スクリプトエンジン取得
 		scriptEngine = GetComponent<ScriptEngine> ();
 
 		// スクリプトの読みこみ
-		scriptEngine.readScenarioFile("script01.txt");
+		scriptEngine.readScenarioFile("script01.txt", "Prefab/Still-01");
 	}
 
 	void Update () {
@@ -20,7 +21,10 @@ public class MainGameManager : MonoBehaviour {
 		// データを確認する
 		if(script != null){
 			if(script[0]=="# MSG"){
+				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
+			}else if(script[0]=="# STILL-IMG"){
+				GameObject still = GameObject.Find("Main Camera")
 			}
 		}
 

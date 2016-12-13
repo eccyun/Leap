@@ -1,16 +1,16 @@
 # BGM:fest-leap.mp3:REFRESH
 # BGM:fest-leap.mp3:PLAY
-# BG:park_festa.png
+# BG:park_festa
 # MSG:「はぁ、やっぱり駄目だったな」:照
 STOP;
-# IMG:mary_laugh.png:center
+# IMG:mary_laugh:center
 # MSG:「照さんも上手でしたけど、歩さんはもっと上手でしたね」:マリー
 STOP;
 # MSG:「そうだね、正直思ってた以上の実力だったな」:照
 STOP;
 # MSG:練習の成果もむなしく、勝負は結構な差をつけられる形で負けてしまった。
 STOP;
-# IMG:mary_normal.png:center
+# IMG:mary_normal:center
 # MSG:「それで、負けてしまった照さんは一人罰ゲームですか…」:マリー
 STOP;
 # MSG:勝負を終えた僕は、出店の並びの一画にあるたこ焼き屋に並んで列が進むのを待っていた。
@@ -26,16 +26,16 @@ STOP;
 # MSG:彼女とはじめて射的屋に行った時には、こんなことにはならなかった。
 STOP;
 # BLACK;
-# BG:02-shoot-01.png
-# STILL-IMG:02-child-01.png:122:left:1
+# BG:02-shoot-01
+# STILL-IMG:02-child-01:122:left:1
 # MSG:「照くんは、射的やったことある？」:歩
 STOP;
 # MSG:「何度かあるくらいかな、とは言えはじめてやるのと変わらないかも」:照
 STOP;
 # BLACK;
-# BG:02-shoot-01.png
-# BG:park_festa.png
-# IMG:mary_normal.png:center
+# BG:02-shoot-01
+# BG:park_festa
+# IMG:mary_normal:center
 # MSG:射的屋の前で話をしていた時にあんなことを言ったからだろうか？
 STOP;
 # MSG:いずれにせよ、僕が6年前に体験した出来事とは違う出来事が今こうして起こっている。
@@ -44,7 +44,7 @@ STOP;
 STOP;
 # MSG:「はい、次の方どうぞ！」
 STOP;
-# IMG:mary_laugh_2.png:center
+# IMG:mary_laugh_2:center
 # MSG:「あ、照さん。列の前の方が購入されたみたいです」:マリー
 STOP;
 # MSG:そんなことを考えているうちに、あっという間に列の先頭になっていた。
@@ -62,7 +62,7 @@ STOP;
 STOP;
 # MSG:「ありがとうございます。えーっと…あれ？」:照
 STOP;
-# IMG:mary_puzzle_2.png:center
+# IMG:mary_puzzle_2:center
 # MSG:「どうしたんですか？」:マリー
 STOP;
 # MSG:「いや、思ったよりお金が入ってなくて…。うーん、困ったな」:照

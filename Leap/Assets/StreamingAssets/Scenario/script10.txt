@@ -5,7 +5,7 @@ STOP;
 # MSG:その間も、男の子は私の手をずっと離さずに握っていてくれた。
 STOP;
 # WHITE;
-# BG:10-aruku-01.png
+# BG:10-aruku-01
 # MSG:さっきまでの心細さが嘘のようだった。気持ちはとても前向きになっている。
 STOP;
 # MSG:「なかなか、見つからないね」:男の子
@@ -51,7 +51,7 @@ STOP;
 # WHITE;
 # BGM:aruku_theme.mp3:REFRESH
 # BGM:aruku_theme.mp3:PLAY
-# BG:park_evening.png
+# BG:park_evening
 # MSG:「そうして、またまたやってきたわけなんですが」:女の子
 STOP;
 # MSG:あの子は、このあたりに住んでるんじゃなかったっけ？
@@ -81,7 +81,7 @@ STOP;
 # MSG:どうしてなのかは、私自身も未だにはっきりとは分かっていなかった。
 STOP;
 # BLACK;
-# BG:upland_evening.png
+# BG:upland_evening
 # MSG:そうして、私は高台へとやってきた。
 STOP;
 # MSG:普段はここまで来ることはあまり無いんだけれど、最後になるかもしれないしね。
@@ -91,7 +91,7 @@ STOP;
 # BGM:aruku_theme.mp3:STOP
 # MSG:「あら？」:女の子
 STOP;
-# STILL-IMG:01-teru-01.png:122:left:1
+# STILL-IMG:01-teru-01:122:left:1
 # MSG:高台にはどうやら先客がいるようだった、座りこんで何かをしている。
 STOP;
 # MSG:その様子を見て、はじめて行った日の夏祭りを何故か私は思い出していた。
@@ -99,15 +99,15 @@ STOP;
 # WHITE;
 # BGM:on-a-bench.mp3:REFRESH
 # BGM:on-a-bench.mp3:PLAY
-# BG:07-aruku-01.png
+# BG:07-aruku-01
 # MSG:お父さんとお母さんとはぐれて、寂しい思いをしたときのこと。
 STOP;
-# BG:07-aruku-04.png
+# BG:07-aruku-04
 # MSG:そんなときに、私の手を引いて一緒にお父さんとお母さんを探してくれた男の子のこと。
 STOP;
 # BLACK;
-# BG:upland_evening.png
-# STILL-IMG:01-teru-01.png:122:left:1
+# BG:upland_evening
+# STILL-IMG:01-teru-01:122:left:1
 # MSG:今、私の目の前にいるこの人は後ろ姿しか見えないけれど。
 STOP;
 # MSG:どこか、その時の男の子に雰囲気が似ているような気がした。
@@ -138,10 +138,10 @@ STOP;
 STOP;
 # MSG:キャンバスにはここから見える景色がとても綺麗に描かれている。
 STOP;
-# STILL-IMG:01-aruku-01.png:116:right:2
+# STILL-IMG:01-aruku-01:116:right:2
 # MSG:「おお、すごい！」:女の子
 STOP;
-# STILL-IMG:01-teru-02.png:122:left:1
+# STILL-IMG:01-teru-02:122:left:1
 # MSG:「えっ？」:男の子
 STOP;
 # MSG:さっきまでの様子が嘘のように思ったままの言葉がすっと出てきた。

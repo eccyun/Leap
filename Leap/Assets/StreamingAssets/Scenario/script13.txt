@@ -5,7 +5,7 @@ STOP;
 STOP;
 # WHITE;
 # BGM:on-a-bench.mp3:PLAY
-# BG:12-aruku-01.png
+# BG:12-aruku-01
 # MSG:「それでね、分かったんだけど」:歩
 STOP;
 # MSG:「私、照くんのことが好きだったんだ。はじめて会ってからそれ以来ずっと」:歩
@@ -16,10 +16,10 @@ STOP;
 STOP;
 # MSG:「突然だったから、ちょっとびっくりしてる」:照
 STOP;
-# BG:12-aruku-02.png
+# BG:12-aruku-02
 # MSG:「私の方こそ、いきなりごめん」:歩
 STOP;
-# BG:12-aruku-01.png
+# BG:12-aruku-01
 # MSG:「でも、これだけは。ちゃんと言っておかないといけないと思って」:歩
 STOP;
 # MSG:「…」:照
@@ -43,8 +43,8 @@ STOP;
 # MSG:「…」:照
 STOP;
 # BLACK;
-# BG:rest.png
-# IMG:aruku_laugh2.png:center
+# BG:rest
+# IMG:aruku_laugh2:center
 # BGM:on-a-bench.mp3:STOP
 # MSG:「ありがとう、気持ちはすごく嬉しいんだけど」:照
 STOP;
@@ -60,21 +60,21 @@ STOP;
 STOP;
 # MSG:「ごめん」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「謝らなくていいよ、気にしないで」:歩
 STOP;
 # MSG:「言うか言わないかとても悩んだけれど、うやむやにするのは嫌だったし」:歩
 STOP;
 # MSG:「言わなかったら、きっと後悔してたと思うから…」:歩
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「だから、良いの」:歩
 STOP;
 # MSG:「むしろ、ちゃんと伝えることが出来てとてもすっきりしてる」:歩
 STOP;
 # MSG:「君は、すごいね」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「どうして？」:歩
 STOP;
 # MSG:「僕は、そんな風に判断を迫られた時どうすれば良いのか分からなくなるから」:照
@@ -82,34 +82,34 @@ STOP;
 # MSG:「そして、しばらくして後悔する。『あの時、やっぱりああしておけば良かったな』って」:照
 STOP;
 # BLACK;
-# BG:12-aruku-02.png
+# BG:12-aruku-02
 # MSG:「それは、もちろん私だってそういう風になる時はあるよ。でも」:歩
 STOP;
-# BG:12-aruku-01.png
+# BG:12-aruku-01
 # MSG:「それでも、出来る限り後悔しないように選ばないといけない時がどうしてもあるから」:歩
 STOP;
 # MSG:「もしも失敗しても、次また同じような時には失敗しないようにしようって」:歩
 STOP;
 # MSG:「結局、そういうことを繰り返していくしかないんだよ」:歩
 STOP;
-# BG:12-aruku-03.png
+# BG:12-aruku-03
 # MSG:「…だって、時間は巻き戻せるわけじゃないんだもん」:歩
 STOP;
 # MSG:「僕にも、そうやって前を向いて生きていくことが出来るかな？」:照
 STOP;
-# BG:12-aruku-01.png
+# BG:12-aruku-01
 # MSG:「『生きる』っていうと、ちょっと大袈裟に聞こえるね」:歩
 STOP;
 # MSG:「ははは、そうだね…」:照
 STOP;
-# BG:12-aruku-03.png
+# BG:12-aruku-03
 # MSG:「でも、照くんにも出来るよ、きっと」:歩
 STOP;
 # MSG:彼女は笑顔で、そう答えた。
 STOP;
 # BLACK;
-# BG:rest.png
-# IMG:aruku_normal.png:center
+# BG:rest
+# IMG:aruku_normal:center
 # MSG:「そういえば、そろそろ花火の時間なんじゃないかな？」:歩
 STOP;
 # MSG:しばらくの時間が経って、そんな提案をしたのは彼女からだった。
@@ -120,12 +120,12 @@ STOP;
 STOP;
 # MSG:みんな、花火に向けての移動なのだろうか。
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「せっかく来たことだしさ、最後に花火を観ようよ」:歩
 STOP;
 # MSG:「うん、良いよ」:照
 STOP;
-# IMG:aruku_normal.png:center
+# IMG:aruku_normal:center
 # MSG:「どこで観るのが良いかな、観覧席でも良いとは思うんだけど…」:歩
 STOP;
 # MSG:「それだったら、僕達が最初に会った高台のところとか良いんじゃないかな」:照
@@ -134,14 +134,14 @@ STOP;
 STOP;
 # MSG:「きっと、花火もばっちり観ることが出来ると思うんだ」:照
 STOP;
-# IMG:aruku_laugh.png:center
+# IMG:aruku_laugh:center
 # MSG:「なるほどね、良いんじゃないかな、そうしよう！」:歩
 STOP;
 # MSG:「それじゃあ、早速移動しようか」:照
 STOP;
 # MSG:「人が多くなる前に、場所は取った方が良いだろうしね」:照
 STOP;
-# IMG:aruku_laugh2.png:center
+# IMG:aruku_laugh2:center
 # MSG:「うん、そうだね」:歩
 STOP;
 # MSG:僕達は、花火を観るために高台へと移動することにした。
