@@ -25,10 +25,20 @@ public class MainGameManager : MonoBehaviour {
 				text.GetComponent<TextManager>().setText(script[1]);
 			}else if(script[0]=="# STILL-IMG"){
 				GameObject     still    = GameObject.Find(script[1]);
+				SpriteRenderer renderer = still.GetComponent<SpriteRenderer>();
 
 				// Spriteを表示
-				SpriteRenderer renderer = still.GetComponent<SpriteRenderer>();
-				renderer.enabled        = true;
+				if(script[2]=="show"){
+					if(script[3] == "false"){
+						still.GetComponent<SpriteScript>().alfa = 1.0f;
+						renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+					}
+					renderer.enabled = true;
+				}else if(script[2]=="hide"){
+					renderer.enabled                        = false;
+					still.GetComponent<SpriteScript>().alfa = 0.0f;
+					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+				}
 			}
 		}
 

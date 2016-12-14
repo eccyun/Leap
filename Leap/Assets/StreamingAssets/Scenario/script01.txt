@@ -25,7 +25,7 @@ STOP;
 STOP;
 # MSG:それからコツコツと画材を揃えて、休みの日にこうして絵を描くようになった。
 STOP;
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:true
 # MSG:「日も暮れはじめてきたなあ、そろそろ片付けて今日は終わりにしようか」:照
 STOP;
 # MSG:この場所で絵を描くようになったのは、夏休みに入ってからのことだった。
@@ -41,10 +41,11 @@ STOP;
 # MSG:この調子で行けば夏休みが終わる頃には完成しそうだ。
 STOP;
 # BGM:bell-leap.mp3:STOP
-# STILL-IMG:01-aruku-01
+# STILL-IMG:01-aruku-01:show:true
 # MSG:「おお、すごい！」:女の子
 STOP;
-# STILL-IMG:01-teru-02
+# STILL-IMG:01-teru-01:hide
+# STILL-IMG:01-teru-02:show:false
 # MSG:「えっ？」:照
 STOP;
 # MSG:振り返ると、そこには一人の女の子が立っていた。

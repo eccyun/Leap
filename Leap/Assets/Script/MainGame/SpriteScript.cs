@@ -3,8 +3,8 @@ using System.Collections;
 
 public class SpriteScript : MonoBehaviour {
 	private SpriteRenderer renderer;
-	private float  alfa;
 	private float  range;
+	public  float  alfa;
 
 	void Start () {
 		renderer       = GetComponent<SpriteRenderer>();
