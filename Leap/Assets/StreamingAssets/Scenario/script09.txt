@@ -8,8 +8,8 @@ STOP;
 # MSG:僕達は、ふもとの公園の夏祭りへとやってきた。会場はあいかわらず多くの人達で賑わっている。
 STOP;
 # BLACK;
-# STILL-IMG:01-cut-01:122:right:3
-# STILL-IMG:01-cut-02:122:left:4
+# STILL-IMG:01-cut-01
+# STILL-IMG:01-cut-02
 # MSG:「だって、私達がはじめて会ったのってさ、夏祭りの時なんだよ。ここの」:歩
 STOP;
 # BLACK;
@@ -42,7 +42,7 @@ STOP;
 # BLACK;
 # BG:02-shoot-01
 # BGM:shoot.mp3:PLAY
-# STILL-IMG:02-child-01:122:left:1
+# STILL-IMG:02-child-01
 # MSG:「照くん、あれやろうよ」:歩
 STOP;
 # MSG:それまで出店の連なりを横目に歩いていたけれど、彼女の一言に僕達は足を止めた。

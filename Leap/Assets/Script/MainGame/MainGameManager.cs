@@ -24,7 +24,11 @@ public class MainGameManager : MonoBehaviour {
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
 			}else if(script[0]=="# STILL-IMG"){
-				GameObject still = GameObject.Find("Main Camera")
+				GameObject     still    = GameObject.Find(script[1]);
+
+				// Spriteを表示
+				SpriteRenderer renderer = still.GetComponent<SpriteRenderer>();
+				renderer.enabled        = true;
 			}
 		}
 

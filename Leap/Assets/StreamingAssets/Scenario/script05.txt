@@ -71,7 +71,7 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-01:122:left:1
+# STILL-IMG:01-teru-01
 # MSG:夏休みの時期に、毎日通ってはこのベンチに座って絵を描いていた。
 STOP;
 # MSG:僕以外に人がやってくることはあまりなくて、そういうところも気に入っていた。
@@ -84,7 +84,7 @@ STOP;
 STOP;
 # MSG:それがしばらく続いて、夏休みも終盤に差し掛かった頃。
 STOP;
-# STILL-IMG:01-aruku-01:116:right:2
+# STILL-IMG:01-aruku-01
 # MSG:「おお、すごい！」:歩
 STOP;
 # MSG:はじめて彼女と会ったのは、そんな時だった。

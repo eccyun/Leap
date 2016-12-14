@@ -53,7 +53,7 @@ STOP;
 # BGM:shoot.mp3:REFRESH
 # BGM:shoot.mp3:PLAY
 # BG:02-shoot-01
-# STILL-IMG:02-child-01:122:left:1
+# STILL-IMG:02-child-01
 # MSG:「照くん、あれやろうよ」:歩
 STOP;
 # MSG:そう言って彼女が指を差した先にあったのは射的屋だった。

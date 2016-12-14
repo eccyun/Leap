@@ -147,7 +147,7 @@ STOP;
 STOP;
 # MSG:あちこちから、そんな歓声や拍手の音が聞こえてくる。
 STOP;
-# STILL-IMG:14-fire-04:145:left:1
+# STILL-IMG:14-fire-04
 # BGM:on-a-bench.mp3:REFRESH
 # BGM:on-a-bench.mp3:PLAY
 # MSG:「照くん、はじまった！」:歩

@@ -27,7 +27,7 @@ STOP;
 STOP;
 # BLACK;
 # BG:02-shoot-01
-# STILL-IMG:02-child-01:122:left:1
+# STILL-IMG:02-child-01
 # MSG:「照くんは、射的やったことある？」:歩
 STOP;
 # MSG:「何度かあるくらいかな、とは言えはじめてやるのと変わらないかも」:照

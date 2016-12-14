@@ -25,7 +25,7 @@ STOP;
 STOP;
 # MSG:それからコツコツと画材を揃えて、休みの日にこうして絵を描くようになった。
 STOP;
-# STILL-IMG:01-teru-01:122:left:1
+# STILL-IMG:01-teru-01
 # MSG:「日も暮れはじめてきたなあ、そろそろ片付けて今日は終わりにしようか」:照
 STOP;
 # MSG:この場所で絵を描くようになったのは、夏休みに入ってからのことだった。
@@ -41,10 +41,10 @@ STOP;
 # MSG:この調子で行けば夏休みが終わる頃には完成しそうだ。
 STOP;
 # BGM:bell-leap.mp3:STOP
-# STILL-IMG:01-aruku-01:116:right:2
+# STILL-IMG:01-aruku-01
 # MSG:「おお、すごい！」:女の子
 STOP;
-# STILL-IMG:01-teru-02:122:left:1
+# STILL-IMG:01-teru-02
 # MSG:「えっ？」:照
 STOP;
 # MSG:振り返ると、そこには一人の女の子が立っていた。
@@ -97,8 +97,8 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-04:122:left:1
-# STILL-IMG:01-aruku-01:116:right:2
+# STILL-IMG:01-teru-04
+# STILL-IMG:01-aruku-01
 # MSG:「ところでさ、全く関係のない話にはなるんだけど…」:女の子
 STOP;
 # MSG:「うん？」:照
@@ -113,12 +113,12 @@ STOP;
 STOP;
 # MSG:「これから、一緒に夏祭りに行かない？」:女の子
 STOP;
-# STILL-IMG:01-teru-05:122:left:1
+# STILL-IMG:01-teru-05
 # MSG:「えーっ！？」:照
 STOP;
 # MSG:「そこまで微妙な反応をされるとは思わなかった…」:女の子
 STOP;
-# STILL-IMG:01-teru-04:122:left:1
+# STILL-IMG:01-teru-04
 # MSG:「だって、僕達知り合ったばかりなんだし、それはさすがに少し躊躇うというか」:照
 STOP;
 # MSG:「やっぱり、私のこと覚えてない？」:女の子
@@ -151,10 +151,10 @@ STOP;
 STOP;
 # MSG:「せめて、いつ頃どこで会ったのかを教えてくれたら思い出せるかもしれないんだけど…」:照
 STOP;
-# STILL-IMG:01-cut-01:122:right:3
+# STILL-IMG:01-cut-01
 # MSG:「それだったら夏祭りに行っている間に、何か思い出せるんじゃないかな」:歩
 STOP;
-# STILL-IMG:01-cut-02:122:left:4
+# STILL-IMG:01-cut-02
 # MSG:「えっ、それってどういうこと？」:照
 STOP;
 # MSG:「どういうことでしょう？」:歩

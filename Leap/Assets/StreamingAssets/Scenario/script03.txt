@@ -54,8 +54,8 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-04:122:left:1
-# STILL-IMG:01-aruku-01:116:right:2
+# STILL-IMG:01-teru-04
+# STILL-IMG:01-aruku-01
 # MSG:「やっぱり、私のこと覚えてない？」:歩
 STOP;
 # BLACK;

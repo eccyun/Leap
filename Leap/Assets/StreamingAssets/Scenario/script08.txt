@@ -230,25 +230,25 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-01:122:left:1
+# STILL-IMG:01-teru-01
 # MSG:「本当に戻ってきたんだな、画材もその時のままだ」:照
 STOP;
 # MSG:そんな風に当時のことを懐かしんでいると、横からマリーが身を乗り出してきた。
 STOP;
-# STILL-IMG:08-mary-01:116:right:2
+# STILL-IMG:08-mary-01
 # MSG:「とても綺麗に描かれてるじゃないですか、これって全部照さんが描いたんですか？」:マリー
 STOP;
-# STILL-IMG:01-teru-02:122:left:1
+# STILL-IMG:01-teru-02
 # MSG:「そうだよ。でも、今となってはもうここまでは描けないだろうなあ」:照
 STOP;
 # MSG:「と言うことは、もうしばらくの間描いてないんですか？」:マリー
 STOP;
-# STILL-IMG:01-teru-01:122:left:1
+# STILL-IMG:01-teru-01
 # MSG:「ちょうど高校を出るくらいかな。それぐらいの時期に描くのをやめちゃって」:照
 STOP;
 # MSG:「なんだかもったいないですね、こんなに上手なのに」:マリー
 STOP;
-# STILL-IMG:01-teru-02:122:left:1
+# STILL-IMG:01-teru-02
 # MSG:「ありがとう、なんだか照れるなあ」:照
 STOP;
 # BLACK;
@@ -319,24 +319,24 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-01:122:left:1
-# STILL-IMG:08-mary-01:116:right:2
+# STILL-IMG:01-teru-01
+# STILL-IMG:08-mary-01
 # MSG:「どうでした？」:マリー
 STOP;
 # MSG:僕が筆を置いたのを確認してから、マリーは声を掛けてきた。
 STOP;
-# STILL-IMG:01-teru-02:122:left:1
+# STILL-IMG:01-teru-02
 # MSG:「本当に描けるとは思わなかったから、びっくりした」:照
 STOP;
-# STILL-IMG:01-teru-01:122:left:1
+# STILL-IMG:01-teru-01
 # MSG:「何より楽しかった、こうして再び絵を描くことが出来て良かったなと思う」:照
 STOP;
 # MSG:「絵を描いてる時の照さん、とてもいきいきとしてましたよ」:マリー
 STOP;
-# STILL-IMG:01-teru-02:122:left:1
+# STILL-IMG:01-teru-02
 # MSG:「そうかな、全く気付かなかった。でも、そう言われると少し恥ずかしいかも」:照
 STOP;
-# STILL-IMG:01-teru-01:122:left:1
+# STILL-IMG:01-teru-01
 # MSG:僕は、こんなに楽しいことをどうしてやめてしまったんだろう？
 STOP;
 # MSG:『あの頃は時間が無かった』なんて言えば、それまでなんだろうけれど。
@@ -417,8 +417,8 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-04:122:left:1
-# STILL-IMG:01-aruku-01:116:right:2
+# STILL-IMG:01-teru-04
+# STILL-IMG:01-aruku-01
 # MSG:「ところで、全く関係のない話になるんだけど…」:歩
 STOP;
 # MSG:「うん？」:照
@@ -517,8 +517,8 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-04:122:left:1
-# STILL-IMG:01-aruku-01:116:right:2
+# STILL-IMG:01-teru-04
+# STILL-IMG:01-aruku-01
 # MSG:「まあ、でも」:歩
 STOP;
 # MSG:「私達が、はじめて会ったのは随分と前のことだったし、それに少しの間だけだったから」:歩
@@ -529,14 +529,14 @@ STOP;
 STOP;
 # MSG:「せめて、いつ頃どこで僕達が会ったのか教えてくれたら、何か思い出せるかもしれないんだけど」:照
 STOP;
-# STILL-IMG:01-cut-01:122:right:3
+# STILL-IMG:01-cut-01
 # MSG:「それだったら夏祭りに行ってる間に、何か思い出せるんじゃないかな」:歩
 STOP;
 # MSG:ああ、結局こうなってしまうんだ。
 STOP;
 # MSG:なんとなくだけれど、予想していたことではあった。
 STOP;
-# STILL-IMG:01-cut-02:122:left:4
+# STILL-IMG:01-cut-02
 # MSG:「あのさ、それなんだけど」:照
 STOP;
 # MSG:「どうして、僕と君がいつ会ったかって言う話と、今日の夏祭りが結びつくの？」:照
