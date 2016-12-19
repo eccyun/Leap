@@ -23,6 +23,15 @@ public class MainGameManager : MonoBehaviour {
 			if(script[0]=="# MSG"){
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
+			}else if(script[0]=="# IMG"){
+				GameObject     img      = GameObject.Find("character_"+script[2]);
+				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
+				renderer.sprite         = Resources.Load<Sprite>("Sprite/character/"+script[1]);
+			}else if(script[0]=="# BG"){
+				GameObject     img      = GameObject.Find("background_image");
+				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
+				renderer.sprite         = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
+
 			}else if(script[0]=="# STILL-IMG"){
 				// 部分絵の表示
 				GameObject     still    = GameObject.Find(script[1]);

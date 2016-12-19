@@ -58,6 +58,18 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	}
 
 	public void fade(float alfa){
+		GameObject     img      = GameObject.Find("character_center");
+		SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
+		renderer.sprite         = null;
+
+		img      = GameObject.Find("character_left");
+		renderer = img.GetComponent<SpriteRenderer>();
+		renderer.sprite = null;
+
+		img      = GameObject.Find("character_right");
+		renderer = img.GetComponent<SpriteRenderer>();
+		renderer.sprite = null;
+
 		PanelComponent panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
 		panelComponent.setAlfa(alfa);
 		panelComponent.isFade = true;
