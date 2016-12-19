@@ -24,6 +24,7 @@ public class MainGameManager : MonoBehaviour {
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
 			}else if(script[0]=="# STILL-IMG"){
+				// 部分絵の表示
 				GameObject     still    = GameObject.Find(script[1]);
 				SpriteRenderer renderer = still.GetComponent<SpriteRenderer>();
 
@@ -39,6 +40,8 @@ public class MainGameManager : MonoBehaviour {
 					still.GetComponent<SpriteScript>().alfa = 0.0f;
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
+			}else if(script[0]=="# BLACK;"){
+				scriptEngine.fade(1.0f);
 			}
 		}
 

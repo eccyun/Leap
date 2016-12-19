@@ -57,6 +57,12 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		return ret.Split(':');
 	}
 
+	public void fade(float alfa){
+		PanelComponent panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
+		panelComponent.setAlfa(alfa);
+		panelComponent.isFade = true;
+	}
+
 	// 改行コード処理
     private string SetDefaultText(){
         return "C#あ\n";
