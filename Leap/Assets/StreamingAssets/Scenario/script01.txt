@@ -1,5 +1,4 @@
-# BGM:bell-leap.mp3:REFRESH
-# BGM:bell-leap.mp3:PLAY
+# BGM:bell-leap:PLAY
 # BG:upland_evening
 # MSG:夏休みも終盤に差し掛かった8月の日、僕は近所の高台まで絵を描きに来ていた。
 STOP;
@@ -40,7 +39,7 @@ STOP;
 STOP;
 # MSG:この調子で行けば夏休みが終わる頃には完成しそうだ。
 STOP;
-# BGM:bell-leap.mp3:STOP
+# BGM:bell-leap:STOP
 # STILL-IMG:01-aruku-01:show:true
 # MSG:「おお、すごい！」:女の子
 STOP;
@@ -53,8 +52,7 @@ STOP;
 # BLACK;
 # STILL-IMG:01-teru-02:hide
 # STILL-IMG:01-aruku-01:hide
-# BGM:aruku_theme.mp3:REFRESH
-# BGM:aruku_theme.mp3:PLAY
+# BGM:aruku_theme:PLAY
 # IMG:aruku_normal:center
 # MSG:「あ、突然ごめんね。とてもよく描けてるなあって思って」:女の子
 STOP;
@@ -179,5 +177,5 @@ STOP;
 STOP;
 # MSG:「わかった、わかったから。置いてかないで…」:照
 STOP;
-# BGM:aruku_theme.mp3:STOP
+# BGM:aruku_theme:STOP
 LOADING;

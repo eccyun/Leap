@@ -23,6 +23,15 @@ public class MainGameManager : MonoBehaviour {
 			if(script[0]=="# MSG"){
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
+			}else if(script[0]=="# BGM"){
+				GameObject  audio       = GameObject.Find("BGM");
+				AudioSource audioSource = audio.GetComponent<AudioSource>();
+				if(script[2]=="PLAY"){
+					audioSource.clip        = Resources.Load<AudioClip>("BGM/"+script[1]);
+					audioSource.Play();
+				}else if(script[2]=="STOP"){
+					audioSource.Stop();
+				}
 			}else if(script[0]=="# IMG"){
 				GameObject     img      = GameObject.Find("character_"+script[2]);
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
