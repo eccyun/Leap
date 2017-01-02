@@ -70,9 +70,8 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		renderer = img.GetComponent<SpriteRenderer>();
 		renderer.sprite = null;
 
-		PanelComponent panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
-		panelComponent.setAlfa(alfa);
-		panelComponent.isFade = true;
+		SceneComponent sceneComponent = GetComponent<SceneComponent> ();
+		sceneComponent.fade("out", 0.02f);
 	}
 
 	// 改行コード処理
