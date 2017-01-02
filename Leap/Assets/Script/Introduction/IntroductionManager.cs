@@ -21,7 +21,7 @@ public class IntroductionManager : MonoBehaviour {
 		Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
 		Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
-		if(Input.GetMouseButtonDown(0) && !sceneComponent.panel.GetComponent<PanelComponent>().isFade){
+		if(Input.GetMouseButtonDown(0) && !sceneComponent.panelComponent.isFade){
 			if(col == drawSprite.GetComponent<Collider2D>()){
 				SpriteRenderer renderer  = drawSprite.GetComponent<SpriteRenderer>();
 				MainImage      mainImage = drawSprite.GetComponent<MainImage>();

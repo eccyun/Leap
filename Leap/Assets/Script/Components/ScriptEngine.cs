@@ -57,7 +57,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		return ret.Split(':');
 	}
 
-	public void fade(float alfa){
+	public void fade(string mode, float range){
 		GameObject     img      = GameObject.Find("character_center");
 		SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
 		renderer.sprite         = null;
@@ -71,7 +71,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		renderer.sprite = null;
 
 		SceneComponent sceneComponent = GetComponent<SceneComponent> ();
-		sceneComponent.fade("out", 0.02f);
+		sceneComponent.fade(mode, range);
 	}
 
 	// 改行コード処理

@@ -3,21 +3,31 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class MainGameManager : MonoBehaviour {
-	private ScriptEngine scriptEngine;
+	private ScriptEngine   scriptEngine;
+	private SceneComponent sceneComponent;
+
 	private string[]     script;
+	private bool         isLoading;
 	public  Text         text;
 
 	void Start () {
 		// スクリプトエンジン取得
-		scriptEngine = GetComponent<ScriptEngine> ();
+		scriptEngine   = GetComponent<ScriptEngine> ();
+		sceneComponent = GetComponent<SceneComponent> ();
 
 		// スクリプトの読みこみ
 		scriptEngine.readScenarioFile("script01.txt", "Prefab/Still-01");
 	}
 
 	void Update () {
-		script = scriptEngine.readScript();
+		if(isLoading){
+			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
+				sceneComponent.moveScene("Introduction");
+			}
+			return;
+		}
 
+		script = scriptEngine.readScript();
 		// データを確認する
 		if(script != null){
 			if(script[0]=="# MSG"){
@@ -28,7 +38,7 @@ public class MainGameManager : MonoBehaviour {
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
 				if(script[2]=="PLAY"){
 					audioSource.clip        = Resources.Load<AudioClip>("BGM/"+script[1]);
-					audioSource.Play();
+//					audioSource.Play();
 				}else if(script[2]=="STOP"){
 					audioSource.Stop();
 				}
@@ -40,7 +50,6 @@ public class MainGameManager : MonoBehaviour {
 				GameObject     img      = GameObject.Find("background_image");
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
 				renderer.sprite         = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
-
 			}else if(script[0]=="# STILL-IMG"){
 				// 部分絵の表示
 				GameObject     still    = GameObject.Find(script[1]);
@@ -59,7 +68,10 @@ public class MainGameManager : MonoBehaviour {
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK;"){
-				scriptEngine.fade(1.0f);
+				scriptEngine.fade("out", 0.02f);
+			}else if(script[0]=="LOADING;"){
+				scriptEngine.fade("normal", 0.01f);
+				isLoading = true;
 			}
 		}
 

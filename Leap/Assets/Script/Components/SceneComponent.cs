@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class SceneComponent : MonoBehaviour {
 
-	public GameObject panel;
+	public PanelComponent panelComponent;
 
 	public void Start(){
+		panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
 	}
 
 	/*
@@ -16,10 +17,10 @@ public class SceneComponent : MonoBehaviour {
 	*/
 	public void fade(string mode="normal", float range = 0.01f){
 		if(mode=="out"){
-			panel.GetComponent<PanelComponent> ().setAlfa(1.0f);
+			panelComponent.setAlfa(1.0f);
 		}
-		panel.GetComponent<PanelComponent> ().isFade = true;
-		panel.GetComponent<PanelComponent> ().setRange(range);
+		panelComponent.isFade = true;
+		panelComponent.setRange(range);
 	}
 
 	/*
