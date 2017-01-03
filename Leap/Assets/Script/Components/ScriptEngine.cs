@@ -8,9 +8,9 @@ using System.Collections.Generic;
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	private List<string> listScript;  // スクリプトファイルから読み込んだ命令群を格納
 	private int          cnt;         // スクリプトのカウンタ
+	public  int          chapter;     // 章情報
 	public  GameObject   stillPrefab; // スチルのプレハブ
 	public  bool         stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
-	public  string       fileName;    // ファイルネーム
 
 	public void Awake(){
         if(this != Instance){
@@ -20,10 +20,17 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
         DontDestroyOnLoad(this.gameObject);
     }
 
-	public void readScenarioFile(string fileName, string stillName){
+	public void Start () {
+	}
+
+	public void readScenarioFile(){
 		// 変数の初期化
 		listScript = new List<string>();
-		cnt        = 177;
+		cnt        = 0;
+		chapter++;
+
+		string fileName  = "script"+chapter.ToString("0,0")+".txt";
+		string stillName = "Prefab/Still-"+chapter.ToString("0,0");
 
 		// スチルデータのセット
 		stillPrefab = (GameObject)Resources.Load (stillName);

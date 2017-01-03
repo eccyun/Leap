@@ -16,14 +16,13 @@ public class MainGameManager : MonoBehaviour {
 		sceneComponent = GetComponent<SceneComponent> ();
 
 		// スクリプトの読みこみ
-		scriptEngine.readScenarioFile("script01.txt", "Prefab/Still-01");
+		scriptEngine.readScenarioFile();
 	}
 
 	void Update () {
 		if(isLoading){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
 				sceneComponent.moveScene("Load");
-				isLoading = false;
 			}
 			return;
 		}
@@ -74,6 +73,10 @@ public class MainGameManager : MonoBehaviour {
 			}else if(script[0]=="LOADING;"){
 				scriptEngine.fade("normal", 0.01f);
 				isLoading = true;
+			}else if(script[0]=="# REMOVE-IMG"){
+				GameObject     img      = GameObject.Find("character_"+script[1]);
+				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
+				renderer.sprite         = null;
 			}
 		}
 

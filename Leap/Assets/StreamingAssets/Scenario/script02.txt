@@ -1,6 +1,4 @@
-# EFFECT:shoot_effect.mp3:LOAD
-# BGM:fest-leap.mp3:REFRESH
-# BGM:fest-leap.mp3:PLAY
+# BGM:fest-leap:PLAY
 # BG:park_festa
 # IMG:aruku_normal:center
 # MSG:「今年も、賑わってるな」
@@ -50,10 +48,9 @@ STOP;
 STOP;
 # BLACK;
 # BGM:fest-leap.mp3:STOP
-# BGM:shoot.mp3:REFRESH
 # BGM:shoot.mp3:PLAY
-# BG:02-shoot-01
-# STILL-IMG:02-child-01
+# STILL-IMG:02-shoot-01:show:false
+# STILL-IMG:02-child-01:show:false
 # MSG:「照くん、あれやろうよ」:歩
 STOP;
 # MSG:そう言って彼女が指を差した先にあったのは射的屋だった。
@@ -74,7 +71,7 @@ STOP;
 STOP;
 # MSG:「うん、おっちゃん！ありがとう！」
 STOP;
-# REMOVE-IMG:1
+# STILL-IMG:02-child-01:hide
 # MSG:そうして子ども達は射的屋を離れて次の遊び場を探して走っていく。
 STOP;
 # MSG:お客さんはいなくなり、射的屋の周りには遠目に見ている僕達だけとなった。
@@ -88,6 +85,7 @@ STOP;
 # MSG:「うん！」:歩
 STOP;
 # BLACK;
+# STILL-IMG:02-shoot-01:hide
 # BG:park_festa
 # MSG:「いらっしゃい！」
 STOP;
