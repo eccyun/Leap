@@ -22,12 +22,14 @@ public class MainGameManager : MonoBehaviour {
 	void Update () {
 		if(isLoading){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
-				sceneComponent.moveScene("Load");
+				sceneComponent.pushScene("Load");
+				isLoading = false;
 			}
 			return;
 		}
 
 		script = scriptEngine.readScript();
+
 		// データを確認する
 		if(script != null){
 			if(script[0]=="# MSG"){
@@ -68,7 +70,7 @@ public class MainGameManager : MonoBehaviour {
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK;"){
-				scriptEngine.fade("out", 0.02f);
+				scriptEngine.fade("out", 0.03f);
 			}else if(script[0]=="LOADING;"){
 				scriptEngine.fade("normal", 0.01f);
 				isLoading = true;
