@@ -12,7 +12,7 @@ public class MainGameManager : MonoBehaviour {
 
 	void Start () {
 		// スクリプトエンジン取得
-		scriptEngine   = GetComponent<ScriptEngine> ();
+		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
 		sceneComponent = GetComponent<SceneComponent> ();
 
 		// スクリプトの読みこみ
@@ -22,7 +22,7 @@ public class MainGameManager : MonoBehaviour {
 	void Update () {
 		if(isLoading){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
-				sceneComponent.pushScene("Load");
+				sceneComponent.moveScene("Load");
 				isLoading = false;
 			}
 			return;

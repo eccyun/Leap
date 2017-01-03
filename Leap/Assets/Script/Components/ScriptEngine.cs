@@ -23,7 +23,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public void readScenarioFile(string fileName, string stillName){
 		// 変数の初期化
 		listScript = new List<string>();
-		cnt        = 0;
+		cnt        = 177;
 
 		// スチルデータのセット
 		stillPrefab = (GameObject)Resources.Load (stillName);
@@ -70,7 +70,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		renderer = img.GetComponent<SpriteRenderer>();
 		renderer.sprite = null;
 
-		SceneComponent sceneComponent = GetComponent<SceneComponent> ();
+		SceneComponent sceneComponent = GameObject.Find("MainGameManager").GetComponent<SceneComponent> ();
 		sceneComponent.fade(mode, range);
 	}
 

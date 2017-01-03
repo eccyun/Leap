@@ -12,7 +12,7 @@ public class LoadManager : MonoBehaviour {
 		max   = 5.0f;
 		range = 0.02f;
 		frame = 0.0f;
-		sceneComponent = GameObject.Find("ScriptEngine").GetComponent<SceneComponent>();
+		sceneComponent = GetComponent<SceneComponent>();
 	}
 
 	// Update is called once per frame
