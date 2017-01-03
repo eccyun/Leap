@@ -39,7 +39,7 @@ public class MainGameManager : MonoBehaviour {
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
 				if(script[2]=="PLAY"){
 					audioSource.clip        = Resources.Load<AudioClip>("BGM/"+script[1]);
-//					audioSource.Play();
+					audioSource.Play();
 				}else if(script[2]=="STOP"){
 					audioSource.Stop();
 				}
@@ -77,6 +77,11 @@ public class MainGameManager : MonoBehaviour {
 				GameObject     img      = GameObject.Find("character_"+script[1]);
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
 				renderer.sprite         = null;
+			}else if(script[0]=="# EFFECT"){
+				GameObject  audio       = GameObject.Find("Effect");
+				AudioSource audioSource = audio.GetComponent<AudioSource>();
+				audioSource.clip        = Resources.Load<AudioClip>("Effects/"+script[1]);
+				audioSource.Play();
 			}
 		}
 
