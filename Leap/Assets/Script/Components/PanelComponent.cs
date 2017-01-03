@@ -25,7 +25,7 @@ public class PanelComponent : MonoBehaviour {
 		green = GetComponent<Image>().color.g;
 		blue  = GetComponent<Image>().color.b;
 		alfa  = GetComponent<Image>().color.a;
-		range = 0.01f;
+		range = 0.02f;
 	}
 
 	void Update () {

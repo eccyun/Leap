@@ -22,7 +22,7 @@ public class MainGameManager : MonoBehaviour {
 	void Update () {
 		if(isLoading){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
-				sceneComponent.moveScene("Introduction");
+				sceneComponent.moveScene("Load");
 			}
 			return;
 		}
