@@ -74,7 +74,12 @@ public class MainGameManager : MonoBehaviour {
 				scriptEngine.fade("normal", 0.01f);
 				isLoading = true;
 			}else if(script[0]=="# REMOVE-IMG"){
-				GameObject     img      = GameObject.Find("character_"+script[1]);
+				GameObject img;
+				if(script[1]=="bg"){
+					img = GameObject.Find("background_image");
+				}else{
+					img = GameObject.Find("character_"+script[1]);
+				}
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
 				renderer.sprite         = null;
 			}else if(script[0]=="# EFFECT"){
