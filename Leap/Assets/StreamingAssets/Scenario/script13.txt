@@ -1,10 +1,10 @@
-# BGM:on-a-bench.mp3:REFRESH
+# BGM:on-a-bench:REFRESH
 # MSG:彼女がいったい誰だったのか、ようやくその全てが分かった。
 STOP;
 # MSG:僕がずっと気になっていた女の子は、まだ小さかった頃に出会った迷子の女の子だった。
 STOP;
 # WHITE;
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:PLAY
 # BG:12-aruku-01
 # MSG:「それでね、分かったんだけど」:歩
 STOP;
@@ -45,7 +45,7 @@ STOP;
 # BLACK;
 # BG:rest
 # IMG:aruku_laugh2:center
-# BGM:on-a-bench.mp3:STOP
+# BGM:on-a-bench:STOP
 # MSG:「ありがとう、気持ちはすごく嬉しいんだけど」:照
 STOP;
 # MSG:「僕には、君の気持ちに応えられそうにないんだ、ごめん」:照
@@ -54,8 +54,8 @@ STOP;
 STOP;
 # MSG:今、ここにいる僕は未来から来た僕であって、本来ここにいるべき僕とは違うのだから。
 STOP;
-# BGM:confessions.mp3:REFRESH
-# BGM:confessions.mp3:PLAY
+# BGM:confessions:REFRESH
+# BGM:confessions:PLAY
 # MSG:「覚悟はしてたつもりだったんだけど、やっぱりへこむね。ははは…」:歩
 STOP;
 # MSG:「ごめん」:照
@@ -146,5 +146,5 @@ STOP;
 STOP;
 # MSG:僕達は、花火を観るために高台へと移動することにした。
 STOP;
-# BGM:confessions.mp3:STOP
+# BGM:confessions:STOP
 LOADING;

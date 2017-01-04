@@ -34,7 +34,9 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 
 		// スチルデータのセット
 		stillPrefab = (GameObject)Resources.Load (stillName);
-		Instantiate(stillPrefab, Vector3.zero, Quaternion.identity);
+		if(stillPrefab != null){
+			Instantiate(stillPrefab, Vector3.zero, Quaternion.identity);
+		}
 
 		FileInfo f = new FileInfo(Application.streamingAssetsPath+"/Scenario/"+fileName);
 		try{

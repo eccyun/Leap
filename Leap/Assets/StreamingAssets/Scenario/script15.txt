@@ -1,5 +1,5 @@
-# BGM:on-a-bench.mp3:REFRESH
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:REFRESH
+# BGM:on-a-bench:PLAY
 # BG:park_festa
 # IMG:aruku_laugh2:center
 # MSG:「花火、終わっちゃった」:歩
@@ -82,5 +82,5 @@ STOP;
 STOP;
 # MSG:僕の二度目の夏祭りは、こうして終わった。
 STOP;
-# BGM:on-a-bench.mp3:STOP
+# BGM:on-a-bench:STOP
 LOADING;

@@ -1,5 +1,5 @@
-# BGM:bell-leap.mp3:REFRESH
-# BGM:bell-leap.mp3:PLAY
+# BGM:bell-leap:REFRESH
+# BGM:bell-leap:PLAY
 # MSG:今から、ちょうど6年前くらいのこと。
 STOP;
 # MSG:お父さんの仕事の都合で、家を引っ越したことがあった。
@@ -119,5 +119,5 @@ STOP;
 STOP;
 # MSG:そうして私は男の子に手を引かれるまま、お父さんとお母さんを探して人ごみの中へと入っていった。
 STOP;
-# BGM:bell-leap.mp3:STOP
+# BGM:bell-leap:STOP
 LOADING;

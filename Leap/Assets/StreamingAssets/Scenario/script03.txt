@@ -1,6 +1,4 @@
-# BGM:on-a-bench.mp3:REFRESH
-# BGM:fest-leap.mp3:REFRESH
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:PLAY
 # BG:rest
 # IMG:aruku_normal:center
 # MSG:「そろそろ、良い時間になってきたね」:歩
@@ -54,11 +52,13 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-04
-# STILL-IMG:01-aruku-01
+# STILL-IMG:01-teru-04:show:false
+# STILL-IMG:01-aruku-01:show:false
 # MSG:「やっぱり、私のこと覚えてない？」:歩
 STOP;
 # BLACK;
+# STILL-IMG:01-teru-04:hide
+# STILL-IMG:01-aruku-01:hide
 # BG:rest
 # IMG:aruku_normal:center
 # MSG:あれは、どういうことだったんだろう。
@@ -102,8 +102,8 @@ STOP;
 # MSG:そう決めて、僕達は高台までの道を歩いていくことにした。
 STOP;
 # BLACK;
-# BGM:on-a-bench.mp3:STOP
-# BGM:fest-leap.mp3:PLAY
+# BGM:on-a-bench:STOP
+# BGM:fest-leap:PLAY
 # BG:park_festa
 # MSG:「かなり、混んでるなあ」:照
 STOP;
@@ -127,7 +127,8 @@ STOP;
 # MSG:「そうなんだ、それだったら良いんだけど」:照
 STOP;
 # BLACK;
-# BGM:fest-leap.mp3:STOP
+# REMOVE-IMG:bg
+# BGM:fest-leap:STOP
 # MSG:そんなことを話しながら人の流れに乗って、高台まで歩いていく。
 STOP;
 # MSG:事が起こったのは、その歩いている途中だった。

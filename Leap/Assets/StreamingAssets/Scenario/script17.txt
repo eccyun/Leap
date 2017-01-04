@@ -5,8 +5,8 @@ STOP;
 # MSG:「照さん…起きてください…」:？？？
 STOP;
 # WHITE;
-# BGM:bar_theme.mp3:REFRESH
-# BGM:bar_theme.mp3:PLAY
+# BGM:bar_theme:REFRESH
+# BGM:bar_theme:PLAY
 # BG:bar
 # MSG:「う、うーん…」:照
 STOP;
@@ -160,10 +160,10 @@ STOP;
 # MSG:久しぶりに誰かとお酒が飲めると思うと、ちょっとだけ楽しみな気分になった。
 STOP;
 # BLACK;
-# BGM:bar_theme.mp3:STOP
-# BGM:end-loop.mp3:REFRESH
-# BGM:end-loop.mp3:PLAY
-# EFFECT:door_open.mp3:PLAY
+# BGM:bar_theme:STOP
+# BGM:end-loop:REFRESH
+# BGM:end-loop:PLAY
+# EFFECT:door_open:PLAY
 # WAIT:3
 STOP;
 # MSG:店の扉が開く音がする、店内でこの音を聞くのもなかなか無いことだ。
@@ -206,5 +206,5 @@ STOP;
 STOP;
 # MSG:「また、会うことが出来たね」:照
 STOP;
-# BGM:end-loop.mp3:STOP
+# BGM:end-loop:STOP
 ENDING;

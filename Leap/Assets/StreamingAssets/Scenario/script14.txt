@@ -1,5 +1,5 @@
-# BGM:fest-leap.mp3:REFRESH
-# BGM:fest-leap.mp3:PLAY
+# BGM:fest-leap:REFRESH
+# BGM:fest-leap:PLAY
 # BG:park_festa
 # MSG:「混んでるなぁ」:照
 STOP;
@@ -43,7 +43,7 @@ STOP;
 STOP;
 # MSG:比較的小柄なこともあって、来る人達の目に付きにくいからだろうか。
 STOP;
-# BGM:fest-leap.mp3:STOP
+# BGM:fest-leap:STOP
 # MSG:「うーん」:照
 STOP;
 # REMOVE-IMG:center
@@ -61,8 +61,8 @@ STOP;
 # MSG:「…」:照
 STOP;
 # BLACK;
-# BGM:on-a-bench.mp3:REFRESH
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:REFRESH
+# BGM:on-a-bench:PLAY
 # BG:14-aruku-01
 # MSG:「わっ、わわわ。何、急に！？」:歩
 STOP;
@@ -91,9 +91,9 @@ STOP;
 # MSG:今となってはその時の心境がどうだったか曖昧だったけれど、なんとなくそんな気がした。
 STOP;
 # BLACK;
-# BGM:on-a-bench.mp3:STOP
-# BGM:road_theme.mp3:REFRESH
-# BGM:road_theme.mp3:PLAY
+# BGM:on-a-bench:STOP
+# BGM:road_theme:REFRESH
+# BGM:road_theme:PLAY
 # BG:upland_night
 # IMG:aruku_normal:center
 # MSG:「思っていたより、人が少ないね」:照
@@ -130,17 +130,17 @@ STOP;
 STOP;
 # MSG:「そうだねー」:歩
 STOP;
-# BGM:road_theme.mp3:STOP
+# BGM:road_theme:STOP
 # MSG:「…あっ！」:歩
 STOP;
 # BG:14-fire-02
-# EFFECT:fire_1.mp3:PLAY
+# EFFECT:fire_1:PLAY
 # WAIT:2
 STOP;
 # MSG:それは、一瞬の出来事だった。
 STOP;
 # BG:14-fire-03
-# EFFECT:fire_2.mp3:PLAY
+# EFFECT:fire_2:PLAY
 # WAIT:2
 STOP;
 # MSG:「おー！」
@@ -148,8 +148,8 @@ STOP;
 # MSG:あちこちから、そんな歓声や拍手の音が聞こえてくる。
 STOP;
 # STILL-IMG:14-fire-04
-# BGM:on-a-bench.mp3:REFRESH
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:REFRESH
+# BGM:on-a-bench:PLAY
 # MSG:「照くん、はじまった！」:歩
 STOP;
 # MSG:「最初から、飛ばしてるなあ」:照
@@ -264,5 +264,5 @@ STOP;
 STOP;
 # MSG:未来へと帰る時が、もうすぐそこまで近付いてきていた。
 STOP;
-# BGM:on-a-bench.mp3:STOP
+# BGM:on-a-bench:STOP
 LOADING;

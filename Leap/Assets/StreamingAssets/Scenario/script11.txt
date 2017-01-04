@@ -1,5 +1,5 @@
-# BGM:fest-leap.mp3:REFRESH
-# BGM:fest-leap.mp3:PLAY
+# BGM:fest-leap:REFRESH
+# BGM:fest-leap:PLAY
 # BG:park_festa
 # MSG:「はぁ、やっぱり駄目だったな」:照
 STOP;
@@ -84,5 +84,5 @@ STOP;
 STOP;
 # MSG:なけなしの400円と引き換えにたこ焼きを一つ受け取って、僕達はお店をあとにした。
 STOP;
-# BGM:fest-leap.mp3:STOP
+# BGM:fest-leap:STOP
 LOADING;

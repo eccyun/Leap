@@ -1,5 +1,5 @@
-# BGM:on-a-bench.mp3:REFRESH
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:REFRESH
+# BGM:on-a-bench:PLAY
 # BG:rest
 # IMG:aruku_normal:center
 # MSG:「照くん、こっちこっち」:歩
@@ -136,7 +136,7 @@ STOP;
 # IMG:aruku_normal:center
 # MSG:「そうだね、そろそろ答え合わせをしてもいいかな…」:歩
 STOP;
-# BGM:on-a-bench.mp3:STOP
+# BGM:on-a-bench:STOP
 # MSG:「あのね、今から6年前にもここで夏祭りがあったんだよ」:歩
 STOP;
 # IMG:aruku_laugh2:center
@@ -147,8 +147,8 @@ STOP;
 # MSG:「その時の夏祭りで、迷子の女の子と会ったことなかった？」:歩
 STOP;
 # BLACK;
-# BGM:bell-leap.mp3:REFRESH
-# BGM:bell-leap.mp3:PLAY
+# BGM:bell-leap:REFRESH
+# BGM:bell-leap:PLAY
 # MSG:6年前と言えば、両親に連れられてよくここの夏祭りに来ていた頃だ。
 STOP;
 # WHITE;
@@ -296,7 +296,7 @@ STOP;
 STOP;
 # MSG:「それでね、分かったんだけど」:歩
 STOP;
-# BGM:bell-leap.mp3:STOP
+# BGM:bell-leap:STOP
 # MSG:「私、照くんのことが好きだったんだ。はじめて会ってからそれ以来ずっと」:歩
 STOP;
 # MSG:「だから、ずっと照くんとまた会えないかなって。今日まで、毎年夏祭りに来てたんだよ」:歩

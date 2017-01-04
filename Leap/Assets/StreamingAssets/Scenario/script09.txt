@@ -1,6 +1,6 @@
-# BGM:shoot.mp3:REFRESH
-# BGM:fest-leap.mp3:REFRESH
-# BGM:fest-leap.mp3:PLAY
+# BGM:shoot:REFRESH
+# BGM:fest-leap:REFRESH
+# BGM:fest-leap:PLAY
 # BG:park_festa
 # IMG:aruku_normal:center
 # MSG:「今年も、賑わってるな」:歩
@@ -38,10 +38,10 @@ STOP;
 STOP;
 # MSG:『それもこれも、君がもったいぶるから…』そう言いたい気持ちになった。
 STOP;
-# BGM:fest-leap.mp3:STOP
+# BGM:fest-leap:STOP
 # BLACK;
 # BG:02-shoot-01
-# BGM:shoot.mp3:PLAY
+# BGM:shoot:PLAY
 # STILL-IMG:02-child-01
 # MSG:「照くん、あれやろうよ」:歩
 STOP;
@@ -134,5 +134,5 @@ STOP;
 STOP;
 # MSG:何てことのない勝負が、絶対に負けられない勝負へと変わった瞬間だった。
 STOP;
-# BGM:shoot.mp3:STOP
+# BGM:shoot:STOP
 LOADING;

@@ -1,6 +1,6 @@
-# BGM:forest.mp3:REFRESH
-# BGM:road_theme.mp3:REFRESH
-# BGM:forest.mp3:PLAY
+# BGM:forest:REFRESH
+# BGM:road_theme:REFRESH
+# BGM:forest:PLAY
 # BG:upland_night
 # IMG:mary_normal:center
 # MSG:「こんばんは」:女の子
@@ -58,7 +58,7 @@ STOP;
 STOP;
 # MSG:「手助け？それって、具体的にどういうことをするの？」:照
 STOP;
-# BGM:forest.mp3:STOP
+# BGM:forest:STOP
 # MSG:「過去へと連れていくんです、後悔した出来事が実際に起こるちょっと前の時間に」:女の子
 STOP;
 # MSG:頭がくらくらするのを感じた、彼女は何を言っているんだろう…。
@@ -69,7 +69,7 @@ STOP;
 STOP;
 # MSG:だから、彼女が何を言ってるのか僕には理解出来なかった。
 STOP;
-# BGM:forest.mp3:PLAY
+# BGM:forest:PLAY
 # MSG:「ちょっと何を言ってるのか、よく分からないんだけど」:照
 STOP;
 # MSG:「やっぱり疲れてるのかもしれないな、さっきもバーで深酒して寝ちゃってたし…」:照
@@ -207,14 +207,14 @@ STOP;
 STOP;
 # MSG:それなのに文字盤には夏祭りの日付が表示されている、単なる偶然だとは思えなかった。
 STOP;
-# BGM:forest.mp3:STOP
+# BGM:forest:STOP
 # MSG:「僕さ、もう一度会いたい人がいるんだ」:照
 STOP;
 # MSG:彼女に促されるわけでもなく、僕は6年前の夏祭りのことを話しはじめた。
 STOP;
 # IMG:mary_puzzle_2:center
-# BGM:on-a-bench.mp3:REFRESH
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:REFRESH
+# BGM:on-a-bench:PLAY
 # MSG:「会いたい人…ですか？」:女の子
 STOP;
 # MSG:「うん」:照
@@ -346,7 +346,7 @@ STOP;
 # MSG:「いえいえ」:マリー
 STOP;
 # BLACK;
-# BGM:on-a-bench.mp3:STOP
+# BGM:on-a-bench:STOP
 # MSG:お互いの自己紹介が終わる頃には、辺りの景色もすっかり見えなくなってしまっていた。
 STOP;
 LOADING;

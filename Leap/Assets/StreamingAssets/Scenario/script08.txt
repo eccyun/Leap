@@ -1,5 +1,5 @@
-# BGM:forest.mp3:REFRESH
-# BGM:forest.mp3:PLAY
+# BGM:forest:REFRESH
+# BGM:forest:PLAY
 # MSG:暗闇の中にいる。
 STOP;
 # MSG:そうなってから、どれくらいの時間が経っただろうか？
@@ -189,9 +189,9 @@ STOP;
 # MSG:そうして白いもやが徐々に晴れてきて、景色がより鮮明になっていった。
 STOP;
 # WHITE;
-# BGM:forest.mp3:STOP
-# BGM:mary_theme.mp3:REFRESH
-# BGM:mary_theme.mp3:PLAY
+# BGM:forest:STOP
+# BGM:mary_theme:REFRESH
+# BGM:mary_theme:PLAY
 # BG:upland_evening
 # IMG:mary_normal:center
 # MSG:「無事に到着したようです」:マリー
@@ -348,7 +348,7 @@ STOP;
 # MSG:そんなことを考えていた時のことだった。
 STOP;
 # BLACK;
-# BGM:mary_theme.mp3:STOP
+# BGM:mary_theme:STOP
 # BG:upland_evening
 # MSG:「おお、すごい！」:？？？
 STOP;
@@ -363,8 +363,8 @@ STOP;
 STOP;
 # MSG:はじまりは、6年前の時と全く同じだった。
 STOP;
-# BGM:aruku_theme.mp3:REFRESH
-# BGM:aruku_theme.mp3:PLAY
+# BGM:aruku_theme:REFRESH
+# BGM:aruku_theme:PLAY
 # IMG:aruku_laugh2:center
 # MSG:「あ、突然ごめんね。とてもよく描けてるなあって思って」:歩
 STOP;
@@ -429,14 +429,14 @@ STOP;
 STOP;
 # MSG:「そっか、それでその夏祭りなんだけどさ…」:歩
 STOP;
-# BGM:aruku_theme.mp3:STOP
+# BGM:aruku_theme:STOP
 # MSG:「もし良かったら、これから一緒に行かない？」:歩
 STOP;
 # MSG:「…」:照
 STOP;
 # BLACK;
-# BGM:on-a-bench.mp3:REFRESH
-# BGM:on-a-bench.mp3:PLAY
+# BGM:on-a-bench:REFRESH
+# BGM:on-a-bench:PLAY
 # BG:upland_evening
 # IMG:aruku_normal:center
 # MSG:「…ごめん、その前に一つ気になってたことがあるんだけど、聞いてもいいかな」:照
@@ -547,7 +547,7 @@ STOP;
 STOP;
 # MSG:しかし、そんな僕の考えとは裏腹に彼女の答えは意外なものだった。
 STOP;
-# BGM:on-a-bench.mp3:STOP
+# BGM:on-a-bench:STOP
 # MSG:「だって、私達がはじめて会ったのってさ、夏祭りの時なんだよ。ここの」:歩
 STOP;
 LOADING;

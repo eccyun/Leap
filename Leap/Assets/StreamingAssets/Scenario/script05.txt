@@ -1,7 +1,7 @@
-# EFFECT:watch_alert.mp3:LOAD
-# BGM:forest.mp3:REFRESH
-# BGM:road_theme.mp3:REFRESH
-# BGM:road_theme.mp3:PLAY
+# EFFECT:watch_alert:LOAD
+# BGM:forest:REFRESH
+# BGM:road_theme:REFRESH
+# BGM:road_theme:PLAY
 # BG:road
 # MSG:家に帰る途中、僕はさっき見た夢のことで頭がいっぱいになっていた。
 STOP;
@@ -39,8 +39,8 @@ STOP;
 STOP;
 # BLACK;
 # BG:park
-# BGM:road_theme.mp3:STOP
-# BGM:forest.mp3:PLAY
+# BGM:road_theme:STOP
+# BGM:forest:PLAY
 # MSG:夜の公園は街灯もまばらで、とても薄暗かった。
 STOP;
 # MSG:時間も時間だし仕方のないことだとは思うけれど、人の気配も全くない。
@@ -127,7 +127,7 @@ STOP;
 STOP;
 # MSG:僕を取り巻く世の中の環境は、子どもの頃から何ひとつ変わっていなかった。
 STOP;
-# EFFECT:watch_alert.mp3:PLAY
+# EFFECT:watch_alert:PLAY
 # MSG:ーーーピピピッ！
 STOP;
 # MSG:腕時計のアラームが鳴る。1時間置きにセットしていた分が鳴ったようだ。
@@ -142,7 +142,7 @@ STOP;
 STOP;
 # MSG:思えば、6年前に彼女と会った時もこうやって帰る準備をはじめた時だった。
 STOP;
-# BGM:forest.mp3:STOP
+# BGM:forest:STOP
 # MSG:「こんばんは」:？？？
 STOP;
 # MSG:そうそう、こんな感じで。

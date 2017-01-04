@@ -1,5 +1,5 @@
-# BGM:road_theme.mp3:REFRESH
-# BGM:road_theme.mp3:PLAY
+# BGM:road_theme:REFRESH
+# BGM:road_theme:PLAY
 # BG:road
 # MSG:夏祭りの帰り道。
 STOP;
@@ -136,5 +136,5 @@ STOP;
 # BLACK;
 # MSG:そうマリーが言った時には、あたり一面すっかりと真っ暗になっていた。
 STOP;
-# BGM:road_theme.mp3:STOP
+# BGM:road_theme:STOP
 LOADING;
