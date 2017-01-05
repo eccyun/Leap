@@ -47,9 +47,10 @@ STOP;
 # MSG:「そういうもんだよ」:歩
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BGM:fest-leap:STOP
 # BGM:shoot:PLAY
-# STILL-IMG:02-shoot-01:show:false
+# BG:02-shoot-01
 # STILL-IMG:02-child-01:show:false
 # MSG:「照くん、あれやろうよ」:歩
 STOP;
@@ -85,7 +86,6 @@ STOP;
 # MSG:「うん！」:歩
 STOP;
 # BLACK;
-# STILL-IMG:02-shoot-01:hide
 # BG:park_festa
 # MSG:「いらっしゃい！」
 STOP;
@@ -268,6 +268,7 @@ STOP;
 # MSG:「へへへ、ありがとうございます！」:歩
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # REMOVE-IMG:bg
 # BGM:shoot:STOP
 # MSG:それからしばらくの間、僕達は射的を続けた。

@@ -156,7 +156,8 @@ STOP;
 # MSG:そう言って彼女は懐中時計を取り出して、僕に見せてきた。
 STOP;
 # BLACK;
-# STILL-IMG:06-watch-01:show:false
+# REMOVE-IMG:center
+# BG:06-watch-01
 # MSG:見た感じはよくある懐中時計だが、デジタルの文字盤が埋め込まれており一般的な懐中時計とはそこが異なる点だった。
 STOP;
 # MSG:その文字盤から浮き上がるようにして、6年前の夏祭りの日付と時刻が点滅を繰り返しながら表示されている。
@@ -190,7 +191,6 @@ STOP;
 # MSG:「そうですね、その認識で問題ありません」:女の子
 STOP;
 # BLACK;
-# STILL-IMG:06-watch-01:hide
 # BG:upland_night
 # IMG:mary_normal:center
 # MSG:「分かった、ありがとう」:照
