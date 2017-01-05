@@ -69,7 +69,9 @@ public class MainGameManager : MonoBehaviour {
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK;"){
-				scriptEngine.fade("out", 0.03f);
+				scriptEngine.fade("out", 0.03f, "black");
+			}else if(script[0]=="# WHITE;"){
+				scriptEngine.fade("out", 0.03f, "white");
 			}else if(script[0]=="LOADING;"){
 				scriptEngine.fade("normal", 0.01f);
 				isLoading = true;

@@ -1,6 +1,3 @@
-# EFFECT:watch_alert:LOAD
-# BGM:forest:REFRESH
-# BGM:road_theme:REFRESH
 # BGM:road_theme:PLAY
 # BG:road
 # MSG:家に帰る途中、僕はさっき見た夢のことで頭がいっぱいになっていた。
@@ -71,7 +68,7 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:true
 # MSG:夏休みの時期に、毎日通ってはこのベンチに座って絵を描いていた。
 STOP;
 # MSG:僕以外に人がやってくることはあまりなくて、そういうところも気に入っていた。
@@ -84,12 +81,14 @@ STOP;
 STOP;
 # MSG:それがしばらく続いて、夏休みも終盤に差し掛かった頃。
 STOP;
-# STILL-IMG:01-aruku-01
+# STILL-IMG:01-aruku-01:show:true
 # MSG:「おお、すごい！」:歩
 STOP;
 # MSG:はじめて彼女と会ったのは、そんな時だった。
 STOP;
 # BLACK;
+# STILL-IMG:01-teru-01:hide
+# STILL-IMG:01-aruku-01:hide
 # BG:upland_night
 # MSG:きっかけは些細なもので、半ば強引な形で夏祭りに行くことにはなったけれど。
 STOP;

@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class PanelComponent : MonoBehaviour {
 
 	public bool   isFade;
-	float  red;
-	float  blue;
-	float  green;
-	float  alfa;
-	float  range;
+	public float  red;
+	public float  blue;
+	public float  green;
+	public float  alfa;
+	public float  range;
 
 	public void setAlfa(float value){
 		alfa = value;

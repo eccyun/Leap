@@ -66,21 +66,9 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		return ret.Split(':');
 	}
 
-	public void fade(string mode, float range){
-		GameObject     img      = GameObject.Find("character_center");
-		SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
-		renderer.sprite         = null;
-
-		img      = GameObject.Find("character_left");
-		renderer = img.GetComponent<SpriteRenderer>();
-		renderer.sprite = null;
-
-		img      = GameObject.Find("character_right");
-		renderer = img.GetComponent<SpriteRenderer>();
-		renderer.sprite = null;
-
+	public void fade(string mode, float range, String color="black"){
 		SceneComponent sceneComponent = GameObject.Find("MainGameManager").GetComponent<SceneComponent> ();
-		sceneComponent.fade(mode, range);
+		sceneComponent.fade(mode, range, color);
 	}
 
 	// 改行コード処理

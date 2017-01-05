@@ -15,7 +15,17 @@ public class SceneComponent : MonoBehaviour {
 		フェードイン
 		wait ... フェード時間
 	*/
-	public void fade(string mode="normal", float range = 0.01f){
+	public void fade(string mode="normal", float range = 0.01f, string color="black"){
+		if (color=="black"){
+			panelComponent.red   = 0.0f;
+			panelComponent.green = 0.0f;
+			panelComponent.blue  = 0.0f;
+		}else if(color=="white"){
+			panelComponent.red   = 1.0f;
+			panelComponent.green = 1.0f;
+			panelComponent.blue  = 1.0f;
+		}
+
 		if(mode=="out"){
 			panelComponent.setAlfa(1.0f);
 		}
