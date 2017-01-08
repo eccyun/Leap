@@ -1,4 +1,3 @@
-# BGM:on-a-bench:REFRESH
 # BGM:on-a-bench:PLAY
 # BG:rest
 # IMG:aruku_normal:center
@@ -147,7 +146,8 @@ STOP;
 # MSG:「その時の夏祭りで、迷子の女の子と会ったことなかった？」:歩
 STOP;
 # BLACK;
-# BGM:bell-leap:REFRESH
+# REMOVE-IMG:center
+# REMOVE-IMG:bg
 # BGM:bell-leap:PLAY
 # MSG:6年前と言えば、両親に連れられてよくここの夏祭りに来ていた頃だ。
 STOP;
@@ -160,6 +160,7 @@ STOP;
 # MSG:そんな探検するようなわくわく感が、僕の気持ちをとても盛り上げてくれていた。
 STOP;
 # BLACK;
+# REMOVE-IMG:bg
 # MSG:家族には、家から公園までが近いし困ったら帰ってくれば良いということであまり心配はされなかった。
 STOP;
 # MSG:僕達が出会ったのは、ちょうどその頃の夏祭りだった。彼女の話によればだけれど。
@@ -191,6 +192,7 @@ STOP;
 # MSG:「やっと、思い出してくれたんだね」:歩
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:07-aruku-01
 # MSG:「お父さんと、お母さんとはぐれたんだっけ」:照
 STOP;
