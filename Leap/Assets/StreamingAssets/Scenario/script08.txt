@@ -1,4 +1,3 @@
-# BGM:forest:REFRESH
 # BGM:forest:PLAY
 # MSG:暗闇の中にいる。
 STOP;
@@ -69,6 +68,7 @@ STOP;
 # MSG:「それは、またどうして？」:照
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:08-watch-01
 # MSG:「これなんですけど…」:マリー
 STOP;
@@ -119,6 +119,7 @@ STOP;
 # MSG:「『その為に、懐中時計を配っている』とも」:マリー
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # MSG:ひょっとして、僕は何か大きなとんでもないことに巻き込まれているのではないか？
 STOP;
 # MSG:そんなことを思いながら、これから先どうなるのか非常に不安になってきた。
@@ -190,7 +191,6 @@ STOP;
 STOP;
 # WHITE;
 # BGM:forest:STOP
-# BGM:mary_theme:REFRESH
 # BGM:mary_theme:PLAY
 # BG:upland_evening
 # IMG:mary_normal:center
@@ -229,29 +229,35 @@ STOP;
 # MSG:それを聞いたマリーはどこか納得のいかない様子だった。
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:upland_evening
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:true
 # MSG:「本当に戻ってきたんだな、画材もその時のままだ」:照
 STOP;
 # MSG:そんな風に当時のことを懐かしんでいると、横からマリーが身を乗り出してきた。
 STOP;
-# STILL-IMG:08-mary-01
+# STILL-IMG:08-mary-01:show:true
 # MSG:「とても綺麗に描かれてるじゃないですか、これって全部照さんが描いたんですか？」:マリー
 STOP;
-# STILL-IMG:01-teru-02
+# STILL-IMG:01-teru-02:show:false
+# STILL-IMG:01-teru-01:hide
 # MSG:「そうだよ。でも、今となってはもうここまでは描けないだろうなあ」:照
 STOP;
 # MSG:「と言うことは、もうしばらくの間描いてないんですか？」:マリー
 STOP;
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:false
+# STILL-IMG:01-teru-02:hide
 # MSG:「ちょうど高校を出るくらいかな。それぐらいの時期に描くのをやめちゃって」:照
 STOP;
 # MSG:「なんだかもったいないですね、こんなに上手なのに」:マリー
 STOP;
-# STILL-IMG:01-teru-02
+# STILL-IMG:01-teru-02:show:false
+# STILL-IMG:01-teru-01:hide
 # MSG:「ありがとう、なんだか照れるなあ」:照
 STOP;
 # BLACK;
+# STILL-IMG:08-mary-01:hide
+# STILL-IMG:01-teru-02:hide
 # BG:upland_evening
 # IMG:mary_puzzle_2:center
 # MSG:「せっかくですし、少し描いてみたらどうですか？」:マリー
@@ -319,24 +325,28 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-01
-# STILL-IMG:08-mary-01
+# STILL-IMG:01-teru-01:show:true
+# STILL-IMG:08-mary-01:show:true
 # MSG:「どうでした？」:マリー
 STOP;
 # MSG:僕が筆を置いたのを確認してから、マリーは声を掛けてきた。
 STOP;
-# STILL-IMG:01-teru-02
+# STILL-IMG:01-teru-02:show:false
+# STILL-IMG:01-teru-01:hide
 # MSG:「本当に描けるとは思わなかったから、びっくりした」:照
 STOP;
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:false
+# STILL-IMG:01-teru-02:hide
 # MSG:「何より楽しかった、こうして再び絵を描くことが出来て良かったなと思う」:照
 STOP;
 # MSG:「絵を描いてる時の照さん、とてもいきいきとしてましたよ」:マリー
 STOP;
-# STILL-IMG:01-teru-02
+# STILL-IMG:01-teru-02:show:false
+# STILL-IMG:01-teru-01:hide
 # MSG:「そうかな、全く気付かなかった。でも、そう言われると少し恥ずかしいかも」:照
 STOP;
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:false
+# STILL-IMG:01-teru-02:hide
 # MSG:僕は、こんなに楽しいことをどうしてやめてしまったんだろう？
 STOP;
 # MSG:『あの頃は時間が無かった』なんて言えば、それまでなんだろうけれど。
@@ -348,6 +358,8 @@ STOP;
 # MSG:そんなことを考えていた時のことだった。
 STOP;
 # BLACK;
+# STILL-IMG:01-teru-01:hide
+# STILL-IMG:08-mary-01:hide
 # BGM:mary_theme:STOP
 # BG:upland_evening
 # MSG:「おお、すごい！」:？？？
@@ -416,9 +428,10 @@ STOP;
 # MSG:「へへへ、やった！」:歩
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:upland_evening
-# STILL-IMG:01-teru-04
-# STILL-IMG:01-aruku-01
+# STILL-IMG:01-teru-04:show:false
+# STILL-IMG:01-aruku-01:show:false
 # MSG:「ところで、全く関係のない話になるんだけど…」:歩
 STOP;
 # MSG:「うん？」:照
@@ -435,7 +448,8 @@ STOP;
 # MSG:「…」:照
 STOP;
 # BLACK;
-# BGM:on-a-bench:REFRESH
+# STILL-IMG:01-teru-04:hide
+# STILL-IMG:01-aruku-01:hide
 # BGM:on-a-bench:PLAY
 # BG:upland_evening
 # IMG:aruku_normal:center
@@ -516,9 +530,10 @@ STOP;
 # MSG:何故だか、妙にかしこまってしまってどこか落ち着かない。
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:upland_evening
-# STILL-IMG:01-teru-04
-# STILL-IMG:01-aruku-01
+# STILL-IMG:01-teru-04:show:false
+# STILL-IMG:01-aruku-01:show:false
 # MSG:「まあ、でも」:歩
 STOP;
 # MSG:「私達が、はじめて会ったのは随分と前のことだったし、それに少しの間だけだったから」:歩
@@ -529,14 +544,14 @@ STOP;
 STOP;
 # MSG:「せめて、いつ頃どこで僕達が会ったのか教えてくれたら、何か思い出せるかもしれないんだけど」:照
 STOP;
-# STILL-IMG:01-cut-01
+# STILL-IMG:01-cut-01:show:true
 # MSG:「それだったら夏祭りに行ってる間に、何か思い出せるんじゃないかな」:歩
 STOP;
 # MSG:ああ、結局こうなってしまうんだ。
 STOP;
 # MSG:なんとなくだけれど、予想していたことではあった。
 STOP;
-# STILL-IMG:01-cut-02
+# STILL-IMG:01-cut-02:show:true
 # MSG:「あのさ、それなんだけど」:照
 STOP;
 # MSG:「どうして、僕と君がいつ会ったかって言う話と、今日の夏祭りが結びつくの？」:照
