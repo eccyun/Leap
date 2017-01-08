@@ -1,4 +1,3 @@
-# BGM:fest-leap:REFRESH
 # BGM:fest-leap:PLAY
 # BG:park_festa
 # MSG:「はぁ、やっぱり駄目だったな」:照
@@ -26,13 +25,15 @@ STOP;
 # MSG:彼女とはじめて射的屋に行った時には、こんなことにはならなかった。
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:02-shoot-01
-# STILL-IMG:02-child-01
+# STILL-IMG:02-child-01:show:false
 # MSG:「照くんは、射的やったことある？」:歩
 STOP;
 # MSG:「何度かあるくらいかな、とは言えはじめてやるのと変わらないかも」:照
 STOP;
 # BLACK;
+# STILL-IMG:02-child-01:hide
 # BG:02-shoot-01
 # BG:park_festa
 # IMG:mary_normal:center
