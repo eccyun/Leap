@@ -1,5 +1,3 @@
-# BGM:shoot:REFRESH
-# BGM:fest-leap:REFRESH
 # BGM:fest-leap:PLAY
 # BG:park_festa
 # IMG:aruku_normal:center
@@ -8,11 +6,14 @@ STOP;
 # MSG:僕達は、ふもとの公園の夏祭りへとやってきた。会場はあいかわらず多くの人達で賑わっている。
 STOP;
 # BLACK;
-# STILL-IMG:01-cut-01
-# STILL-IMG:01-cut-02
+# REMOVE-IMG:center
+# STILL-IMG:01-cut-01:show:false
+# STILL-IMG:01-cut-02:show:false
 # MSG:「だって、私達がはじめて会ったのってさ、夏祭りの時なんだよ。ここの」:歩
 STOP;
 # BLACK;
+# STILL-IMG:01-cut-01:hide
+# STILL-IMG:01-cut-02:hide
 # BG:park_festa
 # IMG:aruku_normal:center
 # MSG:僕達がはじめて会ったのは、ここの夏祭りらしいことが分かった。
@@ -40,9 +41,10 @@ STOP;
 STOP;
 # BGM:fest-leap:STOP
 # BLACK;
+# REMOVE-IMG:center
 # BG:02-shoot-01
 # BGM:shoot:PLAY
-# STILL-IMG:02-child-01
+# STILL-IMG:02-child-01:show:false
 # MSG:「照くん、あれやろうよ」:歩
 STOP;
 # MSG:それまで出店の連なりを横目に歩いていたけれど、彼女の一言に僕達は足を止めた。
@@ -65,7 +67,7 @@ STOP;
 STOP;
 # MSG:「うん、おっちゃん！　ありがとう！」
 STOP;
-# REMOVE-IMG:1
+# STILL-IMG:02-child-01:hide
 # MSG:そうして子ども達は次の遊び場を探して、射的屋を離れていく。
 STOP;
 # MSG:さっきまでの活気とうってかわって、射的屋の周りには僕達だけとなった。
