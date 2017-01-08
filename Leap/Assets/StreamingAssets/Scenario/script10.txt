@@ -1,4 +1,3 @@
-# BGM:bell-leap:REFRESH
 # BGM:bell-leap:PLAY
 # MSG:人ごみの中をかき分けてかき分けて、お父さんとお母さんを私達は探した。
 STOP;
@@ -31,6 +30,7 @@ STOP;
 # MSG:名前の通りの子だった。
 STOP;
 # BLACK;
+# REMOVE-IMG:bg
 # MSG:それからしばらくして、ようやくお父さんとお母さんを見つけることが出来た。
 STOP;
 # MSG:お父さんとお母さんはとても心配していたようだった、悪いことをしちゃったな。
@@ -91,12 +91,13 @@ STOP;
 # BGM:aruku_theme:STOP
 # MSG:「あら？」:女の子
 STOP;
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:false
 # MSG:高台にはどうやら先客がいるようだった、座りこんで何かをしている。
 STOP;
 # MSG:その様子を見て、はじめて行った日の夏祭りを何故か私は思い出していた。
 STOP;
 # WHITE;
+# STILL-IMG:01-teru-01:hide
 # BGM:on-a-bench:REFRESH
 # BGM:on-a-bench:PLAY
 # BG:07-aruku-01
@@ -107,7 +108,7 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
-# STILL-IMG:01-teru-01
+# STILL-IMG:01-teru-01:show:false
 # MSG:今、私の目の前にいるこの人は後ろ姿しか見えないけれど。
 STOP;
 # MSG:どこか、その時の男の子に雰囲気が似ているような気がした。
@@ -138,10 +139,11 @@ STOP;
 STOP;
 # MSG:キャンバスにはここから見える景色がとても綺麗に描かれている。
 STOP;
-# STILL-IMG:01-aruku-01
+# STILL-IMG:01-aruku-01:show:false
 # MSG:「おお、すごい！」:女の子
 STOP;
-# STILL-IMG:01-teru-02
+# STILL-IMG:01-teru-02:show:false
+# STILL-IMG:01-teru-01:hide
 # MSG:「えっ？」:男の子
 STOP;
 # MSG:さっきまでの様子が嘘のように思ったままの言葉がすっと出てきた。
