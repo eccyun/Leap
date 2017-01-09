@@ -1,6 +1,5 @@
 # EFFECT:watch_alert:PLAY
 # WAIT:3
-STOP;
 # MSG:「はい、私です」:？？？
 STOP;
 # MSG:「…お久しぶりです」:？？？

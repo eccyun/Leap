@@ -5,7 +5,6 @@ STOP;
 # MSG:「照さん…起きてください…」:？？？
 STOP;
 # WHITE;
-# BGM:bar_theme:REFRESH
 # BGM:bar_theme:PLAY
 # BG:bar
 # MSG:「う、うーん…」:照
@@ -33,6 +32,7 @@ STOP;
 # MSG:そんな不思議な出来事から、もうじき2年が経とうとしている。
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:upland_night
 # MSG:夏祭りを終えて帰ってきた時、僕は高台にあるベンチに横になっていたところで目が覚めた。
 STOP;
@@ -160,8 +160,8 @@ STOP;
 # MSG:久しぶりに誰かとお酒が飲めると思うと、ちょっとだけ楽しみな気分になった。
 STOP;
 # BLACK;
+# REMOVE-IMG:bg
 # BGM:bar_theme:STOP
-# BGM:end-loop:REFRESH
 # BGM:end-loop:PLAY
 # EFFECT:door_open:PLAY
 # WAIT:3
@@ -207,4 +207,5 @@ STOP;
 # MSG:「また、会うことが出来たね」:照
 STOP;
 # BGM:end-loop:STOP
-ENDING;
+//ENDING;
+LOADING;
