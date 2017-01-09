@@ -53,6 +53,10 @@ public class MainGameManager : MonoBehaviour {
 			if(script[0]=="# MSG"){
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
+				if(script.Length >= 3){
+					GameObject nameTagObject = GameObject.Find("NameTag");
+					nameTagObject.GetComponent<Text>().text = script[2];
+				}
 			}else if(script[0]=="# BGM"){
 				GameObject  audio       = GameObject.Find("BGM");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
