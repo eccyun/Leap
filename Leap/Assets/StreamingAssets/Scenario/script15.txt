@@ -1,4 +1,3 @@
-# BGM:on-a-bench:REFRESH
 # BGM:on-a-bench:PLAY
 # BG:park_festa
 # IMG:aruku_laugh2:center
