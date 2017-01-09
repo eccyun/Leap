@@ -1,4 +1,3 @@
-# BGM:fest-leap:REFRESH
 # BGM:fest-leap:PLAY
 # BG:park_festa
 # MSG:「混んでるなぁ」:照
@@ -61,7 +60,7 @@ STOP;
 # MSG:「…」:照
 STOP;
 # BLACK;
-# BGM:on-a-bench:REFRESH
+# REMOVE-IMG:center
 # BGM:on-a-bench:PLAY
 # BG:14-aruku-01
 # MSG:「わっ、わわわ。何、急に！？」:歩
@@ -92,7 +91,6 @@ STOP;
 STOP;
 # BLACK;
 # BGM:on-a-bench:STOP
-# BGM:road_theme:REFRESH
 # BGM:road_theme:PLAY
 # BG:upland_night
 # IMG:aruku_normal:center
@@ -111,6 +109,7 @@ STOP;
 # MSG:彼女は僕の手を取ってくる、僕はそれについていくことにした。
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:14-fire-01
 # MSG:「今日は、空も綺麗だね」:歩
 STOP;
@@ -147,8 +146,7 @@ STOP;
 STOP;
 # MSG:あちこちから、そんな歓声や拍手の音が聞こえてくる。
 STOP;
-# STILL-IMG:14-fire-04
-# BGM:on-a-bench:REFRESH
+# STILL-IMG:14-fire-04:show:false
 # BGM:on-a-bench:PLAY
 # MSG:「照くん、はじまった！」:歩
 STOP;
@@ -165,6 +163,7 @@ STOP;
 # MSG:僕も彼女もしばらくの間、夜空を彩る花火に魅入っていた。
 STOP;
 # BLACK;
+# STILL-IMG:14-fire-04:hide
 # BG:upland_night
 # IMG:aruku_laugh2:center
 # MSG:「照くん、今日はありがとうね」:歩
@@ -248,6 +247,7 @@ STOP;
 # MSG:「そういうもんだよ」:歩
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:14-fire-03
 # MSG:「…ずっと、この時間が続いたら良いんだけどな」:歩
 STOP;
@@ -258,6 +258,7 @@ STOP;
 # MSG:「へへっ、何でもないよ！」:歩
 STOP;
 # BLACK;
+# REMOVE-IMG:bg
 # MSG:打ち上がりはじめた時から比べると、花火の間隔が徐々に短くなってきていた。
 STOP;
 # MSG:それが花火の終わりを、祭の終わりを感じさせる。

@@ -1,4 +1,3 @@
-# BGM:on-a-bench:REFRESH
 # MSG:彼女がいったい誰だったのか、ようやくその全てが分かった。
 STOP;
 # MSG:僕がずっと気になっていた女の子は、まだ小さかった頃に出会った迷子の女の子だった。
@@ -54,7 +53,6 @@ STOP;
 STOP;
 # MSG:今、ここにいる僕は未来から来た僕であって、本来ここにいるべき僕とは違うのだから。
 STOP;
-# BGM:confessions:REFRESH
 # BGM:confessions:PLAY
 # MSG:「覚悟はしてたつもりだったんだけど、やっぱりへこむね。ははは…」:歩
 STOP;
@@ -82,6 +80,7 @@ STOP;
 # MSG:「そして、しばらくして後悔する。『あの時、やっぱりああしておけば良かったな』って」:照
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:12-aruku-02
 # MSG:「それは、もちろん私だってそういう風になる時はあるよ。でも」:歩
 STOP;
@@ -108,6 +107,7 @@ STOP;
 # MSG:彼女は笑顔で、そう答えた。
 STOP;
 # BLACK;
+# REMOVE-IMG:center
 # BG:rest
 # IMG:aruku_normal:center
 # MSG:「そういえば、そろそろ花火の時間なんじゃないかな？」:歩
