@@ -32,7 +32,6 @@ public class MainGameManager : MonoBehaviour {
 			isWait      = false;
 			maxWaitTime = 0.0f;
 			waitTime    = 0.0f;
-			Debug.Log("OK");
 			return;
 		}else if(isWait && maxWaitTime>waitTime){
 			waitTime += 0.03f;
