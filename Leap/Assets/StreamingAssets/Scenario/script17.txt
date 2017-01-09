@@ -165,7 +165,6 @@ STOP;
 # BGM:end-loop:PLAY
 # EFFECT:door_open:PLAY
 # WAIT:3
-STOP;
 # MSG:店の扉が開く音がする、店内でこの音を聞くのもなかなか無いことだ。
 STOP;
 # MSG:それを聞いたマスターは、扉のほうへと目を向けている。

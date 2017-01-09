@@ -171,7 +171,6 @@ STOP;
 STOP;
 # WHITE;
 # BG:07-aruku-01
-# WAIT:5
 # MSG:…ああ、そうだ。
 STOP;
 # MSG:「そうか、思い出したかも」:照

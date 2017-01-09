@@ -8,9 +8,17 @@ public class MainGameManager : MonoBehaviour {
 
 	private string[]     script;
 	private bool         isLoading;
+	private bool         isWait;
+	private float        maxWaitTime;
+	private float        waitTime;
 	public  Text         text;
 
 	void Start () {
+		isLoading   = false;
+		isWait      = false;
+		maxWaitTime = 0.0f;
+		waitTime    = 0.0f;
+
 		// スクリプトエンジン取得
 		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
 		sceneComponent = GetComponent<SceneComponent> ();
@@ -20,6 +28,18 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	void Update () {
+		if(isWait && maxWaitTime<=waitTime){
+			isWait      = false;
+			maxWaitTime = 0.0f;
+			waitTime    = 0.0f;
+			Debug.Log("OK");
+			return;
+		}else if(isWait && maxWaitTime>waitTime){
+			waitTime += 0.03f;
+			return;
+		}
+
+		// ロード判定
 		if(isLoading){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
 				sceneComponent.moveScene("Load");
@@ -70,6 +90,7 @@ public class MainGameManager : MonoBehaviour {
 				}
 			}else if(script[0]=="# BLACK;"){
 				scriptEngine.fade("out", 0.03f, "black");
+
 			}else if(script[0]=="# WHITE;"){
 				scriptEngine.fade("out", 0.03f, "white");
 			}else if(script[0]=="LOADING;"){
@@ -89,6 +110,9 @@ public class MainGameManager : MonoBehaviour {
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
 				audioSource.clip        = Resources.Load<AudioClip>("Effects/"+script[1]);
 				audioSource.Play();
+			}else if(script[0] == "# WAIT"){
+				isWait = true;
+				maxWaitTime = float.Parse(script[1]);
 			}
 		}
 

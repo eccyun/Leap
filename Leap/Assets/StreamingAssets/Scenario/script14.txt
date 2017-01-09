@@ -135,13 +135,11 @@ STOP;
 # BG:14-fire-02
 # EFFECT:fire_1:PLAY
 # WAIT:2
-STOP;
 # MSG:それは、一瞬の出来事だった。
 STOP;
 # BG:14-fire-03
 # EFFECT:fire_2:PLAY
 # WAIT:2
-STOP;
 # MSG:「おー！」
 STOP;
 # MSG:あちこちから、そんな歓声や拍手の音が聞こえてくる。
