@@ -97,6 +97,7 @@ STOP;
 STOP;
 # BLACK;
 # BG:upland_evening
+# REMOVE-IMG:center
 # STILL-IMG:01-teru-04:show:false
 # STILL-IMG:01-aruku-01:show:false
 # MSG:「ところでさ、全く関係のない話にはなるんだけど…」:女の子

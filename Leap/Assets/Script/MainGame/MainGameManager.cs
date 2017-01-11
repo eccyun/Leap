@@ -9,15 +9,21 @@ public class MainGameManager : MonoBehaviour {
 	private string[]     script;
 	private bool         isLoading;
 	private bool         isWait;
+	private bool         isMoveScene;
 	private float        maxWaitTime;
 	private float        waitTime;
+	private Camera       camera;
 	public  Text         text;
 
 	void Start () {
 		isLoading   = false;
 		isWait      = false;
+		isMoveScene = false;
 		maxWaitTime = 0.0f;
 		waitTime    = 0.0f;
+
+		// カメラ取得
+		camera = GameObject.Find("Main Camera").GetComponent<Camera>();
 
 		// スクリプトエンジン取得
 		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
@@ -28,6 +34,10 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	void Update () {
+		if(isMoveScene){
+			return;
+		}
+
 		if(isWait && maxWaitTime<=waitTime){
 			isWait      = false;
 			maxWaitTime = 0.0f;
@@ -46,8 +56,30 @@ public class MainGameManager : MonoBehaviour {
 			return;
 		}
 
-		script = scriptEngine.readScript();
+		// タッチイベント
+		if(Input.GetMouseButtonDown(0)){
+			Vector3    touchPos = camera.ScreenToWorldPoint(Input.mousePosition);
+			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
+			if(col==GameObject.Find("log").GetComponent<Collider2D>()){
+				sceneComponent.pushScene("BackLog");
+
+				// テキストを非表示にする
+				GameObject.Find("NameTag").GetComponent<Text>().enabled = false;
+				GameObject.Find("Text").GetComponent<Text>().enabled = false;
+
+				isMoveScene = true;
+				return;
+			}else{
+				if(text.GetComponent<TextManager>().animation){
+					text.GetComponent<TextManager>().setFullText();
+				}else{
+					scriptEngine.stop_flg = false;
+				}
+			}
+		}
+
+		script = scriptEngine.readScript();
 		// データを確認する
 		if(script != null){
 			if(script[0]=="# MSG"){
@@ -116,14 +148,6 @@ public class MainGameManager : MonoBehaviour {
 			}else if(script[0] == "# WAIT"){
 				isWait = true;
 				maxWaitTime = float.Parse(script[1]);
-			}
-		}
-
-		if(Input.GetMouseButtonDown(0)){
-			if(text.GetComponent<TextManager>().animation){
-				text.GetComponent<TextManager>().setFullText();
-			}else{
-				scriptEngine.stop_flg = false;
 			}
 		}
 	}
