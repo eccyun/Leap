@@ -9,7 +9,7 @@ public class MainGameManager : MonoBehaviour {
 	private string[]     script;
 	private bool         isLoading;
 	private bool         isWait;
-	private bool         isMoveScene;
+	public  bool         isMoveScene;
 	private float        maxWaitTime;
 	private float        waitTime;
 	private Camera       camera;
@@ -66,7 +66,7 @@ public class MainGameManager : MonoBehaviour {
 
 				// テキストを非表示にする
 				GameObject.Find("NameTag").GetComponent<Text>().enabled = false;
-				GameObject.Find("Text").GetComponent<Text>().enabled = false;
+				GameObject.Find("Text").GetComponent<Text>().enabled    = false;
 
 				isMoveScene = true;
 				return;
