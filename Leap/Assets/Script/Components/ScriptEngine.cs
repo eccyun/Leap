@@ -6,11 +6,12 @@ using System.Text;
 using System.Collections.Generic;
 
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
-	private List<string> listScript;  // スクリプトファイルから読み込んだ命令群を格納
-	private int          cnt;         // スクリプトのカウンタ
-	public  int          chapter;     // 章情報
-	public  GameObject   stillPrefab; // スチルのプレハブ
-	public  bool         stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
+	private List<string>   listScript;  // スクリプトファイルから読み込んだ命令群を格納
+	private int            cnt;         // スクリプトのカウンタ
+	public  List<string[]> textLogs;
+	public  int            chapter;     // 章情報
+	public  GameObject     stillPrefab; // スチルのプレハブ
+	public  bool           stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
 
 	public void Awake(){
         if(this != Instance){
@@ -21,6 +22,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
     }
 
 	public void Start () {
+		textLogs = new List<string[]>();
 	}
 
 	public void readScenarioFile(){

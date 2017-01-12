@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class BackLogManager : MonoBehaviour {
 
+	private MainGameManager mainGameManger;
+
 	// Use this for initialization
 	void Start () {
-
+		mainGameManger = GameObject.Find("MainGameManager").GetComponent<MainGameManager>();
 	}
 
 	// Update is called once per frame
@@ -21,8 +23,7 @@ public class BackLogManager : MonoBehaviour {
 				// テキストを非表示にする
 				GameObject.Find("NameTag").GetComponent<Text>().enabled = true;
 				GameObject.Find("Text").GetComponent<Text>().enabled    = true;
-				GameObject.Find("MainGameManager").GetComponent<MainGameManager>().isMoveScene = false;
-
+				mainGameManger.isMoveScene                              = false;
 				SceneManager.UnloadScene("BackLog");
 			}
 		}

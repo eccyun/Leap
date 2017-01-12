@@ -9,11 +9,13 @@ public class MainGameManager : MonoBehaviour {
 	private string[]     script;
 	private bool         isLoading;
 	private bool         isWait;
-	public  bool         isMoveScene;
 	private float        maxWaitTime;
 	private float        waitTime;
 	private Camera       camera;
+
+	// public
 	public  Text         text;
+	public  bool         isMoveScene;
 
 	void Start () {
 		isLoading   = false;
@@ -23,7 +25,7 @@ public class MainGameManager : MonoBehaviour {
 		waitTime    = 0.0f;
 
 		// カメラ取得
-		camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+		camera         = GameObject.Find("Main Camera").GetComponent<Camera>();
 
 		// スクリプトエンジン取得
 		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
@@ -80,15 +82,24 @@ public class MainGameManager : MonoBehaviour {
 		}
 
 		script = scriptEngine.readScript();
+
 		// データを確認する
 		if(script != null){
 			if(script[0]=="# MSG"){
+				string[] tmpTextLog = new string[2];
+
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
+				tmpTextLog[0] = script[1];
+
 				if(script.Length >= 3){
 					GameObject nameTagObject = GameObject.Find("NameTag");
 					nameTagObject.GetComponent<Text>().text = script[2];
+					tmpTextLog[1] = script[2];
+				}else{
+					tmpTextLog[1] = "";
 				}
+				scriptEngine.textLogs.Add(tmpTextLog);
 			}else if(script[0]=="# BGM"){
 				GameObject  audio       = GameObject.Find("BGM");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
@@ -125,7 +136,6 @@ public class MainGameManager : MonoBehaviour {
 				}
 			}else if(script[0]=="# BLACK;"){
 				scriptEngine.fade("out", 0.03f, "black");
-
 			}else if(script[0]=="# WHITE;"){
 				scriptEngine.fade("out", 0.03f, "white");
 			}else if(script[0]=="LOADING;"){
