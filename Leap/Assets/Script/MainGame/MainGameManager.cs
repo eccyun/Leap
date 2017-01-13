@@ -90,15 +90,14 @@ public class MainGameManager : MonoBehaviour {
 
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
-				tmpTextLog[0] = script[1];
-
 				if(script.Length >= 3){
 					GameObject nameTagObject = GameObject.Find("NameTag");
 					nameTagObject.GetComponent<Text>().text = script[2];
-					tmpTextLog[1] = script[2];
+					tmpTextLog[0] = script[2];
 				}else{
-					tmpTextLog[1] = "";
+					tmpTextLog[0] = "ーーー";
 				}
+				tmpTextLog[1] = script[1];
 				scriptEngine.textLogs.Add(tmpTextLog);
 			}else if(script[0]=="# BGM"){
 				GameObject  audio       = GameObject.Find("BGM");
