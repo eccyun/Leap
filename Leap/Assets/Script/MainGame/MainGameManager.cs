@@ -16,11 +16,15 @@ public class MainGameManager : MonoBehaviour {
 	// public
 	public  Text         text;
 	public  bool         isMoveScene;
+	public  bool         isFull;
+
+	public GameObject canvas;
+	public GameObject MenuBtn;
+	public GameObject message_window;
 
 	void Start () {
 		isLoading   = false;
 		isWait      = false;
-		isMoveScene = false;
 		maxWaitTime = 0.0f;
 		waitTime    = 0.0f;
 
@@ -36,10 +40,7 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if(isMoveScene){
-			return;
-		}
-
+		// ウェイトの設定
 		if(isWait && maxWaitTime<=waitTime){
 			isWait      = false;
 			maxWaitTime = 0.0f;
@@ -60,6 +61,14 @@ public class MainGameManager : MonoBehaviour {
 
 		// タッチイベント
 		if(Input.GetMouseButtonDown(0)){
+			if(isFull){
+				canvas.SetActive(true);
+				MenuBtn.SetActive(true);
+				message_window.SetActive(true);
+				isFull = false;
+				return;
+			}
+
 			Vector3    touchPos = camera.ScreenToWorldPoint(Input.mousePosition);
 			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
@@ -72,6 +81,12 @@ public class MainGameManager : MonoBehaviour {
 
 				isMoveScene = true;
 				return;
+			}else if(col==GameObject.Find("full").GetComponent<Collider2D>()){
+				canvas.SetActive(false);
+				MenuBtn.SetActive(false);
+				message_window.SetActive(false);
+				isFull = true;
+				return;
 			}else{
 				if(text.GetComponent<TextManager>().animation){
 					text.GetComponent<TextManager>().setFullText();
@@ -79,6 +94,10 @@ public class MainGameManager : MonoBehaviour {
 					scriptEngine.stop_flg = false;
 				}
 			}
+		}
+
+		if(isFull||isMoveScene){
+			return;
 		}
 
 		script = scriptEngine.readScript();
