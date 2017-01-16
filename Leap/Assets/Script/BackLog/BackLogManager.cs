@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class BackLogManager : MonoBehaviour {
-	private MainGameManager mainGameManger;
+	private MainGameManager mainGameManager;
 	private ScriptEngine    scriptEngine;
 	private float           cellHeight;
 
@@ -17,8 +17,8 @@ public class BackLogManager : MonoBehaviour {
 		cellHeight         = rect.rect.height;
 		GameObject.Destroy(GameObject.Find("BaseItem"));
 
-		mainGameManger = GameObject.Find("MainGameManager").GetComponent<MainGameManager>();
-		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
+		mainGameManager = GameObject.Find("MainGameManager").GetComponent<MainGameManager>();
+		scriptEngine    = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 
 		// コンテントの高さを変える
 		RectTransform contentTransform = (RectTransform)content_.transform;
@@ -50,10 +50,7 @@ public class BackLogManager : MonoBehaviour {
 			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
 			if(col == GameObject.Find("save_back").GetComponent<Collider2D>()){
-				// テキストを非表示にする
-				GameObject.Find("NameTag").GetComponent<Text>().enabled = true;
-				GameObject.Find("Text").GetComponent<Text>().enabled    = true;
-				mainGameManger.isMoveScene = false;
+				mainGameManager.isMoveScene = false;
 				SceneManager.UnloadScene("BackLog");
 			}
 		}

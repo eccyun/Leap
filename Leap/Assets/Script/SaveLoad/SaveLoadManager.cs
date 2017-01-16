@@ -4,11 +4,12 @@ using System.Collections;
 
 public class SaveLoadManager : MonoBehaviour {
 
-	GameObject backBtn;
+	public GameObject backBtn;
 
 	// Use this for initialization
 	void Start () {
 		backBtn = GameObject.FindGameObjectWithTag("backBtn");
+		Debug.Log(GameObject.Find("GameMenuManager").GetComponent<GameMenuManager>().pushBtnName);
 	}
 
 	// Update is called once per frame

@@ -40,6 +40,14 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	void Update () {
+		if(isMoveScene){
+			return;
+		}else if(!isFull){
+			canvas.SetActive(true);
+			MenuBtn.SetActive(true);
+			message_window.SetActive(true);
+		}
+
 		// ウェイトの設定
 		if(isWait && maxWaitTime<=waitTime){
 			isWait      = false;
@@ -76,8 +84,9 @@ public class MainGameManager : MonoBehaviour {
 				sceneComponent.pushScene("BackLog");
 
 				// テキストを非表示にする
-				GameObject.Find("NameTag").GetComponent<Text>().enabled = false;
-				GameObject.Find("Text").GetComponent<Text>().enabled    = false;
+				canvas.SetActive(false);
+				MenuBtn.SetActive(false);
+				message_window.SetActive(false);
 
 				isMoveScene = true;
 				return;
@@ -86,6 +95,15 @@ public class MainGameManager : MonoBehaviour {
 				MenuBtn.SetActive(false);
 				message_window.SetActive(false);
 				isFull = true;
+				return;
+			}else if(col==GameObject.Find("menu").GetComponent<Collider2D>()){
+				sceneComponent.pushScene("GameMenu");
+
+				canvas.SetActive(false);
+				MenuBtn.SetActive(false);
+				message_window.SetActive(false);
+
+				isMoveScene = true;
 				return;
 			}else{
 				if(text.GetComponent<TextManager>().animation){
@@ -96,7 +114,7 @@ public class MainGameManager : MonoBehaviour {
 			}
 		}
 
-		if(isFull||isMoveScene){
+		if(isFull){
 			return;
 		}
 

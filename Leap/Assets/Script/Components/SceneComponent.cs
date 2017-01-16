@@ -7,7 +7,9 @@ public class SceneComponent : MonoBehaviour {
 	public PanelComponent panelComponent;
 
 	public void Start(){
-		panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
+		if(GameObject.Find("Panel")){
+			panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
+		}
 	}
 
 	/*
