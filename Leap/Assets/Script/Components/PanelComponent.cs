@@ -39,6 +39,8 @@ public class PanelComponent : MonoBehaviour {
 
 			// 1.0fを超えるもしくは0.f以下になったら終わり
 			if(alfa>=1.0f || alfa<=0.0f){
+				GetComponent<SceneComponent>().runDelegateMethod();
+
 				isFade = false;
 				alfa   = 0.0f;
 				range  = range*-1;
