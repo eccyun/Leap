@@ -44,6 +44,10 @@ public class SceneComponent : MonoBehaviour {
 		panelComponent.setRange(range);
 	}
 
+	public bool getPanelIsFade(){
+		return panelComponent.isFade;
+	}
+
 	/*
 		moveScene
 		シーン遷移する

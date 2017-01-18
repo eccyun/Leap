@@ -12,15 +12,22 @@ public class EndingManager : MonoBehaviour {
 	}
 
 	void Update () {
+		if(sceneComponent.getPanelIsFade()){
+			return;
+		}
+
 		if(maxWaitTime <= waitTime){
-			sceneComponent.fade("normal", 0.01f, "black", callBack);
+			sceneComponent.fade("normal", 0.0065f, "black", callBack);
 			waitTime = 0.0f;
 			return;
 		}
-		waitTime += 0.03f;
+
+		waitTime += 0.01f;
 	}
 
 	public void callBack(){
-		Debug.Log("処理終わり");
+		GameObject.Find("ending-"+panelCount).GetComponent<SpriteRenderer>().enabled = false;
+		panelCount++;
+		GameObject.Find("ending-"+panelCount).GetComponent<SpriteRenderer>().enabled = true;
 	}
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class PanelComponent : MonoBehaviour {
 
 	public bool   isFade;
+	public bool   isFlap;
+	public bool   isPageIn;
 	public float  red;
 	public float  blue;
 	public float  green;
@@ -25,7 +27,7 @@ public class PanelComponent : MonoBehaviour {
 		green = GetComponent<Image>().color.g;
 		blue  = GetComponent<Image>().color.b;
 		alfa  = GetComponent<Image>().color.a;
-		range = 0.02f;
+		range = 0.008f;
 	}
 
 	void Update () {
@@ -38,10 +40,20 @@ public class PanelComponent : MonoBehaviour {
 			GetComponent<Image>().color = new Color(red, green, blue, alfa);
 
 			// 1.0fを超えるもしくは0.f以下になったら終わり
-			if(alfa>=1.0f || alfa<=0.0f){
+			if((alfa>=1.0f || alfa<=0.0f) && !isFlap){
 				GetComponent<SceneComponent>().runDelegateMethod();
 
+				if(!isPageIn){
+					isPageIn = true;
+					isFade   = false;
+					alfa     = 0.0f;
+				}else{
+					isFlap = true;
+					alfa   = 1.0f;
+				}
+			}else if((alfa>=1.0f || alfa<=0.0f) && isFlap){
 				isFade = false;
+				isFlap = false;
 				alfa   = 0.0f;
 				range  = range*-1;
 			}
