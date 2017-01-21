@@ -15,7 +15,7 @@ public class MainGameManager : MonoBehaviour {
 
 	// public
 	public  Text         text;
-	public  bool         isMoveScene;
+	public  bool         isUpdateStop;
 	public  bool         isFull;
 
 	public GameObject canvas;
@@ -40,7 +40,7 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	void Update () {
-		if(isMoveScene){
+		if(isUpdateStop){
 			return;
 		}else if(!isFull){
 			canvas.SetActive(true);
@@ -88,7 +88,7 @@ public class MainGameManager : MonoBehaviour {
 				MenuBtn.SetActive(false);
 				message_window.SetActive(false);
 
-				isMoveScene = true;
+				isUpdateStop = true;
 				return;
 			}else if(col==GameObject.Find("full").GetComponent<Collider2D>()){
 				canvas.SetActive(false);
@@ -103,7 +103,7 @@ public class MainGameManager : MonoBehaviour {
 				MenuBtn.SetActive(false);
 				message_window.SetActive(false);
 
-				isMoveScene = true;
+				isUpdateStop = true;
 				return;
 			}else{
 				if(text.GetComponent<TextManager>().animation){
@@ -171,9 +171,9 @@ public class MainGameManager : MonoBehaviour {
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK;"){
-				scriptEngine.fade("out", 0.03f, "black");
+				scriptEngine.fade("normal", 0.03f, "black");
 			}else if(script[0]=="# WHITE;"){
-				scriptEngine.fade("out", 0.03f, "white");
+				scriptEngine.fade("normal", 0.03f, "white");
 			}else if(script[0]=="LOADING;"){
 				scriptEngine.fade("normal", 0.01f);
 				isLoading = true;

@@ -50,7 +50,7 @@ public class BackLogManager : MonoBehaviour {
 			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
 			if(col == GameObject.Find("save_back").GetComponent<Collider2D>()){
-				mainGameManager.isMoveScene = false;
+				mainGameManager.isUpdateStop = false;
 				SceneManager.UnloadScene("BackLog");
 			}
 		}

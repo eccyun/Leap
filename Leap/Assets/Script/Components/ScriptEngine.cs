@@ -69,7 +69,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	}
 
 	public void fade(string mode, float range, String color="black"){
-		SceneComponent sceneComponent = GameObject.Find("MainGameManager").GetComponent<SceneComponent> ();
+		SceneComponent sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
 		sceneComponent.fade(mode, range, color);
 	}
 

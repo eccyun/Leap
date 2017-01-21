@@ -22,7 +22,7 @@ public class GameMenuManager : MonoBehaviour {
 			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
 			if(col==GameObject.Find("back_game").GetComponent<Collider2D>()){
-				mainGameManager.isMoveScene = false;
+				mainGameManager.isUpdateStop = false;
 				SceneManager.UnloadScene("GameMenu");
 			}else if(col==GameObject.Find("menu_save").GetComponent<Collider2D>()||col==GameObject.Find("menu_load").GetComponent<Collider2D>()){
 				if(col==GameObject.Find("menu_save").GetComponent<Collider2D>()){
