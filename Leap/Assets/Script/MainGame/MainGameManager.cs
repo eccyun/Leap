@@ -33,7 +33,7 @@ public class MainGameManager : MonoBehaviour {
 
 		// スクリプトエンジン取得
 		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
-		sceneComponent = GetComponent<SceneComponent> ();
+		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
 
 		// スクリプトの読みこみ
 		scriptEngine.readScenarioFile();
@@ -171,11 +171,13 @@ public class MainGameManager : MonoBehaviour {
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK;"){
-				scriptEngine.fade("normal", 0.03f, "black");
+				sceneComponent.fade("normal", 0.03f, "black", inGameFade);
+				isUpdateStop = true;
 			}else if(script[0]=="# WHITE;"){
-				scriptEngine.fade("normal", 0.03f, "white");
+				sceneComponent.fade("normal", 0.03f, "white", inGameFade);
+				isUpdateStop = true;
 			}else if(script[0]=="LOADING;"){
-				scriptEngine.fade("normal", 0.01f);
+				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
 				isLoading = true;
 			}else if(script[0]=="# REMOVE-IMG"){
 				GameObject img;
@@ -196,5 +198,13 @@ public class MainGameManager : MonoBehaviour {
 				maxWaitTime = float.Parse(script[1]);
 			}
 		}
+	}
+
+	public void inGameFade(){
+		isUpdateStop = false;
+	}
+
+	public void outGameFade(){
+		GameObject.Find("Panel").GetComponent<PanelComponent>().isFade = false;
 	}
 }

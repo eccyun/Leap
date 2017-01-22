@@ -12,6 +12,8 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public  int            chapter;     // 章情報
 	public  GameObject     stillPrefab; // スチルのプレハブ
 	public  bool           stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
+	public  delegate void Delegate();
+
 
 	public void Awake(){
         if(this != Instance){
@@ -66,11 +68,6 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		}
 
 		return ret.Split(':');
-	}
-
-	public void fade(string mode, float range, String color="black"){
-		SceneComponent sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
-		sceneComponent.fade(mode, range, color);
 	}
 
 	// 改行コード処理
