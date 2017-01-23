@@ -4,6 +4,7 @@ using System.IO;
 using System;
 using System.Text;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	private List<string>      listScript;  // スクリプトファイルから読み込んだ命令群を格納
@@ -65,6 +66,24 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		}
 	}
 
+	public byte[] displayCapture(){
+		Texture2D texture = new Texture2D(Screen.width, Screen.height);
+        texture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+        texture.Apply();
+
+		return texture.EncodeToPNG();
+	}
+
+	public void setActiveScreenShot(){
+		// byteを文字列になおして、入れる
+		byte[] bytes = displayCapture();
+		gameDataComponent.activeData.setActiveScreenShot(Convert.ToBase64String(bytes));
+	}
+
+	public void setAbridgeText(string abridgeText){
+		gameDataComponent.activeData.setAbridgeText(abridgeText);
+	}
+
 	public string[] readScript(){
 		if(stop_flg) return null;
 
@@ -72,7 +91,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		cnt++;
 
 		if(ret == "STOP;"){
-			gameDataComponent.setActiveData(chapter, cnt);
+			gameDataComponent.activeData.setActiveData(chapter, cnt);
 
 			// 現行のデータをセット
 			stop_flg = true;

@@ -7,6 +7,19 @@ public class GameData {
 	public string abridgeText;   // 省略テキスト
 	public string saveDate;      // 保存日
 	public string binaryCapture; // バイナリキャプチャ
+
+	public void setActiveData(int chapter, int scriptCnt){
+		this.chapter   = chapter;
+		this.scriptCnt = scriptCnt;
+	}
+
+	public void setActiveScreenShot(string binaryCapture){
+		this.binaryCapture = binaryCapture;
+	}
+
+	public void setAbridgeText(string abridgeText){
+		this.abridgeText = abridgeText;
+	}
 }
 
 public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
@@ -23,10 +36,5 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 	public void Start () {
 		// 初期化
 		activeData = new GameData();
-	}
-
-	public void setActiveData(int chapter, int scriptCnt){
-		activeData.chapter   = chapter;
-		activeData.scriptCnt = scriptCnt;
 	}
 }

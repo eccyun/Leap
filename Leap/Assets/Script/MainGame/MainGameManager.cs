@@ -22,6 +22,17 @@ public class MainGameManager : MonoBehaviour {
 	public GameObject MenuBtn;
 	public GameObject message_window;
 
+	IEnumerator beforeGameMenuOpen(){
+	    yield return new WaitForEndOfFrame();
+
+		// スクリーンキャプチャ
+		scriptEngine.setActiveScreenShot();
+
+		// 文字セット
+		scriptEngine.setAbridgeText(text.GetComponent<TextManager>().displayText);
+	}
+
+
 	void Start () {
 		isLoading   = false;
 		isWait      = false;
@@ -98,6 +109,9 @@ public class MainGameManager : MonoBehaviour {
 				isFull = true;
 				return;
 			}else if(col==GameObject.Find("menu").GetComponent<Collider2D>()){
+				// 現状のスクリーンショットを取る
+				StartCoroutine(beforeGameMenuOpen());
+
 				sceneComponent.pushScene("GameMenu");
 
 				canvas.SetActive(false);
