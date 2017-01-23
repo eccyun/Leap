@@ -9,7 +9,6 @@ public class SaveLoadManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		backBtn = GameObject.FindGameObjectWithTag("backBtn");
-		Debug.Log(GameObject.Find("GameMenuManager").GetComponent<GameMenuManager>().pushBtnName);
 	}
 
 	// Update is called once per frame

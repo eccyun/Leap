@@ -6,14 +6,14 @@ using System.Text;
 using System.Collections.Generic;
 
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
-	private List<string>   listScript;  // スクリプトファイルから読み込んだ命令群を格納
-	private int            cnt;         // スクリプトのカウンタ
-	public  List<string[]> textLogs;
-	public  int            chapter;     // 章情報
-	public  GameObject     stillPrefab; // スチルのプレハブ
-	public  bool           stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
+	private List<string>      listScript;  // スクリプトファイルから読み込んだ命令群を格納
+	private int               cnt;         // スクリプトのカウンタ
+	private GameDataComponent gameDataComponent;
+	public  List<string[]>    textLogs;
+	public  int               chapter;     // 章情報
+	public  GameObject        stillPrefab; // スチルのプレハブ
+	public  bool              stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
 	public  delegate void Delegate();
-
 
 	public void Awake(){
         if(this != Instance){
@@ -24,14 +24,23 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
     }
 
 	public void Start () {
-		textLogs = new List<string[]>();
+		textLogs          = new List<string[]>();
+		gameDataComponent = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent> ();
+	}
+
+	public void initGameScene(int currentCnt, int currentChapter=0){
+		cnt = currentCnt;
+
+		if(currentChapter==0){
+			chapter++;
+		}else{
+			chapter = currentChapter;
+		}
 	}
 
 	public void readScenarioFile(){
 		// 変数の初期化
 		listScript = new List<string>();
-		cnt        = 0;
-		chapter++;
 
 		string fileName  = "script"+chapter.ToString("0,0")+".txt";
 		string stillName = "Prefab/Still-"+chapter.ToString("0,0");
@@ -63,6 +72,9 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		cnt++;
 
 		if(ret == "STOP;"){
+			gameDataComponent.setActiveData(chapter, cnt);
+
+			// 現行のデータをセット
 			stop_flg = true;
 			return null;
 		}

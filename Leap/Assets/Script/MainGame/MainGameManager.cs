@@ -3,15 +3,15 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class MainGameManager : MonoBehaviour {
-	private ScriptEngine   scriptEngine;
-	private SceneComponent sceneComponent;
+	private ScriptEngine      scriptEngine;
+	private SceneComponent    sceneComponent;
+	private Camera            camera;
 
 	private string[]     script;
 	private bool         isLoading;
 	private bool         isWait;
 	private float        maxWaitTime;
 	private float        waitTime;
-	private Camera       camera;
 
 	// public
 	public  Text         text;
@@ -28,12 +28,13 @@ public class MainGameManager : MonoBehaviour {
 		maxWaitTime = 0.0f;
 		waitTime    = 0.0f;
 
-		// カメラ取得
-		camera         = GameObject.Find("Main Camera").GetComponent<Camera>();
+		// 変数の初期化
+		scriptEngine      = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
+		sceneComponent    = GameObject.Find("Panel").GetComponent<SceneComponent> ();
+		camera            = GameObject.Find("Main Camera").GetComponent<Camera>();
 
-		// スクリプトエンジン取得
-		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
-		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
+		// シーン情報初期化
+		scriptEngine.initGameScene(0);
 
 		// スクリプトの読みこみ
 		scriptEngine.readScenarioFile();
