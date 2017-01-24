@@ -22,6 +22,7 @@ public class MainGameManager : MonoBehaviour {
 	public GameObject MenuBtn;
 	public GameObject message_window;
 
+	// ゲームメニューを開く処理
 	IEnumerator beforeGameMenuOpen(){
 	    yield return new WaitForEndOfFrame();
 
