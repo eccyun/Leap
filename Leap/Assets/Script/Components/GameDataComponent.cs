@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
+
 
 public class GameData {
 	public int    chapter;       // 現在のチャプター
@@ -36,5 +38,11 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 	public void Start () {
 		// 初期化
 		activeData = new GameData();
+	}
+
+	public bool _save(string name){
+		activeData.saveDate = DateTime.Now.ToString("yyyy/MM/dd/ HH:mm:ss");
+		PlayerPrefs.SetString(name, LitJson.JsonMapper.ToJson(activeData));
+		return true;
 	}
 }

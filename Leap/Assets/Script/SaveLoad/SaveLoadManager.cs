@@ -4,13 +4,17 @@ using System.Collections;
 
 public class SaveLoadManager : MonoBehaviour {
 
-	private GameMenuManager gameMenuManager;
-	private int             mode; // 0 だったらセーブ 1 だったらロード
-	private GameObject      backBtn;
+	private GameMenuManager   gameMenuManager;
+	private GameDataComponent gameDataComponent;
+	private int               mode;       // 0 だったらセーブ 1 だったらロード
+	private GameObject        backBtn;
+	private int               maxSaveCnt; // 最大データ保存数
 
 	// Use this for initialization
 	void Start () {
-		backBtn = GameObject.FindGameObjectWithTag("backBtn");
+		backBtn           = GameObject.FindGameObjectWithTag("backBtn");
+		gameDataComponent = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
+		maxSaveCnt        = 6;
 
 		if(GameObject.Find("GameMenuManager")){
 			gameMenuManager = GameObject.Find("GameMenuManager").GetComponent<GameMenuManager>();
@@ -24,6 +28,13 @@ public class SaveLoadManager : MonoBehaviour {
 			gameMenuManager = null;
 			mode            = 1;
 		}
+
+		Debug.Log(PlayerPrefs.GetString("save_1"));
+
+		// セーブデータをセットする
+		for (int i=1; i<=maxSaveCnt; i++) {
+
+		}
 	}
 
 	// Update is called once per frame
@@ -35,6 +46,10 @@ public class SaveLoadManager : MonoBehaviour {
 
 			if(col == backBtn.GetComponent<Collider2D>()){
 				SceneManager.UnloadScene("SaveLoad");
+			}else if(col == GameObject.Find("save_1").GetComponent<Collider2D>()){
+				if(mode==0){
+					gameDataComponent._save("save_1");
+				}
 			}
 		}
 	}
