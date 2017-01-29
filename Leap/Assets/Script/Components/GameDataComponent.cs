@@ -25,7 +25,8 @@ public class GameData {
 }
 
 public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
-	public GameData activeData;
+	public GameData   activeData;
+	public GameData[] saveDatas;
 
 	public void Awake(){
         if(this != Instance){
@@ -38,6 +39,15 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 	public void Start () {
 		// 初期化
 		activeData = new GameData();
+	}
+
+	public void setSaveData(){
+		GameObject[] objects_ = GameObject.FindGameObjectsWithTag("DataBox");
+		// セーブデータをセットする
+		for (int i=0; i<objects_.Length; i++) {
+			DataBox dataBox  = objects_[i].GetComponent<DataBox>();
+			dataBox.gameData = new GameData();
+		}
 	}
 
 	public bool _save(string name){

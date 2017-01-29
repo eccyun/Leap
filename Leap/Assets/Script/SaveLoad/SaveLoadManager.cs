@@ -29,27 +29,27 @@ public class SaveLoadManager : MonoBehaviour {
 			mode            = 1;
 		}
 
-		Debug.Log(PlayerPrefs.GetString("save_1"));
-
 		// セーブデータをセットする
-		for (int i=1; i<=maxSaveCnt; i++) {
-
-		}
+		gameDataComponent.setSaveData();
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+
 		if(Input.GetMouseButtonDown(0)){
 			Camera     main     = GameObject.Find("Main Camera").GetComponent<Camera>();
 			Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
 			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
+Debug.Log(col);
 			if(col == backBtn.GetComponent<Collider2D>()){
-				SceneManager.UnloadScene("SaveLoad");
-			}else if(col == GameObject.Find("save_1").GetComponent<Collider2D>()){
-				if(mode==0){
-					gameDataComponent._save("save_1");
-				}
+//				SceneManager.UnloadScene("SaveLoad");
+			}else if(col == GameObject.Find("DataBox").GetComponent<Collider2D>()){
+				Debug.Log("abc");
+				// if(mode==0){
+				// 	gameDataComponent._save("save_1");
+				// }
 			}
 		}
 	}
