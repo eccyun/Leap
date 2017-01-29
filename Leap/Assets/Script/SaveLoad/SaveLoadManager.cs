@@ -9,6 +9,7 @@ public class SaveLoadManager : MonoBehaviour {
 	private int               mode;       // 0 だったらセーブ 1 だったらロード
 	private GameObject        backBtn;
 	private int               maxSaveCnt; // 最大データ保存数
+	private GameObject[]      dataBoxs;
 
 	// Use this for initialization
 	void Start () {
@@ -31,25 +32,27 @@ public class SaveLoadManager : MonoBehaviour {
 
 		// セーブデータをセットする
 		gameDataComponent.setSaveData();
+		dataBoxs = GameObject.FindGameObjectsWithTag("DataBox");
 	}
 
 	// Update is called once per frame
 	void Update () {
-
-
 		if(Input.GetMouseButtonDown(0)){
 			Camera     main     = GameObject.Find("Main Camera").GetComponent<Camera>();
 			Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
 			Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
-Debug.Log(col);
 			if(col == backBtn.GetComponent<Collider2D>()){
-//				SceneManager.UnloadScene("SaveLoad");
-			}else if(col == GameObject.Find("DataBox").GetComponent<Collider2D>()){
-				Debug.Log("abc");
-				// if(mode==0){
-				// 	gameDataComponent._save("save_1");
-				// }
+				SceneManager.UnloadScene("SaveLoad");
+			}else{
+				foreach(GameObject _object in dataBoxs){
+					if(col == _object.GetComponent<Collider2D>()){
+						if(mode==0){
+							int identifier = _object.GetComponent<DataBox>().identifier;
+							gameDataComponent._save("save_"+identifier.ToString());
+						}
+					}
+				}
 			}
 		}
 	}

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DataBox : MonoBehaviour {
 	public GameData gameData;
+	public int      identifier;
 
 	// Use this for initialization
 	void Start () {
