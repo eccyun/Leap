@@ -47,7 +47,7 @@ public class SaveLoadManager : MonoBehaviour {
 					if(col == _object.GetComponent<Collider2D>()){
 						if(mode==0){
 							int identifier = _object.GetComponent<DataBox>().identifier;
-							gameDataComponent._save("save_"+identifier.ToString());
+							gameDataComponent._save(identifier);
 						}
 					}
 				}
