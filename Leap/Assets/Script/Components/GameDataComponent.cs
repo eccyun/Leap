@@ -43,16 +43,17 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 		dataBoxes  = new List<DataBox>();
 	}
 
-	public void setSaveData(){
+	public GameObject[] setSaveData(){
 		objects_ = GameObject.FindGameObjectsWithTag("DataBox");
 
 		// セーブデータをセットする
 		for (int i=0; i<objects_.Length; i++) {
-			// セーブデータを取ってくる
-			string  json = PlayerPrefs.GetString("save_"+(i+1).ToString());
-
 			// データのセット
 			DataBox dataBox = objects_[i].GetComponent<DataBox>();
+
+			// セーブデータを取ってくる
+			string  json = PlayerPrefs.GetString("save_"+dataBox.identifier.ToString());
+
 			if (json.Length > 0){
 				dataBox.gameData = LitJson.JsonMapper.ToObject<GameData>(json);
 				dataBox.dispDataBox();
@@ -62,6 +63,8 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 
 			dataBoxes.Add(dataBox);
 		}
+
+		return objects_;
 	}
 
 	public bool _save(int identifier){

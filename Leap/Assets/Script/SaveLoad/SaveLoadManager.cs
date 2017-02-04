@@ -34,8 +34,7 @@ public class SaveLoadManager : MonoBehaviour {
 		}
 
 		// セーブデータをセットする
-		gameDataComponent.setSaveData();
-		dataBoxs = GameObject.FindGameObjectsWithTag("DataBox");
+		dataBoxs = gameDataComponent.setSaveData();
 	}
 
 	// Update is called once per frame

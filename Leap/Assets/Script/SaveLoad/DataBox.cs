@@ -14,7 +14,8 @@ public class DataBox : MonoBehaviour {
 		GameObject saveDate     = dataBox.transform.FindChild("SaveDate").gameObject;
 		Text       saveDateText = saveDate.GetComponent<Text>();
 		saveDateText.enabled    = true;
-		saveDateText.text       = gameData.saveDate;
+//		saveDateText.text       = gameData.saveDate;
+		saveDateText.text = identifier.ToString();
 
 		// ゲーム中の本文
 		GameObject abridge     = dataBox.transform.FindChild("Abridge").gameObject;
