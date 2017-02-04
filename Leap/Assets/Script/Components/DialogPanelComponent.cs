@@ -33,6 +33,10 @@ public class DialogPanelComponent : MonoBehaviour {
 		setClickEvent_(noBtn, noClicked);
 	}
 
+	public void hide(){
+		this.gameObject.SetActive(false);
+	}
+
 	public void setClickEvent_ (GameObject object_, UnityAction<BaseEventData> event_){
 		// クリックイベントのセット
 		EventTrigger trigger     = object_.GetComponent<EventTrigger> ();

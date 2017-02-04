@@ -11,6 +11,7 @@ public class SaveLoadManager : MonoBehaviour {
 	private GameObject           backBtn;
 	private GameObject[]         dataBoxs;
 	private DialogPanelComponent dialogPanelComponent;
+	private GameObject           tmpSaveData;
 	public  GameObject           dialogPanel;
 
 	// Use this for initialization
@@ -39,6 +40,10 @@ public class SaveLoadManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if(dialogPanelComponent.gameObject.activeSelf){
+			return;
+		}
+
 		if(Input.GetMouseButtonDown(0)){
 			Camera     main     = GameObject.Find("Main Camera").GetComponent<Camera>();
 			Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
@@ -49,12 +54,9 @@ public class SaveLoadManager : MonoBehaviour {
 			}else{
 				foreach(GameObject _object in dataBoxs){
 					if(col == _object.GetComponent<Collider2D>()){
-						dialogPanelComponent.show("ロードしますか？", yesCallBack, noCallBack);
-
-						// if(mode==0){
-						// 	int identifier = _object.GetComponent<DataBox>().identifier;
-						// 	gameDataComponent._save(identifier);
-						// }
+						string dialogMessage = (mode==0)?"セーブしますか？":"ロードしますか？";
+						tmpSaveData          = _object;
+						dialogPanelComponent.show(dialogMessage, yesCallBack, noCallBack);
 					}
 				}
 			}
@@ -62,10 +64,14 @@ public class SaveLoadManager : MonoBehaviour {
 	}
 
 	public void yesCallBack(){
-		Debug.Log("YES");
+		if(mode==0){
+			int identifier = tmpSaveData.GetComponent<DataBox>().identifier;
+			gameDataComponent._save(identifier);
+		}
+		dialogPanelComponent.hide();
 	}
 
 	public void noCallBack(){
-		Debug.Log("NO");
+		dialogPanelComponent.hide();
 	}
 }
