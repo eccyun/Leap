@@ -41,12 +41,14 @@ public class MainGameManager : MonoBehaviour {
 		waitTime    = 0.0f;
 
 		// 変数の初期化
-		scriptEngine      = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
-		sceneComponent    = GameObject.Find("Panel").GetComponent<SceneComponent> ();
-		camera            = GameObject.Find("Main Camera").GetComponent<Camera>();
+		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
+		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
+		camera         = GameObject.Find("Main Camera").GetComponent<Camera>();
 
 		// シーン情報初期化
-		scriptEngine.initGameScene(0);
+		if(!scriptEngine.load_flg){
+			scriptEngine.initGameScene(0);
+		}
 
 		// スクリプトの読みこみ
 		scriptEngine.readScenarioFile();

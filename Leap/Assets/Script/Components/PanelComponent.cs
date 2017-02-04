@@ -28,6 +28,17 @@ public class PanelComponent : MonoBehaviour {
 		blue  = GetComponent<Image>().color.b;
 		alfa  = GetComponent<Image>().color.a;
 		range = 0.008f;
+
+		ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
+
+		if(scriptEngine.load_flg){
+			GameObject     loadLogo = GameObject.Find("LoadLogo");
+			if(loadLogo!=null){
+				isFade           = false;
+				Image renderer   = loadLogo.GetComponent<Image>();
+				renderer.enabled = true;
+			}
+		}
 	}
 
 	void Update () {

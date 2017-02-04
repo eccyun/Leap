@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class SaveLoadManager : MonoBehaviour {
@@ -74,11 +75,21 @@ public class SaveLoadManager : MonoBehaviour {
 	}
 
 	public void yesCallBack(){
+		int identifier = tmpSaveData.GetComponent<DataBox>().identifier;
 		if(mode==0){
 			// セーブ
-			int identifier = tmpSaveData.GetComponent<DataBox>().identifier;
 			gameDataComponent._save(identifier);
 		}else{
+			ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
+			GameData     data_        = tmpSaveData.GetComponent<DataBox>().gameData;
+
+			// データセット
+			scriptEngine.loadCnt  = data_.scriptCnt;
+			scriptEngine.chapter  = data_.chapter;
+			scriptEngine.textLogs = new List<string[]>();
+			scriptEngine.load_flg = true;
+
+			sceneComponent.fade();
 			action_flg = true;
 		}
 		dialogPanelComponent.hide();

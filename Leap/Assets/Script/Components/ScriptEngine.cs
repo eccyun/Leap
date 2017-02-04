@@ -7,13 +7,15 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
-	private List<string>      listScript;  // スクリプトファイルから読み込んだ命令群を格納
-	private int               cnt;         // スクリプトのカウンタ
-	private GameDataComponent gameDataComponent;
+	public  List<string>      listScript;  // スクリプトファイルから読み込んだ命令群を格納
+	public  int               cnt;         // スクリプトのカウンタ
+	public  int               loadCnt;     // ロードした時に進めたいカウンタ
+	public  GameDataComponent gameDataComponent;
 	public  List<string[]>    textLogs;
 	public  int               chapter;     // 章情報
 	public  GameObject        stillPrefab; // スチルのプレハブ
 	public  bool              stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
+	public  bool              load_flg;
 	public  delegate void Delegate();
 
 	public void Awake(){
