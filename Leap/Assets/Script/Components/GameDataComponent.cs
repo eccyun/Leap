@@ -44,7 +44,8 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 	}
 
 	public GameObject[] setSaveData(){
-		objects_ = GameObject.FindGameObjectsWithTag("DataBox");
+		dataBoxes  = new List<DataBox>();
+		objects_   = GameObject.FindGameObjectsWithTag("DataBox");
 
 		// セーブデータをセットする
 		for (int i=0; i<objects_.Length; i++) {
