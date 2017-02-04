@@ -33,7 +33,6 @@ public class MainGameManager : MonoBehaviour {
 		scriptEngine.setAbridgeText(text.GetComponent<TextManager>().displayText);
 	}
 
-
 	void Start () {
 		isLoading   = false;
 		isWait      = false;
@@ -158,8 +157,10 @@ public class MainGameManager : MonoBehaviour {
 				GameObject  audio       = GameObject.Find("BGM");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
 				if(script[2]=="PLAY"){
-					audioSource.clip        = Resources.Load<AudioClip>("BGM/"+script[1]);
-					audioSource.Play();
+					audioSource.clip = Resources.Load<AudioClip>("BGM/"+script[1]);
+					if(!scriptEngine.load_flg){
+						audioSource.Play();
+					}
 				}else if(script[2]=="STOP"){
 					audioSource.Stop();
 				}
@@ -188,10 +189,10 @@ public class MainGameManager : MonoBehaviour {
 					still.GetComponent<SpriteScript>().alfa = 0.0f;
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
-			}else if(script[0]=="# BLACK;"){
+			}else if(script[0]=="# BLACK;" && !scriptEngine.load_flg){
 				sceneComponent.fade("normal", 0.03f, "black", inGameFade);
 				isUpdateStop = true;
-			}else if(script[0]=="# WHITE;"){
+			}else if(script[0]=="# WHITE;" && !scriptEngine.load_flg){
 				sceneComponent.fade("normal", 0.03f, "white", inGameFade);
 				isUpdateStop = true;
 			}else if(script[0]=="LOADING;"){
@@ -206,7 +207,7 @@ public class MainGameManager : MonoBehaviour {
 				}
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
 				renderer.sprite         = null;
-			}else if(script[0]=="# EFFECT"){
+			}else if(script[0]=="# EFFECT" && !scriptEngine.load_flg){
 				GameObject  audio       = GameObject.Find("Effect");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
 				audioSource.clip        = Resources.Load<AudioClip>("Effects/"+script[1]);

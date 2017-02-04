@@ -5,6 +5,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.UI;
 
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public  List<string>      listScript;  // スクリプトファイルから読み込んだ命令群を格納
@@ -95,8 +96,26 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		if(ret == "STOP;"){
 			gameDataComponent.activeData.setActiveData(chapter, cnt);
 
-			// 現行のデータをセット
-			stop_flg = true;
+			if(load_flg){
+				// ロード中の場合ストップさせない、カウンタが追いつくまでやる
+				if(cnt == loadCnt){
+					GameObject  audio       = GameObject.Find("BGM");
+					AudioSource audioSource = audio.GetComponent<AudioSource>();
+					audioSource.Play();
+
+					// ロゴの非表示
+					GameObject loadLogo = GameObject.Find("LoadLogo");
+					Image renderer      = loadLogo.GetComponent<Image>();
+					renderer.enabled    = false;
+
+					PanelComponent panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
+					panelComponent.isFade         = true;
+					load_flg = false;
+					stop_flg = true;
+				}
+			}else{
+				stop_flg = true;
+			}
 			return null;
 		}
 

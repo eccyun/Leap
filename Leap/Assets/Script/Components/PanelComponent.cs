@@ -32,7 +32,7 @@ public class PanelComponent : MonoBehaviour {
 		ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 
 		if(scriptEngine.load_flg){
-			GameObject     loadLogo = GameObject.Find("LoadLogo");
+			GameObject loadLogo = GameObject.Find("LoadLogo");
 			if(loadLogo!=null){
 				isFade           = false;
 				Image renderer   = loadLogo.GetComponent<Image>();
