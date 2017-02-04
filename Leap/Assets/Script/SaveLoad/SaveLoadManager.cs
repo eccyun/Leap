@@ -1,19 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class SaveLoadManager : MonoBehaviour {
 
-	private GameMenuManager   gameMenuManager;
-	private GameDataComponent gameDataComponent;
-	private int               mode;       // 0 だったらセーブ 1 だったらロード
-	private GameObject        backBtn;
-	private GameObject[]      dataBoxs;
+	private GameMenuManager      gameMenuManager;
+	private GameDataComponent    gameDataComponent;
+	private int                  mode;       // 0 だったらセーブ 1 だったらロード
+	private GameObject           backBtn;
+	private GameObject[]         dataBoxs;
+	private DialogPanelComponent dialogPanelComponent;
+	public  GameObject           dialogPanel;
 
 	// Use this for initialization
 	void Start () {
-		backBtn           = GameObject.FindGameObjectWithTag("backBtn");
-		gameDataComponent = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
+		backBtn              = GameObject.FindGameObjectWithTag("backBtn");
+		gameDataComponent    = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
+		dialogPanelComponent = dialogPanel.GetComponent<DialogPanelComponent>();
 
 		if(GameObject.Find("GameMenuManager")){
 			gameMenuManager = GameObject.Find("GameMenuManager").GetComponent<GameMenuManager>();
@@ -45,13 +49,23 @@ public class SaveLoadManager : MonoBehaviour {
 			}else{
 				foreach(GameObject _object in dataBoxs){
 					if(col == _object.GetComponent<Collider2D>()){
-						if(mode==0){
-							int identifier = _object.GetComponent<DataBox>().identifier;
-							gameDataComponent._save(identifier);
-						}
+						dialogPanelComponent.show("ロードしますか？", yesCallBack, noCallBack);
+
+						// if(mode==0){
+						// 	int identifier = _object.GetComponent<DataBox>().identifier;
+						// 	gameDataComponent._save(identifier);
+						// }
 					}
 				}
 			}
 		}
+	}
+
+	public void yesCallBack(){
+		Debug.Log("YES");
+	}
+
+	public void noCallBack(){
+		Debug.Log("NO");
 	}
 }
