@@ -18,6 +18,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public  bool              stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
 	public  bool              load_flg;
 	public  delegate void Delegate();
+	public  string moveLoadedSceneName;
 
 	public void Awake(){
         if(this != Instance){

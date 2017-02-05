@@ -18,7 +18,14 @@ public class LoadManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(max<=frame){
-			sceneComponent.moveScene("MainGame");
+			ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
+			Debug.Log(scriptEngine.moveLoadedSceneName);
+
+			if(scriptEngine.moveLoadedSceneName!="Title"){
+				sceneComponent.moveScene("MainGame");
+			}else{
+				sceneComponent.moveScene(scriptEngine.moveLoadedSceneName);
+			}
 			return;
 		}
 		frame = frame+range;

@@ -21,10 +21,11 @@ public class GameMenuManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(dialogPanelComponent.gameObject.activeSelf){
-			return;
-		}
 		if(!action_flg){
+			if(dialogPanelComponent.gameObject.activeSelf){
+				return;
+			}
+
 			if(Input.GetMouseButtonDown(0)){
 				Vector3    touchPos = camera.ScreenToWorldPoint(Input.mousePosition);
 				Collider2D col      = Physics2D.OverlapPoint(touchPos);
@@ -45,6 +46,8 @@ public class GameMenuManager : MonoBehaviour {
 			}
 		}else{
 			if(!sceneComponent.panelComponent.isFade){
+				ScriptEngine scriptEngine        = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
+				scriptEngine.moveLoadedSceneName = "Title";
 				sceneComponent.moveScene("LOAD");
 			}
 		}
@@ -53,6 +56,7 @@ public class GameMenuManager : MonoBehaviour {
 	public void yesCallBack(){
 		sceneComponent.fade();
 		action_flg = true;
+		dialogPanelComponent.hide();
 	}
 
 	public void noCallBack(){
