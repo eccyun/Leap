@@ -9,6 +9,7 @@ public class MainGameManager : MonoBehaviour {
 
 	private string[]     script;
 	private bool         isLoading;
+	private bool         isEnding;
 	private bool         isWait;
 	private float        maxWaitTime;
 	private float        waitTime;
@@ -74,9 +75,13 @@ public class MainGameManager : MonoBehaviour {
 		}
 
 		// ロード判定
-		if(isLoading){
+		if(isLoading || isEnding){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
-				sceneComponent.moveScene("Load");
+				if(isLoading){
+					sceneComponent.moveScene("Load");
+				}else if(isEnding){
+					sceneComponent.moveScene("Ending");
+				}
 			}
 			return;
 		}
@@ -198,6 +203,9 @@ public class MainGameManager : MonoBehaviour {
 			}else if(script[0]=="LOADING;"){
 				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
 				isLoading = true;
+			}else if(script[0]=="ENDING;"){
+				sceneComponent.fade("normal", 0.01f, "white", outGameFade);
+				isEnding = true;
 			}else if(script[0]=="# REMOVE-IMG"){
 				GameObject img;
 				if(script[1]=="bg"){

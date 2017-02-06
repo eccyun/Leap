@@ -206,5 +206,4 @@ STOP;
 # MSG:「また、会うことが出来たね」:照
 STOP;
 # BGM:end-loop:STOP
-//ENDING;
-LOADING;
+ENDING;
