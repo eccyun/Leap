@@ -20,8 +20,7 @@ public class MainGameManager : MonoBehaviour {
 	public  bool         isFull;
 
 	public GameObject canvas;
-	public GameObject MenuBtn;
-	public GameObject message_window;
+	public GameObject GameUI;
 
 	// ゲームメニューを開く処理
 	IEnumerator beforeGameMenuOpen(){
@@ -59,8 +58,7 @@ public class MainGameManager : MonoBehaviour {
 			return;
 		}else if(!isFull){
 			canvas.SetActive(true);
-			MenuBtn.SetActive(true);
-			message_window.SetActive(true);
+			GameUI.SetActive(true);
 		}
 
 		// ウェイトの設定
@@ -68,6 +66,8 @@ public class MainGameManager : MonoBehaviour {
 			isWait      = false;
 			maxWaitTime = 0.0f;
 			waitTime    = 0.0f;
+
+			GameUI.SetActive(true);
 			return;
 		}else if(isWait && maxWaitTime>waitTime){
 			waitTime += 0.03f;
@@ -90,8 +90,7 @@ public class MainGameManager : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)){
 			if(isFull){
 				canvas.SetActive(true);
-				MenuBtn.SetActive(true);
-				message_window.SetActive(true);
+				GameUI.SetActive(true);
 				isFull = false;
 				return;
 			}
@@ -104,27 +103,21 @@ public class MainGameManager : MonoBehaviour {
 
 				// テキストを非表示にする
 				canvas.SetActive(false);
-				MenuBtn.SetActive(false);
-				message_window.SetActive(false);
-
+				GameUI.SetActive(false);
 				isUpdateStop = true;
 				return;
 			}else if(col==GameObject.Find("full").GetComponent<Collider2D>()){
 				canvas.SetActive(false);
-				MenuBtn.SetActive(false);
-				message_window.SetActive(false);
+				GameUI.SetActive(false);
 				isFull = true;
 				return;
 			}else if(col==GameObject.Find("menu").GetComponent<Collider2D>()){
 				// 現状のスクリーンショットを取る
 				StartCoroutine(beforeGameMenuOpen());
-
 				sceneComponent.pushScene("GameMenu");
 
 				canvas.SetActive(false);
-				MenuBtn.SetActive(false);
-				message_window.SetActive(false);
-
+				GameUI.SetActive(false);
 				isUpdateStop = true;
 				return;
 			}else{
@@ -221,8 +214,16 @@ public class MainGameManager : MonoBehaviour {
 				audioSource.clip        = Resources.Load<AudioClip>("Effects/"+script[1]);
 				audioSource.Play();
 			}else if(script[0] == "# WAIT"){
-				isWait = true;
+				isWait      = true;
 				maxWaitTime = float.Parse(script[1]);
+				GameUI.SetActive(false);
+			}else if(script[0] == "# ANIMATION"){
+				// セーブデータをセットする
+				for (int i=0; i<scriptEngine.animationObjects.Length; i++) {
+					if(scriptEngine.animationObjects[i].name==script[1]){
+						scriptEngine.animationObjects[i].GetComponent<SelfAnimation>().run_flg = (script[2]=="run")?true:false;
+					}
+				}
 			}
 		}
 	}

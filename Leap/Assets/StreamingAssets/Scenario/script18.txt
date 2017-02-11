@@ -1,5 +1,6 @@
+# ANIMATION:18-snow-animation:run
 # EFFECT:watch_alert:PLAY
-# WAIT:3
+# WAIT:5
 # MSG:「はい、私です」:？？？
 STOP;
 # MSG:「…お久しぶりです」:？？？
@@ -30,4 +31,5 @@ STOP;
 STOP;
 # MSG:「はい、それでは」:？？？
 STOP;
+# ANIMATION:18-bg-animation:run
 EOF;

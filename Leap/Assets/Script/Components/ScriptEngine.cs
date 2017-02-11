@@ -18,7 +18,8 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public  bool              stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
 	public  bool              load_flg;
 	public  delegate void Delegate();
-	public  string moveLoadedSceneName;
+	public  string        moveLoadedSceneName;
+	public  GameObject[]  animationObjects;
 
 	public void Awake(){
         if(this != Instance){
@@ -54,6 +55,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		stillPrefab = (GameObject)Resources.Load (stillName);
 		if(stillPrefab != null){
 			Instantiate(stillPrefab, Vector3.zero, Quaternion.identity);
+			animationObjects = GameObject.FindGameObjectsWithTag("Animation");
 		}
 
 		FileInfo f = new FileInfo(Application.streamingAssetsPath+"/Scenario/"+fileName);
