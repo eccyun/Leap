@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class SelfAnimation : MonoBehaviour {
-	private SpriteRenderer renderer;
-	private float          alfa;
-	public  float          range;
-	public  bool           run_flg;
+	private SpriteRenderer  renderer;
+	private float           alfa;
+	public  float           range;
+	public  bool            run_flg;
+	public  MainGameManager mainGameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,18 @@ public class SelfAnimation : MonoBehaviour {
 
 				transform.Translate (0, -0.05f, 0);
 				if (transform.position.y < -18.5f ) {
-					transform.position = new Vector3 (0, 32.0f, 0);
+					transform.position = new Vector3 (0, 32.0f, 9);
+				}
+			}else if(this.name=="18-bg-animation"){
+				if(mainGameManager.GameUI.active){
+					mainGameManager.canvas.SetActive(false);
+					mainGameManager.GameUI.SetActive(false);
+					mainGameManager.isUpdateStop = true;
+				}
+
+				transform.Translate (0, 0.03f, 0);
+				if (transform.position.y > 9.0f) {
+					run_flg = false;
 				}
 			}
 		}

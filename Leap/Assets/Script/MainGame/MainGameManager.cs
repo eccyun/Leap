@@ -221,7 +221,8 @@ public class MainGameManager : MonoBehaviour {
 				// セーブデータをセットする
 				for (int i=0; i<scriptEngine.animationObjects.Length; i++) {
 					if(scriptEngine.animationObjects[i].name==script[1]){
-						scriptEngine.animationObjects[i].GetComponent<SelfAnimation>().run_flg = (script[2]=="run")?true:false;
+						scriptEngine.animationObjects[i].GetComponent<SelfAnimation>().mainGameManager = this;
+						scriptEngine.animationObjects[i].GetComponent<SelfAnimation>().run_flg         = (script[2]=="run")?true:false;
 					}
 				}
 			}
