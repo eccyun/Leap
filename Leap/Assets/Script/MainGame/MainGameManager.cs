@@ -11,6 +11,7 @@ public class MainGameManager : MonoBehaviour {
 	private bool         isLoading;
 	private bool         isEnding;
 	private bool         isWait;
+	private bool         isMoveTitle;
 	private float        maxWaitTime;
 	private float        waitTime;
 
@@ -18,6 +19,7 @@ public class MainGameManager : MonoBehaviour {
 	public  Text         text;
 	public  bool         isUpdateStop;
 	public  bool         isFull;
+	public  GameObject   nameTagObject;
 
 	public GameObject canvas;
 	public GameObject GameUI;
@@ -58,7 +60,6 @@ public class MainGameManager : MonoBehaviour {
 			return;
 		}else if(!isFull){
 			canvas.SetActive(true);
-			GameUI.SetActive(true);
 		}
 
 		// ウェイトの設定
@@ -66,8 +67,6 @@ public class MainGameManager : MonoBehaviour {
 			isWait      = false;
 			maxWaitTime = 0.0f;
 			waitTime    = 0.0f;
-
-			GameUI.SetActive(true);
 			return;
 		}else if(isWait && maxWaitTime>waitTime){
 			waitTime += 0.03f;
@@ -75,12 +74,14 @@ public class MainGameManager : MonoBehaviour {
 		}
 
 		// ロード判定
-		if(isLoading || isEnding){
+		if(isLoading || isEnding || isMoveTitle){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
 				if(isLoading){
 					sceneComponent.moveScene("Load");
 				}else if(isEnding){
 					sceneComponent.moveScene("Ending");
+				}else if(isMoveTitle){
+					sceneComponent.moveScene("Title");
 				}
 			}
 			return;
@@ -90,7 +91,6 @@ public class MainGameManager : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)){
 			if(isFull){
 				canvas.SetActive(true);
-				GameUI.SetActive(true);
 				isFull = false;
 				return;
 			}
@@ -100,7 +100,6 @@ public class MainGameManager : MonoBehaviour {
 
 			if(col==GameObject.Find("log").GetComponent<Collider2D>()){
 				sceneComponent.pushScene("BackLog");
-
 				// テキストを非表示にする
 				canvas.SetActive(false);
 				GameUI.SetActive(false);
@@ -124,6 +123,8 @@ public class MainGameManager : MonoBehaviour {
 				if(text.GetComponent<TextManager>().animation){
 					text.GetComponent<TextManager>().setFullText();
 				}else{
+					text.GetComponent<TextManager>().setText("");
+					nameTagObject.GetComponent<Text>().text = "";
 					scriptEngine.stop_flg = false;
 				}
 			}
@@ -138,12 +139,12 @@ public class MainGameManager : MonoBehaviour {
 		// データを確認する
 		if(script != null){
 			if(script[0]=="# MSG"){
+				GameUI.SetActive(true);
 				string[] tmpTextLog = new string[2];
 
 				// テキストを送る
 				text.GetComponent<TextManager>().setText(script[1]);
 				if(script.Length >= 3){
-					GameObject nameTagObject = GameObject.Find("NameTag");
 					nameTagObject.GetComponent<Text>().text = script[2];
 					tmpTextLog[0] = script[2];
 				}else{
@@ -225,6 +226,9 @@ public class MainGameManager : MonoBehaviour {
 						scriptEngine.animationObjects[i].GetComponent<SelfAnimation>().run_flg         = (script[2]=="run")?true:false;
 					}
 				}
+			}else if(script[0] == "EOF;"){
+				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
+				isMoveTitle = true;
 			}
 		}
 	}
