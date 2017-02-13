@@ -8,8 +8,13 @@ public class IntroductionManager : MonoBehaviour {
 	Camera         main;
 	int            moveCount;
 
+	private float maxWaitTime;
+	private float waitTime;
+
 	// Use this for initialization
 	void Start () {
+		maxWaitTime    = 10.0f;
+		waitTime       = 0.0f;
 		sceneComponent = GetComponent<SceneComponent> ();
 		drawSprite     = GameObject.FindGameObjectWithTag("MainImage");
 		moveCount      = 1;
@@ -17,6 +22,20 @@ public class IntroductionManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if(moveCount==4){
+			return;
+		}
+		if(moveCount==3 && maxWaitTime<=waitTime){
+			sceneComponent.panelComponent.isFlap = true;
+			sceneComponent.fade();
+			StartCoroutine(moveScene());
+			moveCount++;
+			return;
+		}else if(moveCount==3 && maxWaitTime>waitTime){
+			waitTime += 0.03f;
+			return;
+		}
+
 		main                = GameObject.Find("Main Camera").GetComponent<Camera>();
 		Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
 		Collider2D col      = Physics2D.OverlapPoint(touchPos);
@@ -27,6 +46,7 @@ public class IntroductionManager : MonoBehaviour {
 				MainImage      mainImage = drawSprite.GetComponent<MainImage>();
 
 				if(moveCount < 3){
+					sceneComponent.panelComponent.isFlap            = true;
 					sceneComponent.fade("out");
 					mainImage.GetComponent<SpriteRenderer>().sprite = null;
 				}
@@ -35,9 +55,6 @@ public class IntroductionManager : MonoBehaviour {
 					mainImage.GetComponent<SpriteRenderer>().sprite = mainImage.navigation_2;
 				}else if(moveCount==2){
 					mainImage.GetComponent<SpriteRenderer>().sprite = mainImage.navigation_3;
-				}else if(moveCount==3){
-					sceneComponent.fade();
-					StartCoroutine(moveScene());
 				}
 				moveCount++;
 			}
