@@ -34,11 +34,13 @@ public class TitleManager : MonoBehaviour {
 
 			if(Input.GetMouseButtonDown(0)){
 				if(col == startBtn.GetComponent<Collider2D>()){
-					moveSceneName = "Introduction";
+					moveSceneName                        = "Introduction";
+					sceneComponent.panelComponent.isFlap = true;
 					sceneComponent.fade();
 					action_flg = true;
 				}else if(col == quickStartBtn.GetComponent<Collider2D>()){
-					moveSceneName = "QUICK_START";
+					moveSceneName                        = "QUICK_START";
+					sceneComponent.panelComponent.isFlap = true;
 					sceneComponent.fade();
 					action_flg = true;
 				}else if(col == continueBtn.GetComponent<Collider2D>()){
