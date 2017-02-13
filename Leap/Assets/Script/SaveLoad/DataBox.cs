@@ -31,15 +31,20 @@ public class DataBox : MonoBehaviour {
 		Texture2D texture = new Texture2D(Screen.width, Screen.height);
 		texture.LoadImage(Convert.FromBase64String (gameData.binaryCapture));
 
+		// テクスチャをセット
+		RectTransform rt  = dataBox.GetComponent<RectTransform>();
+
 		// テクスチャデータのサイズ
-		int textureWidth  = Screen.width/3;
-		int textureHeight = Screen.height/3;
+		float ratio         = (rt.rect.height+100.0f)/(float)Screen.height;
+	    int   textureWidth  = (int)((float)Screen.width*ratio);
+		int   textureHeight = (int)rt.rect.height+100;
 
 		// テクスチャをリサイズ
-		TextureScale.Bilinear (texture, textureWidth, textureHeight);
+		TextureScale.Bilinear(texture, textureWidth, textureHeight);
 
-		// テクスチャをセット
-		RectTransform rt = dataBox.GetComponent<RectTransform>();
-		dataBox.GetComponent<Image>().sprite = Sprite.Create(texture, new Rect((textureWidth/2)  - ((int)rt.rect.width/2),(textureHeight/2) - ((int)rt.rect.height/2),rt.rect.width, rt.rect.height), new Vector2(0.0f, 0.0f), 71.0f);
+		float s_x = (textureWidth/2)  - ((int)rt.rect.width/2);
+		float s_y = (textureHeight/2) - ((int)rt.rect.height/2);
+
+		dataBox.GetComponent<Image>().sprite = Sprite.Create(texture, new Rect(s_x, s_y, rt.rect.width, rt.rect.height), new Vector2(0.0f, 0.0f), 71.0f);
 	}
 }
