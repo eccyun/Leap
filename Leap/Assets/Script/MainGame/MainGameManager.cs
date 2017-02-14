@@ -91,6 +91,7 @@ public class MainGameManager : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)){
 			if(isFull){
 				canvas.SetActive(true);
+				GameUI.SetActive(true);
 				isFull = false;
 				return;
 			}
