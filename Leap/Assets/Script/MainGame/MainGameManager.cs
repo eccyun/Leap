@@ -24,6 +24,10 @@ public class MainGameManager : MonoBehaviour {
 	public GameObject canvas;
 	public GameObject GameUI;
 
+	public GameObject character_center;
+	public GameObject character_right;
+	public GameObject character_left;
+
 	// ゲームメニューを開く処理
 	IEnumerator beforeGameMenuOpen(){
 	    yield return new WaitForEndOfFrame();
@@ -166,7 +170,15 @@ public class MainGameManager : MonoBehaviour {
 					audioSource.Stop();
 				}
 			}else if(script[0]=="# IMG"){
-				GameObject     img      = GameObject.Find("character_"+script[2]);
+				GameObject img = null;
+				if(script[2]=="center"){
+					img = character_center;
+				}else if(script[2]=="right"){
+					img = character_right;
+				}else if(script[2]=="left"){
+					img = character_left;
+				}
+
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
 				renderer.sprite         = Resources.Load<Sprite>("Sprite/character/"+script[1]);
 			}else if(script[0]=="# BG"){
@@ -191,9 +203,11 @@ public class MainGameManager : MonoBehaviour {
 					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK;" && !scriptEngine.load_flg){
+				dispHideCharacter();
 				sceneComponent.fade("normal", 0.03f, "black", inGameFade);
 				isUpdateStop = true;
 			}else if(script[0]=="# WHITE;" && !scriptEngine.load_flg){
+				dispHideCharacter();
 				sceneComponent.fade("normal", 0.03f, "white", inGameFade);
 				isUpdateStop = true;
 			}else if(script[0]=="LOADING;"){
@@ -233,6 +247,16 @@ public class MainGameManager : MonoBehaviour {
 				isMoveTitle = true;
 			}
 		}
+	}
+
+	private void dispHideCharacter(){
+		SpriteRenderer renderer = null;
+		renderer                = character_center.GetComponent<SpriteRenderer>();
+		renderer.sprite         = null;
+		renderer                = character_right.GetComponent<SpriteRenderer>();
+		renderer.sprite         = null;
+		renderer                = character_left.GetComponent<SpriteRenderer>();
+		renderer.sprite         = null;
 	}
 
 	public void inGameFade(){
