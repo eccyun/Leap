@@ -60,6 +60,7 @@ public class MainGameManager : MonoBehaviour {
 			return;
 		}else if(!isFull){
 			canvas.SetActive(true);
+			GameUI.SetActive(true);
 		}
 
 		// ウェイトの設定
