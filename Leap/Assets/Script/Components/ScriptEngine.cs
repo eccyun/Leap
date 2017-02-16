@@ -118,6 +118,9 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 				}
 			}else{
 				stop_flg = true;
+
+				// STOP判定が来たらクイックセーブ
+				gameDataComponent._save(999);
 			}
 			return null;
 		}
