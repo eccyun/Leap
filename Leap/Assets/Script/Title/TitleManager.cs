@@ -4,22 +4,19 @@ using System.Collections;
 public class TitleManager : MonoBehaviour {
 
 	// シーンコンポーネント定義
-	SceneComponent sceneComponent;
-	bool           action_flg;
-	string         moveSceneName;
-
-	GameObject startBtn;
-	GameObject quickStartBtn;
-	GameObject continueBtn;
+	private SceneComponent sceneComponent;
+	private ScriptEngine   scriptEngine;
+	private bool           action_flg;
+	private string         moveSceneName;
+	public  GameObject     startBtn;
+	public  GameObject     quickStartBtn;
+	public  GameObject     continueBtn;
 
 	void Start () {
-		sceneComponent = GetComponent<SceneComponent> ();
+		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
+		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 		action_flg     = false;
 		moveSceneName  = "";
-
-		startBtn      = GameObject.FindGameObjectWithTag("startBtn");
-		quickStartBtn = GameObject.FindGameObjectWithTag("quickStartBtn");
-		continueBtn   = GameObject.FindGameObjectWithTag("continueBtn");
 	}
 
 	void Update () {
