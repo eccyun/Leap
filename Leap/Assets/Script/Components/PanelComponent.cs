@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PanelComponent : MonoBehaviour {
 
@@ -30,8 +31,7 @@ public class PanelComponent : MonoBehaviour {
 		range = 0.008f;
 
 		ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
-
-		if(scriptEngine.load_flg){
+		if(scriptEngine.load_flg && SceneManager.GetActiveScene().name=="MainGame"){
 			GameObject loadLogo = GameObject.Find("LoadLogo");
 			if(loadLogo!=null){
 				isFade           = false;

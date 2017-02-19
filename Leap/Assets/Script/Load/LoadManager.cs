@@ -19,9 +19,7 @@ public class LoadManager : MonoBehaviour {
 	void Update () {
 		if(max<=frame){
 			ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
-			Debug.Log(scriptEngine.moveLoadedSceneName);
-
-			if(scriptEngine.moveLoadedSceneName!="Title"){
+			if(scriptEngine.moveLoadedSceneName!="Title" && !sceneComponent.panelComponent.isFade){
 				sceneComponent.moveScene("MainGame");
 			}else{
 				sceneComponent.moveScene(scriptEngine.moveLoadedSceneName);
