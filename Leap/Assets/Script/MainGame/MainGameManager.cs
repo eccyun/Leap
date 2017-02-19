@@ -62,9 +62,6 @@ public class MainGameManager : MonoBehaviour {
 	void Update () {
 		if(isUpdateStop){
 			return;
-		}else if(!isFull){
-			canvas.SetActive(true);
-			GameUI.SetActive(true);
 		}
 
 		// ウェイトの設定
@@ -139,6 +136,9 @@ public class MainGameManager : MonoBehaviour {
 		if(isFull){
 			return;
 		}
+
+		canvas.SetActive(true);
+		GameUI.SetActive(true);
 
 		script = scriptEngine.readScript();
 
@@ -244,6 +244,8 @@ public class MainGameManager : MonoBehaviour {
 					}
 				}
 			}else if(script[0] == "EOF;"){
+				GameUI.SetActive(false);
+
 				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
 				isMoveTitle = true;
 			}
@@ -258,6 +260,7 @@ public class MainGameManager : MonoBehaviour {
 		renderer.sprite         = null;
 		renderer                = character_left.GetComponent<SpriteRenderer>();
 		renderer.sprite         = null;
+		GameUI.SetActive(false);
 	}
 
 	public void inGameFade(){
