@@ -24,7 +24,7 @@ public class SaveLoadManager : MonoBehaviour {
 		gameDataComponent      = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
 		dialogPanelComponent   = dialogPanel.GetComponent<DialogPanelComponent>();
 		sceneComponent         = panelObject.GetComponent<SceneComponent> ();
-		action_flg = false;
+		action_flg             = false;
 
 		if(GameObject.Find("GameMenuManager")){
 			gameMenuManager = GameObject.Find("GameMenuManager").GetComponent<GameMenuManager>();
@@ -59,7 +59,7 @@ public class SaveLoadManager : MonoBehaviour {
 					SceneManager.UnloadScene("SaveLoad");
 				}else{
 					foreach(GameObject _object in dataBoxs){
-						if(col == _object.GetComponent<Collider2D>()){
+						if(col == _object.GetComponent<Collider2D>() && _object.GetComponent<DataBox>().gameData!=null){
 							string dialogMessage = (mode==0)?"セーブしますか？":"ロードしますか？";
 							tmpSaveData          = _object;
 							dialogPanelComponent.show(dialogMessage, yesCallBack, noCallBack);

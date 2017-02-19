@@ -59,7 +59,7 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 				dataBox.gameData = LitJson.JsonMapper.ToObject<GameData>(json);
 				dataBox.dispDataBox();
 			}else{
-				dataBox.gameData = new GameData();
+				dataBox.gameData = null;
 			}
 
 			dataBoxes.Add(dataBox);
