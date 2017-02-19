@@ -154,6 +154,7 @@ public class MainGameManager : MonoBehaviour {
 					nameTagObject.GetComponent<Text>().text = script[2];
 					tmpTextLog[0] = script[2];
 				}else{
+					nameTagObject.GetComponent<Text>().text = "";
 					tmpTextLog[0] = "ーーー";
 				}
 				tmpTextLog[1] = script[1];
