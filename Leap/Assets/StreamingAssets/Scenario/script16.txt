@@ -135,6 +135,7 @@ STOP;
 # MSG:「照さん…。短い間でしたが、ありがとうございました」:マリー
 STOP;
 # BLACK;
+# REMOVE-IMG:bg
 # REMOVE-IMG:center
 # MSG:そうマリーが言った時には、あたり一面すっかりと真っ暗になっていた。
 STOP;
