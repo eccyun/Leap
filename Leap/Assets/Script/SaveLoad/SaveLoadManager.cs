@@ -82,14 +82,7 @@ public class SaveLoadManager : MonoBehaviour {
 		}else{
 			ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 			GameData     data_        = tmpSaveData.GetComponent<DataBox>().gameData;
-
-			// データセット
-			scriptEngine.stop_flg = false;
-			scriptEngine.cnt      = 0;
-			scriptEngine.loadCnt  = data_.scriptCnt;
-			scriptEngine.chapter  = data_.chapter;
-			scriptEngine.textLogs = new List<string[]>();
-			scriptEngine.load_flg = true;
+			scriptEngine.setLoadGameData(data_);
 
 			sceneComponent.fade();
 			action_flg = true;

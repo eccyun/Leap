@@ -4,8 +4,10 @@ using System.Collections;
 public class TitleManager : MonoBehaviour {
 
 	// シーンコンポーネント定義
-	private SceneComponent sceneComponent;
-	private ScriptEngine   scriptEngine;
+	private SceneComponent    sceneComponent;
+	private ScriptEngine      scriptEngine;
+	private GameDataComponent gameDataComponent;
+
 	private bool           action_flg;
 	private string         moveSceneName;
 	public  GameObject     startBtn;
@@ -13,8 +15,9 @@ public class TitleManager : MonoBehaviour {
 	public  GameObject     continueBtn;
 
 	void Start () {
-		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
-		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
+		sceneComponent    = GameObject.Find("Panel").GetComponent<SceneComponent> ();
+		scriptEngine      = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
+		gameDataComponent = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
 		action_flg     = false;
 		moveSceneName  = "";
 	}
@@ -36,7 +39,12 @@ public class TitleManager : MonoBehaviour {
 					sceneComponent.fade();
 					action_flg = true;
 				}else if(col == quickStartBtn.GetComponent<Collider2D>()){
-					moveSceneName                        = "QUICK_START";
+					// 中断したデータから再開する
+					GameData qData = gameDataComponent.getQuickStartData();
+					scriptEngine.setLoadGameData(qData);
+
+					// 画面遷移
+					moveSceneName = "LOAD";
 					sceneComponent.panelComponent.isFlap = true;
 					sceneComponent.fade();
 					action_flg = true;

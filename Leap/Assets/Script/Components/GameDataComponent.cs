@@ -68,6 +68,10 @@ public class GameDataComponent : SingletonMonoBehaviour<GameDataComponent> {
 		return objects_;
 	}
 
+	public GameData getQuickStartData(){
+		return LitJson.JsonMapper.ToObject<GameData>(PlayerPrefs.GetString("save_999"));
+	}
+
 	public bool _save(int identifier){
 		activeData.saveDate = DateTime.Now.ToString("yyyy/MM/dd/HH:mm:ss");
 		PlayerPrefs.SetString("save_"+identifier.ToString(), LitJson.JsonMapper.ToJson(activeData));

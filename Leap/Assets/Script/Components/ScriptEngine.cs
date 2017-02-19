@@ -128,6 +128,18 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		return ret.Split(':');
 	}
 
+	public bool setLoadGameData(GameData d){
+		// データセット
+		stop_flg = false;
+		cnt      = 0;
+		loadCnt  = d.scriptCnt;
+		chapter  = d.chapter;
+		textLogs = new List<string[]>();
+		load_flg = true;
+
+		return true;
+	}
+
 	// 改行コード処理
     private string SetDefaultText(){
         return "C#あ\n";
