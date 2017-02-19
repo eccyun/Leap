@@ -127,14 +127,19 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		return ret.Split(':');
 	}
 
-	public bool setLoadGameData(GameData d){
+	public bool setLoadGameData(GameData d=null){
 		// データセット
-		stop_flg = false;
 		cnt      = 0;
-		loadCnt  = d.scriptCnt;
-		chapter  = d.chapter;
+		chapter  = 0;
+		loadCnt  = 0;
 		textLogs = new List<string[]>();
-		load_flg = true;
+		stop_flg = false;
+
+		if(d!=null){
+			loadCnt  = d.scriptCnt;
+			chapter  = d.chapter;
+			load_flg = true;
+		}
 
 		return true;
 	}

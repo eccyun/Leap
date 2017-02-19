@@ -34,6 +34,9 @@ public class TitleManager : MonoBehaviour {
 
 			if(Input.GetMouseButtonDown(0)){
 				if(col == startBtn.GetComponent<Collider2D>()){
+					// 初期化
+					scriptEngine.setLoadGameData();
+
 					moveSceneName                        = "Introduction";
 					sceneComponent.panelComponent.isFlap = true;
 					sceneComponent.fade();
