@@ -101,7 +101,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 
 			if(load_flg){
 				// ロード中の場合ストップさせない、カウンタが追いつくまでやる
-				if(cnt == loadCnt){
+				if(cnt >= loadCnt){
 					GameObject  audio       = GameObject.Find("BGM");
 					AudioSource audioSource = audio.GetComponent<AudioSource>();
 					audioSource.Play();
@@ -118,7 +118,6 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 				}
 			}else{
 				stop_flg = true;
-
 				// STOP判定が来たらクイックセーブ
 				gameDataComponent._save(999);
 			}
