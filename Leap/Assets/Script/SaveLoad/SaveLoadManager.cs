@@ -15,7 +15,9 @@ public class SaveLoadManager : MonoBehaviour {
 	private DialogPanelComponent dialogPanelComponent;
 	private GameObject           tmpSaveData;
 	private SceneComponent       sceneComponent;
+
 	public  GameObject           dialogPanel;
+	public  GameObject           dataBoxes;
 
 	// Use this for initialization
 	void Start () {
@@ -84,8 +86,12 @@ public class SaveLoadManager : MonoBehaviour {
 			GameData     data_        = tmpSaveData.GetComponent<DataBox>().gameData;
 			scriptEngine.setLoadGameData(data_);
 
+			sceneComponent.panelComponent.isFlap = true;
 			sceneComponent.fade();
 			action_flg = true;
+
+			// データボックス非表示
+			dataBoxes.SetActive(false);
 		}
 		dialogPanelComponent.hide();
 	}
