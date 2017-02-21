@@ -61,7 +61,10 @@ public class SaveLoadManager : MonoBehaviour {
 					SceneManager.UnloadScene("SaveLoad");
 				}else{
 					foreach(GameObject _object in dataBoxs){
-						if(col == _object.GetComponent<Collider2D>() && _object.GetComponent<DataBox>().gameData!=null){
+						if(_object.GetComponent<DataBox>().gameData==null&&mode!=0){
+							continue;
+						}
+						if(col == _object.GetComponent<Collider2D>()){
 							string dialogMessage = (mode==0)?"セーブしますか？":"ロードしますか？";
 							tmpSaveData          = _object;
 							dialogPanelComponent.show(dialogMessage, yesCallBack, noCallBack);
