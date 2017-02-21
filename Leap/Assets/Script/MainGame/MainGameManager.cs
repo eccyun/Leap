@@ -12,6 +12,8 @@ public class MainGameManager : MonoBehaviour {
 	private bool        isEnding;
 	private bool        isWait;
 	private bool        isMoveTitle;
+	private bool        isMoveEOF;
+
 	private float       maxWaitTime;
 	private float       waitTime;
 	private GameObject[] stillPrefab;
@@ -82,7 +84,7 @@ public class MainGameManager : MonoBehaviour {
 		}
 
 		// ロード判定
-		if(isLoading || isEnding || isMoveTitle){
+		if(isLoading || isEnding || isMoveTitle || isMoveEOF){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
 				if(isLoading){
 					sceneComponent.moveScene("Load");
@@ -90,6 +92,9 @@ public class MainGameManager : MonoBehaviour {
 					sceneComponent.moveScene("Ending");
 				}else if(isMoveTitle){
 					sceneComponent.moveScene("Title");
+				}else if(isMoveEOF){
+					isUpdateStop = true;
+					Invoke("moveEOF", 3.0f);
 				}
 			}
 			return;
@@ -250,9 +255,8 @@ public class MainGameManager : MonoBehaviour {
 				}
 			}else if(script[0] == "EOF;"){
 				GameUI.SetActive(false);
-
 				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
-				isMoveTitle = true;
+				isMoveEOF = true;
 			}
 		}
 	}
@@ -277,6 +281,10 @@ public class MainGameManager : MonoBehaviour {
 		renderer                = character_left.GetComponent<SpriteRenderer>();
 		renderer.sprite         = null;
 		GameUI.SetActive(false);
+	}
+
+	public void moveEOF(){
+		sceneComponent.moveScene("EOF");
 	}
 
 	public void inGameFade(){
