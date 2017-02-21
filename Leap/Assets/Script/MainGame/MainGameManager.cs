@@ -7,26 +7,28 @@ public class MainGameManager : MonoBehaviour {
 	private SceneComponent    sceneComponent;
 	private Camera            camera;
 
-	private string[]     script;
-	private bool         isLoading;
-	private bool         isEnding;
-	private bool         isWait;
-	private bool         isMoveTitle;
-	private float        maxWaitTime;
-	private float        waitTime;
+	private string[]    script;
+	private bool        isLoading;
+	private bool        isEnding;
+	private bool        isWait;
+	private bool        isMoveTitle;
+	private float       maxWaitTime;
+	private float       waitTime;
+	private GameObject[] stillPrefab;
 
 	// public
-	public  Text         text;
-	public  bool         isUpdateStop;
-	public  bool         isFull;
-	public  GameObject   nameTagObject;
+	public  Text        text;
+	public  bool        isUpdateStop;
+	public  bool        isFull;
+	public  GameObject  nameTagObject;
 
 	public GameObject canvas;
 	public GameObject GameUI;
-
+	public GameObject CharacterUI;
 	public GameObject character_center;
 	public GameObject character_right;
 	public GameObject character_left;
+	public GameObject background_image;
 
 	// ゲームメニューを開く処理
 	IEnumerator beforeGameMenuOpen(){
@@ -37,6 +39,9 @@ public class MainGameManager : MonoBehaviour {
 
 		// 文字セット
 		scriptEngine.setAbridgeText(text.GetComponent<TextManager>().displayText);
+
+		// 非表示にする
+		spriteDisp(false);
 	}
 
 	void Start () {
@@ -57,6 +62,7 @@ public class MainGameManager : MonoBehaviour {
 
 		// スクリプトの読みこみ
 		scriptEngine.readScenarioFile();
+		stillPrefab = GameObject.FindGameObjectsWithTag("Still");
 	}
 
 	void Update () {
@@ -103,9 +109,9 @@ public class MainGameManager : MonoBehaviour {
 
 			if(col==GameObject.Find("log").GetComponent<Collider2D>()){
 				sceneComponent.pushScene("BackLog");
-				// テキストを非表示にする
-				canvas.SetActive(false);
-				GameUI.SetActive(false);
+
+				// 画面を非表示に
+				spriteDisp(false);
 				isUpdateStop = true;
 				return;
 			}else if(col==GameObject.Find("full").GetComponent<Collider2D>()){
@@ -116,10 +122,11 @@ public class MainGameManager : MonoBehaviour {
 			}else if(col==GameObject.Find("menu").GetComponent<Collider2D>()){
 				// 現状のスクリーンショットを取る
 				StartCoroutine(beforeGameMenuOpen());
-				sceneComponent.pushScene("GameMenu");
 
 				canvas.SetActive(false);
 				GameUI.SetActive(false);
+
+				sceneComponent.pushScene("GameMenu");
 				isUpdateStop = true;
 				return;
 			}else{
@@ -137,9 +144,8 @@ public class MainGameManager : MonoBehaviour {
 			return;
 		}
 
-		canvas.SetActive(true);
-		GameUI.SetActive(true);
-
+		// UI表示
+		spriteDisp(true);
 		script = scriptEngine.readScript();
 
 		// データを確認する
@@ -183,8 +189,7 @@ public class MainGameManager : MonoBehaviour {
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
 				renderer.sprite         = Resources.Load<Sprite>("Sprite/character/"+script[1]);
 			}else if(script[0]=="# BG"){
-				GameObject     img      = GameObject.Find("background_image");
-				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
+				SpriteRenderer renderer = background_image.GetComponent<SpriteRenderer>();
 				renderer.sprite         = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
 			}else if(script[0]=="# STILL-IMG"){
 				// 部分絵の表示
@@ -195,13 +200,13 @@ public class MainGameManager : MonoBehaviour {
 				if(script[2]=="show"){
 					if(script[3] == "false"){
 						still.GetComponent<SpriteScript>().alfa = 1.0f;
-						renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+						renderer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 					}
 					renderer.enabled = true;
 				}else if(script[2]=="hide"){
-					renderer.enabled                        = false;
+					renderer.enabled = false;
 					still.GetComponent<SpriteScript>().alfa = 0.0f;
-					renderer.color                          = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+					renderer.color   = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK;" && !scriptEngine.load_flg){
 				dispHideCharacter();
@@ -220,12 +225,12 @@ public class MainGameManager : MonoBehaviour {
 			}else if(script[0]=="# REMOVE-IMG"){
 				GameObject img;
 				if(script[1]=="bg"){
-					img = GameObject.Find("background_image");
+					img = background_image;
 				}else{
 					img = GameObject.Find("character_"+script[1]);
 				}
 				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
-				renderer.sprite         = null;
+				renderer.sprite = null;
 			}else if(script[0]=="# EFFECT" && !scriptEngine.load_flg){
 				GameObject  audio       = GameObject.Find("Effect");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
@@ -236,7 +241,7 @@ public class MainGameManager : MonoBehaviour {
 				maxWaitTime = float.Parse(script[1]);
 				GameUI.SetActive(false);
 			}else if(script[0] == "# ANIMATION"){
-				// セーブデータをセットする
+				// アニメーションセット
 				for (int i=0; i<scriptEngine.animationObjects.Length; i++) {
 					if(scriptEngine.animationObjects[i].name==script[1]){
 						scriptEngine.animationObjects[i].GetComponent<SelfAnimation>().mainGameManager = this;
@@ -249,6 +254,17 @@ public class MainGameManager : MonoBehaviour {
 				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
 				isMoveTitle = true;
 			}
+		}
+	}
+
+	public void spriteDisp(bool flg=false){
+		canvas.SetActive(flg);
+		GameUI.SetActive(flg);
+		CharacterUI.SetActive(flg);
+		background_image.SetActive(flg);
+
+		for (int i=0; i<stillPrefab.Length; i++) {
+			stillPrefab[i].SetActive(flg);
 		}
 	}
 
