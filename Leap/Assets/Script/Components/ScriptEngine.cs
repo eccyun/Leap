@@ -44,6 +44,18 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		}
 	}
 
+	IEnumerator readScenarioFileAndroid(string fileName){
+		string txtBuffer = "";
+		string path      = "jar:file://" + Application.dataPath + "!/assets" + "/Scenario/"+fileName;
+		WWW    www       = new WWW(path);
+		yield return www;
+
+		TextReader txtReader = new StringReader(www.text);
+		while ((txtBuffer = txtReader.ReadLine()) != null){
+			listScript.Add(txtBuffer);
+		}
+	}
+
 	public void readScenarioFile(){
 		// 変数の初期化
 		listScript = new List<string>();
@@ -58,18 +70,22 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 			animationObjects = GameObject.FindGameObjectsWithTag("Animation");
 		}
 
+#if UNITY_EDITOR
 		FileInfo f = new FileInfo(Application.streamingAssetsPath+"/Scenario/"+fileName);
 		try{
 			// 一行毎読み込み
-            using (StreamReader sr = new StreamReader(f.OpenRead(), Encoding.UTF8)){
+			using (StreamReader sr = new StreamReader(f.OpenRead(), Encoding.UTF8)){
 				while(sr.Peek() >= 0){
 					listScript.Add(sr.ReadLine());
 				}
 				sr.Close();
-            }
+			}
 		}catch (Exception e){
 			// エラー処理
 		}
+#elif UNITY_ANDROID
+		StartCoroutine(readScenarioFileAndroid(fileName));
+#endif
 	}
 
 	public byte[] displayCapture(){

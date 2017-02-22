@@ -32,5 +32,8 @@ STOP;
 # MSG:「はい、それでは」:？？？
 STOP;
 # ANIMATION:18-bg-animation:run
+# EFFECT:watch_alert:PLAY
 # WAIT:5
+# MSG:「はい」:？？？
+STOP;
 EOF;
