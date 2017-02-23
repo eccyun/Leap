@@ -22,7 +22,7 @@ STOP;
 STOP;
 # MSG:どうして、今になって夢に出てきたのだろう。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:park_night
 # MSG:そんなことを考えながら歩いている内に、僕は公園の入り口まで来ていた。
 STOP;
@@ -34,7 +34,7 @@ STOP;
 STOP;
 # MSG:僕は、そのままの足で公園の中をまわってみることにした。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:park
 # BGM:road_theme:STOP
 # BGM:forest:PLAY
@@ -52,7 +52,7 @@ STOP;
 STOP;
 # MSG:若干の怖い気持ちを堪えながら、公園の奥へ奥へと歩いていった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_night
 # MSG:そうして、公園内を一通り歩いたところで、最後に高台の方までやってきた。
 STOP;
@@ -66,7 +66,7 @@ STOP;
 STOP;
 # MSG:そのままベンチに腰掛けて、6年前に絵を描いていた時のことを思い出す。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_evening
 # STILL-IMG:01-teru-01:show:true
 # MSG:夏休みの時期に、毎日通ってはこのベンチに座って絵を描いていた。
@@ -86,7 +86,7 @@ STOP;
 STOP;
 # MSG:はじめて彼女と会ったのは、そんな時だった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:01-teru-01:hide
 # STILL-IMG:01-aruku-01:hide
 # BG:upland_night

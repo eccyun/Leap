@@ -3,7 +3,7 @@
 STOP;
 # MSG:その間も、男の子は私の手をずっと離さずに握っていてくれた。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BG:10-aruku-01
 # MSG:さっきまでの心細さが嘘のようだった。気持ちはとても前向きになっている。
 STOP;
@@ -29,7 +29,7 @@ STOP;
 STOP;
 # MSG:名前の通りの子だった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # MSG:それからしばらくして、ようやくお父さんとお母さんを見つけることが出来た。
 STOP;
@@ -48,7 +48,7 @@ STOP;
 # BGM:bell-leap:STOP
 # MSG:だけど、毎年行った夏祭りで再び男の子と会うこともなく…そのまま6年が経った。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BGM:aruku_theme:REFRESH
 # BGM:aruku_theme:PLAY
 # BG:park_evening
@@ -80,7 +80,7 @@ STOP;
 STOP;
 # MSG:どうしてなのかは、私自身も未だにはっきりとは分かっていなかった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_evening
 # MSG:そうして、私は高台へとやってきた。
 STOP;
@@ -96,7 +96,7 @@ STOP;
 STOP;
 # MSG:その様子を見て、はじめて行った日の夏祭りを何故か私は思い出していた。
 STOP;
-# WHITE;
+# WHITE:0.03
 # STILL-IMG:01-teru-01:hide
 # BGM:on-a-bench:REFRESH
 # BGM:on-a-bench:PLAY
@@ -106,7 +106,7 @@ STOP;
 # BG:07-aruku-04
 # MSG:そんなときに、私の手を引いて一緒にお父さんとお母さんを探してくれた男の子のこと。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_evening
 # STILL-IMG:01-teru-01:show:false
 # MSG:今、私の目の前にいるこの人は後ろ姿しか見えないけれど。

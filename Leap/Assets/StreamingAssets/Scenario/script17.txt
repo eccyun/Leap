@@ -4,7 +4,7 @@ STOP;
 STOP;
 # MSG:「照さん…起きてください…」:？？？
 STOP;
-# WHITE;
+# WHITE:0.03
 # BGM:bar_theme:PLAY
 # BG:bar
 # MSG:「う、うーん…」:照
@@ -23,7 +23,7 @@ STOP;
 STOP;
 # MSG:だから、忙しくて最近行けてなかった分、今日こそはと久しぶりにバーに来ていたのだ。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_night
 # IMG:mary_normal:center
 # MSG:真夜中に公園の高台でマリーと出会ってから、時間を遡ってある時期の夏祭りへと行った。
@@ -31,7 +31,7 @@ STOP;
 # IMG:mary_laugh:center
 # MSG:そんな不思議な出来事から、もうじき2年が経とうとしている。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:upland_night
 # MSG:夏祭りを終えて帰ってきた時、僕は高台にあるベンチに横になっていたところで目が覚めた。
@@ -44,7 +44,7 @@ STOP;
 STOP;
 # MSG:その問いに、彼女が答えることはなかった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # MSG:それからも、何度か声を掛けてみたけれど結果は変わらない。
 STOP;
@@ -54,7 +54,7 @@ STOP;
 STOP;
 # MSG:それも、時が経つに連れて自然と考えることも無くなっていった。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BG:bar
 # MSG:「マスターすみません、白ワインを一つください」:照
 STOP;
@@ -106,7 +106,7 @@ STOP;
 STOP;
 # MSG:「かしこまりました」:マスター
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:bar
 # MSG:「ところで、照さん。ちょっとお話があるんですが」:マスター
 STOP;
@@ -160,7 +160,7 @@ STOP;
 STOP;
 # MSG:久しぶりに誰かとお酒が飲めると思うと、ちょっとだけ楽しみな気分になった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # BGM:bar_theme:STOP
 # BGM:end-loop:PLAY
@@ -184,7 +184,7 @@ STOP;
 STOP;
 # MSG:彼女はマスターに案内されて、僕が座っているカウンター席の隣に座った。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BG:17-aruku-01
 # MSG:「こんばんは」:？？？
 STOP;

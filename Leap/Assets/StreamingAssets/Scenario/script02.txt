@@ -46,7 +46,7 @@ STOP;
 STOP;
 # MSG:「そういうもんだよ」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BGM:fest-leap:STOP
 # BGM:shoot:PLAY
@@ -85,7 +85,7 @@ STOP;
 STOP;
 # MSG:「うん！」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:park_festa
 # MSG:「いらっしゃい！」
 STOP;
@@ -267,7 +267,7 @@ STOP;
 # IMG:aruku_laugh:center
 # MSG:「へへへ、ありがとうございます！」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # REMOVE-IMG:bg
 # BGM:shoot:STOP

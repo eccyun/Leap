@@ -20,7 +20,7 @@ STOP;
 # IMG:aruku_laugh:center
 # MSG:「へへっ、そうだね！」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:park_night
 # IMG:aruku_normal:center
 # MSG:「私は、バスで帰るから…。ここで、お別れだね」:歩

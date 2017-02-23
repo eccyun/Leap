@@ -49,7 +49,7 @@ STOP;
 STOP;
 # MSG:振り返ると、そこには一人の女の子が立っていた。
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:01-teru-02:hide
 # STILL-IMG:01-aruku-01:hide
 # BGM:aruku_theme:PLAY
@@ -95,7 +95,7 @@ STOP;
 STOP;
 # MSG:「ははは、ありがとう」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_evening
 # REMOVE-IMG:center
 # STILL-IMG:01-teru-04:show:false

@@ -213,13 +213,17 @@ public class MainGameManager : MonoBehaviour {
 					still.GetComponent<SpriteScript>().alfa = 0.0f;
 					renderer.color   = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
-			}else if(script[0]=="# BLACK;" && !scriptEngine.load_flg){
+			}else if(script[0]=="# BLACK" && !scriptEngine.load_flg){
+				float fadeRange = float.Parse(script[1]);
+
 				dispHideCharacter();
-				sceneComponent.fade("normal", 0.03f, "black", inGameFade);
+				sceneComponent.fade("normal", fadeRange, "black", inGameFade);
 				isUpdateStop = true;
-			}else if(script[0]=="# WHITE;" && !scriptEngine.load_flg){
+			}else if(script[0]=="# WHITE" && !scriptEngine.load_flg){
+				float fadeRange = float.Parse(script[1]);
+
 				dispHideCharacter();
-				sceneComponent.fade("normal", 0.03f, "white", inGameFade);
+				sceneComponent.fade("normal", fadeRange, "white", inGameFade);
 				isUpdateStop = true;
 			}else if(script[0]=="LOADING;"){
 				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
@@ -255,7 +259,7 @@ public class MainGameManager : MonoBehaviour {
 				}
 			}else if(script[0] == "EOF;"){
 				GameUI.SetActive(false);
-				sceneComponent.fade("normal", 0.01f, "black", outGameFade);
+				sceneComponent.fade("normal", 0.01f, "white", outGameFade);
 				isMoveEOF = true;
 			}
 		}

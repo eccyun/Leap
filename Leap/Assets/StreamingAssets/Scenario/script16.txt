@@ -24,7 +24,7 @@ STOP;
 STOP;
 # MSG:「うん」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:12-aruku-01
 # MSG:「それでも、出来る限り後悔しないように選ばないといけない時がどうしてもあるから」:歩
@@ -36,7 +36,7 @@ STOP;
 # BG:12-aruku-03
 # MSG:「…だって、時間は巻き戻せるわけじゃないんだもん」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:road
 # IMG:mary_puzzle_2:center
 # MSG:「僕は、これまでの人生を振り返ると後悔したことばかりで」:照
@@ -75,7 +75,7 @@ STOP;
 # IMG:mary_normal:center
 # MSG:そんなことを話しながら、マリーとしばらく帰り道を歩いた。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:road
 # MSG:そうしてしばらく歩いてから、ふとマリーが立ち止まる。
@@ -134,7 +134,7 @@ STOP;
 # IMG:mary_laugh:center
 # MSG:「照さん…。短い間でしたが、ありがとうございました」:マリー
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # REMOVE-IMG:center
 # MSG:そうマリーが言った時には、あたり一面すっかりと真っ暗になっていた。

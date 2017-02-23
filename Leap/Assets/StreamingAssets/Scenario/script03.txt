@@ -50,13 +50,13 @@ STOP;
 STOP;
 # MSG:もともと、彼女と夏祭りに行くきっかけになった出来事で、彼女が高台で言っていたことだ。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_evening
 # STILL-IMG:01-teru-04:show:false
 # STILL-IMG:01-aruku-01:show:false
 # MSG:「やっぱり、私のこと覚えてない？」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:01-teru-04:hide
 # STILL-IMG:01-aruku-01:hide
 # BG:rest
@@ -101,7 +101,7 @@ STOP;
 STOP;
 # MSG:そう決めて、僕達は高台までの道を歩いていくことにした。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BGM:on-a-bench:STOP
 # BGM:fest-leap:PLAY
 # BG:park_festa
@@ -126,7 +126,7 @@ STOP;
 STOP;
 # MSG:「そうなんだ、それだったら良いんだけど」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # BGM:fest-leap:STOP
 # MSG:そんなことを話しながら人の流れに乗って、高台まで歩いていく。

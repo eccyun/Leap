@@ -5,13 +5,13 @@
 STOP;
 # MSG:僕達は、ふもとの公園の夏祭りへとやってきた。会場はあいかわらず多くの人達で賑わっている。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # STILL-IMG:01-cut-01:show:false
 # STILL-IMG:01-cut-02:show:false
 # MSG:「だって、私達がはじめて会ったのってさ、夏祭りの時なんだよ。ここの」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:01-cut-01:hide
 # STILL-IMG:01-cut-02:hide
 # BG:park_festa
@@ -40,7 +40,7 @@ STOP;
 # MSG:『それもこれも、君がもったいぶるから…』そう言いたい気持ちになった。
 STOP;
 # BGM:fest-leap:STOP
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:02-shoot-01
 # BGM:shoot:PLAY
@@ -94,7 +94,7 @@ STOP;
 STOP;
 # MSG:「照くんもやる気だね、それじゃ最初に練習で何度かやってそこからやろう！」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:park_festa
 # MSG:「いらっしゃい！」
 STOP;

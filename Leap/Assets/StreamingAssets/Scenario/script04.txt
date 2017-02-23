@@ -4,7 +4,7 @@ STOP;
 STOP;
 # MSG:「照さん…起きてください…」:？？？
 STOP;
-# WHITE;
+# WHITE:0.03
 # BGM:bar_theme:PLAY
 # BG:bar
 # MSG:「う、うーん…」:照
@@ -27,7 +27,7 @@ STOP;
 STOP;
 # MSG:「ああ、すみません。お願いします」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:road
 # MSG:僕がこのバーに通うようになったのは、今から3年くらい前のことだった。
 STOP;
@@ -41,13 +41,13 @@ STOP;
 STOP;
 # MSG:いつもなら、こういうお店には行かないはずなのに…。それだけ、疲れていたのだろうか。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # MSG:「いらっしゃいませ」:マスター
 STOP;
 # MSG:マスターとはそれからの付き合いだった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:bar
 # MSG:「照さん、どうぞ」:マスター
 STOP;
@@ -57,7 +57,7 @@ STOP;
 STOP;
 # MSG:ぼんやりとしていた意識がすっとして、そのまま一気に飲み干してしまった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:bar
 # MSG:「ここももうオープンから3年ですか」:照
 STOP;

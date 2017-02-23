@@ -118,7 +118,7 @@ STOP;
 STOP;
 # MSG:無いなら無いで困らないけれど、あったらあったで何かと役に立つことが多かった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_night
 # IMG:mary_normal:center
 # MSG:「あっ、ありがとうございます」:女の子
@@ -155,7 +155,7 @@ STOP;
 STOP;
 # MSG:そう言って彼女は懐中時計を取り出して、僕に見せてきた。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:06-watch-01
 # MSG:見た感じはよくある懐中時計だが、デジタルの文字盤が埋め込まれており一般的な懐中時計とはそこが異なる点だった。
@@ -190,7 +190,7 @@ STOP;
 STOP;
 # MSG:「そうですね、その認識で問題ありません」:女の子
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_night
 # IMG:mary_normal:center
 # MSG:「分かった、ありがとう」:照
@@ -344,7 +344,7 @@ STOP;
 # IMG:mary_laugh_2:center
 # MSG:「いえいえ」:マリー
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # REMOVE-IMG:center
 # BGM:on-a-bench:STOP

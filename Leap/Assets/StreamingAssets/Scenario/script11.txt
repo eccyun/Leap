@@ -24,7 +24,7 @@ STOP;
 STOP;
 # MSG:彼女とはじめて射的屋に行った時には、こんなことにはならなかった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:02-shoot-01
 # STILL-IMG:02-child-01:show:false
@@ -32,7 +32,7 @@ STOP;
 STOP;
 # MSG:「何度かあるくらいかな、とは言えはじめてやるのと変わらないかも」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:02-child-01:hide
 # BG:02-shoot-01
 # BG:park_festa

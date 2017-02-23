@@ -29,7 +29,7 @@ STOP;
 STOP;
 # MSG:「うん、そうだね」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:rest
 # IMG:aruku_laugh2:center
 # MSG:「お店の列だけど長かったよね、結構並んだ？」:歩
@@ -108,7 +108,7 @@ STOP;
 STOP;
 # MSG:1パックに12個入っていたたこ焼きは、あっという間に無くなってしまった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:rest
 # MSG:気付けば、夏祭りも終盤に差し掛かってきている。
 STOP;
@@ -145,13 +145,13 @@ STOP;
 STOP;
 # MSG:「その時の夏祭りで、迷子の女の子と会ったことなかった？」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # REMOVE-IMG:bg
 # BGM:bell-leap:PLAY
 # MSG:6年前と言えば、両親に連れられてよくここの夏祭りに来ていた頃だ。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BG:park_festa
 # MSG:家族と行動するのは最初だけで、途中からは一人で行動することが多かった。
 STOP;
@@ -159,7 +159,7 @@ STOP;
 STOP;
 # MSG:そんな探検するようなわくわく感が、僕の気持ちをとても盛り上げてくれていた。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # MSG:家族には、家から公園までが近いし困ったら帰ってくれば良いということであまり心配はされなかった。
 STOP;
@@ -169,7 +169,7 @@ STOP;
 STOP;
 # MSG:言われてみれば、そんなことがあったかもしれない。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BG:07-aruku-01
 # MSG:…ああ、そうだ。
 STOP;
@@ -177,7 +177,7 @@ STOP;
 STOP;
 # MSG:「本当？」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:rest
 # IMG:aruku_normal:center
 # MSG:「ちょうど、この場所で迷子の女の子に会ったことが一度だけあるんだけど」:照
@@ -190,7 +190,7 @@ STOP;
 # IMG:aruku_laugh:center
 # MSG:「やっと、思い出してくれたんだね」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:07-aruku-01
 # MSG:「お父さんと、お母さんとはぐれたんだっけ」:照
@@ -212,7 +212,7 @@ STOP;
 # BG:07-aruku-03
 # MSG:「それから少ししてからだったかな、照くんが私に声を掛けてくれたのは」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:rest
 # IMG:aruku_normal:center
 # MSG:「単純に『どうしたのかな』って、それで声を掛けたと思う」:照
@@ -273,7 +273,7 @@ STOP;
 STOP;
 # MSG:立ち上がった彼女は無言のままで、こちらから彼女の様子は分からない。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:12-aruku-01
 # MSG:「でも、それはとても簡単なことだった」:歩
 STOP;

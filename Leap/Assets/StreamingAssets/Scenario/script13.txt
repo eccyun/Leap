@@ -2,7 +2,7 @@
 STOP;
 # MSG:僕がずっと気になっていた女の子は、まだ小さかった頃に出会った迷子の女の子だった。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BGM:on-a-bench:PLAY
 # BG:12-aruku-01
 # MSG:「それでね、分かったんだけど」:歩
@@ -41,7 +41,7 @@ STOP;
 STOP;
 # MSG:「…」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:rest
 # IMG:aruku_laugh2:center
 # BGM:on-a-bench:STOP
@@ -79,7 +79,7 @@ STOP;
 STOP;
 # MSG:「そして、しばらくして後悔する。『あの時、やっぱりああしておけば良かったな』って」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:12-aruku-02
 # MSG:「それは、もちろん私だってそういう風になる時はあるよ。でも」:歩
@@ -106,7 +106,7 @@ STOP;
 STOP;
 # MSG:彼女は笑顔で、そう答えた。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:rest
 # IMG:aruku_normal:center

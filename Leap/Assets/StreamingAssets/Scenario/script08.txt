@@ -36,7 +36,7 @@ STOP;
 # IMG:mary_laugh_2:center
 # MSG:「そうですね」:マリー
 STOP;
-# BLACK;
+# BLACK:0.03
 # IMG:mary_normal:center
 # MSG:「気になってたことがあるんだけど、聞いてもいいかな？」:照
 STOP;
@@ -67,7 +67,7 @@ STOP;
 STOP;
 # MSG:「それは、またどうして？」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:08-watch-01
 # MSG:「これなんですけど…」:マリー
@@ -118,7 +118,7 @@ STOP;
 STOP;
 # MSG:「『その為に、懐中時計を配っている』とも」:マリー
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # MSG:ひょっとして、僕は何か大きなとんでもないことに巻き込まれているのではないか？
 STOP;
@@ -189,7 +189,7 @@ STOP;
 STOP;
 # MSG:そうして白いもやが徐々に晴れてきて、景色がより鮮明になっていった。
 STOP;
-# WHITE;
+# WHITE:0.03
 # BGM:forest:STOP
 # BGM:mary_theme:PLAY
 # BG:upland_evening
@@ -228,7 +228,7 @@ STOP;
 # IMG:mary_puzzle_2:center
 # MSG:それを聞いたマリーはどこか納得のいかない様子だった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:upland_evening
 # STILL-IMG:01-teru-01:show:true
@@ -255,7 +255,7 @@ STOP;
 # STILL-IMG:01-teru-01:hide
 # MSG:「ありがとう、なんだか照れるなあ」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:08-mary-01:hide
 # STILL-IMG:01-teru-02:hide
 # BG:upland_evening
@@ -323,7 +323,7 @@ STOP;
 STOP;
 # MSG:…少し疲れた。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BG:upland_evening
 # STILL-IMG:01-teru-01:show:true
 # STILL-IMG:08-mary-01:show:true
@@ -357,7 +357,7 @@ STOP;
 STOP;
 # MSG:そんなことを考えていた時のことだった。
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:01-teru-01:hide
 # STILL-IMG:08-mary-01:hide
 # BGM:mary_theme:STOP
@@ -427,7 +427,7 @@ STOP;
 # IMG:aruku_laugh:center
 # MSG:「へへへ、やった！」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:upland_evening
 # STILL-IMG:01-teru-04:show:false
@@ -447,7 +447,7 @@ STOP;
 STOP;
 # MSG:「…」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:01-teru-04:hide
 # STILL-IMG:01-aruku-01:hide
 # BGM:on-a-bench:PLAY
@@ -529,7 +529,7 @@ STOP;
 STOP;
 # MSG:何故だか、妙にかしこまってしまってどこか落ち着かない。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:upland_evening
 # STILL-IMG:01-teru-04:show:false

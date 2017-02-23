@@ -59,7 +59,7 @@ STOP;
 STOP;
 # MSG:「…」:照
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BGM:on-a-bench:PLAY
 # BG:14-aruku-01
@@ -89,7 +89,7 @@ STOP;
 STOP;
 # MSG:今となってはその時の心境がどうだったか曖昧だったけれど、なんとなくそんな気がした。
 STOP;
-# BLACK;
+# BLACK:0.03
 # BGM:on-a-bench:STOP
 # BGM:road_theme:PLAY
 # BG:upland_night
@@ -108,7 +108,7 @@ STOP;
 STOP;
 # MSG:彼女は僕の手を取ってくる、僕はそれについていくことにした。
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:14-fire-01
 # MSG:「今日は、空も綺麗だね」:歩
@@ -160,7 +160,7 @@ STOP;
 STOP;
 # MSG:僕も彼女もしばらくの間、夜空を彩る花火に魅入っていた。
 STOP;
-# BLACK;
+# BLACK:0.03
 # STILL-IMG:14-fire-04:hide
 # BG:upland_night
 # IMG:aruku_laugh2:center
@@ -244,7 +244,7 @@ STOP;
 # IMG:aruku_laugh2:center
 # MSG:「そういうもんだよ」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:center
 # BG:14-fire-03
 # MSG:「…ずっと、この時間が続いたら良いんだけどな」:歩
@@ -255,7 +255,7 @@ STOP;
 STOP;
 # MSG:「へへっ、何でもないよ！」:歩
 STOP;
-# BLACK;
+# BLACK:0.03
 # REMOVE-IMG:bg
 # MSG:打ち上がりはじめた時から比べると、花火の間隔が徐々に短くなってきていた。
 STOP;
