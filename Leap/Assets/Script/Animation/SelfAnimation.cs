@@ -50,7 +50,7 @@ public class SelfAnimation : MonoBehaviour {
 				}
 
 				transform.Translate (0, 0.03f, 0);
-				if (transform.position.y > 9.0f) {
+				if (transform.position.y > 8.0f) {
 					run_flg                      = false;
 					mainGameManager.isUpdateStop = false;
 				}
