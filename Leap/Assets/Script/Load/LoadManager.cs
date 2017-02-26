@@ -24,6 +24,7 @@ public class LoadManager : MonoBehaviour {
 			}else{
 				sceneComponent.moveScene(scriptEngine.moveLoadedSceneName);
 			}
+			scriptEngine.moveLoadedSceneName = null;
 			return;
 		}
 		frame = frame+range;
