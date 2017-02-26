@@ -87,7 +87,9 @@ public class MainGameManager : MonoBehaviour {
 		if(isLoading || isEnding || isMoveTitle || isMoveEOF){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
 				// BGM停止
-				scriptEngine.bgm.stop_();
+				if(!isMoveEOF){
+					scriptEngine.bgm.stop_();
+				}
 
 				// 遷移処理
 				if(isLoading){
@@ -175,15 +177,13 @@ public class MainGameManager : MonoBehaviour {
 				tmpTextLog[1] = script[1];
 				scriptEngine.textLogs.Add(tmpTextLog);
 			}else if(script[0]=="# BGM"){
-				GameObject  audio       = GameObject.Find("BGM");
-				AudioSource audioSource = audio.GetComponent<AudioSource>();
 				if(script[2]=="PLAY"){
-					audioSource.clip = Resources.Load<AudioClip>("BGM/"+script[1]);
+					scriptEngine.bgm.preload_(script[1]);
 					if(!scriptEngine.load_flg){
-						audioSource.Play();
+						scriptEngine.bgm.play_();
 					}
 				}else if(script[2]=="STOP"){
-					audioSource.Stop();
+					scriptEngine.bgm.stop_();
 				}
 			}else if(script[0]=="# IMG"){
 				GameObject img = null;

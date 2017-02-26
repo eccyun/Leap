@@ -7,13 +7,15 @@ public class SelfAnimation : MonoBehaviour {
 	public  float           range;
 	public  bool            run_flg;
 	public  MainGameManager mainGameManager;
+	public  ScriptEngine    scriptEngine;
 
 	private bool sound_flg;
 
 	// Use this for initialization
 	void Start () {
-		renderer = GetComponent<SpriteRenderer>();
-		alfa     = renderer.color.a;
+		renderer     = GetComponent<SpriteRenderer>();
+		alfa         = renderer.color.a;
+		scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 	}
 
 	void Update () {
@@ -35,11 +37,7 @@ public class SelfAnimation : MonoBehaviour {
 				}
 			}else if(this.name=="18-bg-animation"){
 				if(!sound_flg){
-					GameObject  audio       = GameObject.Find("BGM");
-					AudioSource audioSource = audio.GetComponent<AudioSource>();
-					audioSource.clip        = Resources.Load<AudioClip>("BGM/leap2-overture");
-					audioSource.volume      = 0.3f;
-					audioSource.Play();
+					scriptEngine.bgm.play_("leap2-overture");
 					sound_flg = true;
 				}
 

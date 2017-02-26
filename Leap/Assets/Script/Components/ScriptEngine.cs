@@ -120,13 +120,12 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 			if(load_flg){
 				// ロード中の場合ストップさせない、カウンタが追いつくまでやる
 				if(cnt >= loadCnt){
-					GameObject  audio       = GameObject.Find("BGM");
-					AudioSource audioSource = audio.GetComponent<AudioSource>();
-					audioSource.Play();
+					// 再生
+					bgm.play_();
 
 					// ロゴの非表示
 					GameObject loadLogo = GameObject.Find("LoadLogo");
-					Image renderer      = loadLogo.GetComponent<Image>();
+					Image      renderer = loadLogo.GetComponent<Image>();
 					renderer.enabled    = false;
 
 					PanelComponent panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();

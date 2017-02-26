@@ -19,9 +19,16 @@ public class BGMComponent : SingletonMonoBehaviour<BGMComponent> {
 
 	}
 
-	public void play_(string name){
+	public void preload_(string name){
 		AudioSource audioSource = GetComponent<AudioSource>();
 		audioSource.clip        = Resources.Load<AudioClip>("BGM/"+name);
+	}
+
+	public void play_(string name=null){
+		AudioSource audioSource = GetComponent<AudioSource>();
+		if(name!=null){
+			preload_(name);
+		}
 		audioSource.Play();
 	}
 
