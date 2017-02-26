@@ -24,17 +24,19 @@ public class BGMComponent : SingletonMonoBehaviour<BGMComponent> {
 		audioSource.clip        = Resources.Load<AudioClip>("BGM/"+name);
 	}
 
-	public void play_(string name=null){
+	public void play_(string name=null, bool loop_flg=true){
 		AudioSource audioSource = GetComponent<AudioSource>();
 		if(name!=null){
 			preload_(name);
 		}
+		audioSource.loop = loop_flg;
 		audioSource.Play();
 	}
 
 	public void stop_(){
 		AudioSource audioSource = GetComponent<AudioSource>();
 		audioSource.clip        = null;
+		audioSource.loop        = true;
 		audioSource.Stop();
 	}
 }

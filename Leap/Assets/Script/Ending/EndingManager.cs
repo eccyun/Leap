@@ -12,6 +12,8 @@ public class EndingManager : MonoBehaviour {
 	void Start () {
 		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
 		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
+
+		scriptEngine.bgm.play_("leap-ending", false);
 	}
 
 	void Update () {
