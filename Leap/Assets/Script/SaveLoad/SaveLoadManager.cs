@@ -85,8 +85,6 @@ public class SaveLoadManager : MonoBehaviour {
 	}
 
 	public void onTap_(GameObject object_){
-Debug.Log("abc");
-
 		if(object_.GetComponent<DataBox>().gameData==null&&mode!=0){
 			return;
 		}

@@ -18,10 +18,10 @@ public class DialogPanelComponent : MonoBehaviour {
 
 	public void show(string captionText, Delegate yesCallBack = null, Delegate noCallBack = null){
 		// Game Sort
-		GameObject viewCanvas                          = GameObject.Find("ViewCanvas");
-
-Debug.Log(viewCanvas.GetComponent<Canvas>().sortingOrder);
-		viewCanvas.GetComponent<Canvas>().sortingOrder = 0;
+		GameObject[] viewCanvases = GameObject.FindGameObjectsWithTag("ViewCanvas");
+		for (int i=0; i < viewCanvases.Length; i++) {
+			viewCanvases[i].GetComponent<Canvas>().sortingOrder = 0;
+		}
 
 		this.gameObject.SetActive(true);
 
@@ -41,8 +41,10 @@ Debug.Log(viewCanvas.GetComponent<Canvas>().sortingOrder);
 
 	public void hide(){
 		// Game Sort
-		GameObject viewCanvas                          = GameObject.Find("ViewCanvas");
-		viewCanvas.GetComponent<Canvas>().sortingOrder = 110;
+		GameObject[] viewCanvases = GameObject.FindGameObjectsWithTag("ViewCanvas");
+		for (int i=0; i < viewCanvases.Length; i++) {
+			viewCanvases[i].GetComponent<Canvas>().sortingOrder = 110;
+		}
 		this.gameObject.SetActive(false);
 	}
 
