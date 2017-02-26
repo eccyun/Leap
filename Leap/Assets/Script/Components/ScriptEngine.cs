@@ -20,6 +20,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public  delegate void Delegate();
 	public  string        moveLoadedSceneName;
 	public  GameObject[]  animationObjects;
+	public  BGMComponent  bgm;
 
 	public void Awake(){
         if(this != Instance){
@@ -32,6 +33,7 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public void Start () {
 		textLogs          = new List<string[]>();
 		gameDataComponent = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent> ();
+		bgm               = GameObject.Find("BGM").GetComponent<BGMComponent>();
 	}
 
 	public void initGameScene(int currentCnt, int currentChapter=0){
