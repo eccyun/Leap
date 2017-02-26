@@ -29,39 +29,37 @@ public class TitleManager : MonoBehaviour {
 			return;
 		}
 
-		if(!action_flg){
-			Camera     main     = GameObject.Find("Main Camera").GetComponent<Camera>();
-			Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D col      = Physics2D.OverlapPoint(touchPos);
-
-			if(Input.GetMouseButtonDown(0)){
-				if(col == startBtn.GetComponent<Collider2D>()){
-					// 初期化
-					scriptEngine.setLoadGameData();
-
-					moveSceneName                        = "Introduction";
-					sceneComponent.panelComponent.isFlap = true;
-					sceneComponent.fade();
-					action_flg = true;
-				}else if(col == quickStartBtn.GetComponent<Collider2D>()){
-					// 中断したデータから再開する
-					GameData qData = gameDataComponent.getQuickStartData();
-					scriptEngine.setLoadGameData(qData);
-
-					// 画面遷移
-					moveSceneName = "LOAD";
-					sceneComponent.panelComponent.isFlap = true;
-					sceneComponent.fade();
-					action_flg = true;
-				}else if(col == continueBtn.GetComponent<Collider2D>()){
-					sceneComponent.pushScene("SaveLoad");
-				}
-			}
-		}else{
+		if(action_flg){
 			if(!sceneComponent.panelComponent.isFade){
 				scriptEngine.bgm.stop_();
 				sceneComponent.moveScene(moveSceneName);
 			}
 		}
+	}
+
+	public void onTapGameStart(){
+		// 初期化
+		scriptEngine.setLoadGameData();
+
+		moveSceneName                        = "Introduction";
+		sceneComponent.panelComponent.isFlap = true;
+		sceneComponent.fade();
+		action_flg = true;
+	}
+
+	public void onTapGameQuickStart(){
+		// 中断したデータから再開する
+		GameData qData = gameDataComponent.getQuickStartData();
+		scriptEngine.setLoadGameData(qData);
+
+		// 画面遷移
+		moveSceneName = "LOAD";
+		sceneComponent.panelComponent.isFlap = true;
+		sceneComponent.fade();
+		action_flg = true;
+	}
+
+	public void onTapGameLoad(){
+		sceneComponent.pushScene("SaveLoad");
 	}
 }

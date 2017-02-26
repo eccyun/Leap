@@ -13,6 +13,7 @@ public class PanelComponent : MonoBehaviour {
 	public float  green;
 	public float  alfa;
 	public float  range;
+	private bool orderEditFlg;
 
 	public void setAlfa(float value){
 		alfa = value;
@@ -39,10 +40,18 @@ public class PanelComponent : MonoBehaviour {
 				renderer.enabled = true;
 			}
 		}
+
+		orderEdit(0);
+		orderEditFlg = false;
 	}
 
 	void Update () {
 		if(isFade){
+			if(!orderEditFlg){
+				orderEdit(1000);
+				orderEditFlg = true;
+			}
+
 			if(alfa>=1.0f){
 				range = range*-1;
 			}
@@ -57,7 +66,13 @@ public class PanelComponent : MonoBehaviour {
 				if(!isPageIn){
 					isPageIn = true;
 					isFade   = false;
+
+					if(alfa<=0.0f){
+						orderEdit(0);
+					}
+
 					alfa     = 0.0f;
+					orderEditFlg = false;
 				}else{
 					isFlap = true;
 					alfa   = 1.0f;
@@ -65,9 +80,23 @@ public class PanelComponent : MonoBehaviour {
 			}else if((alfa>=1.0f || alfa<=0.0f) && isFlap){
 				isFade = false;
 				isFlap = false;
+
+				if(alfa<=0.0f){
+					orderEdit(0);
+				}
+
 				alfa   = 0.0f;
 				range  = range*-1;
+				orderEditFlg = false;
 			}
+		}
+	}
+
+	public void orderEdit(int order=0){
+		// Game Sort
+		GameObject[] fadeObjects_ = GameObject.FindGameObjectsWithTag("Fade");
+		for (int i=0; i < fadeObjects_.Length; i++) {
+			fadeObjects_[i].GetComponent<Canvas>().sortingOrder = order;
 		}
 	}
 }
