@@ -20,7 +20,6 @@ public class SaveLoadManager : MonoBehaviour {
 	public  GameObject           dataBoxes;
 	public  ScriptEngine         scriptEngine;
 
-
 	// Use this for initialization
 	void Start () {
 		GameObject panelObject = GameObject.Find("Panel");
@@ -60,18 +59,14 @@ public class SaveLoadManager : MonoBehaviour {
 				Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
 				Collider2D col      = Physics2D.OverlapPoint(touchPos);
 
-				if(col == backBtn.GetComponent<Collider2D>()){
-					SceneManager.UnloadScene("SaveLoad");
-				}else{
-					foreach(GameObject _object in dataBoxs){
-						if(_object.GetComponent<DataBox>().gameData==null&&mode!=0){
-							continue;
-						}
-						if(col == _object.GetComponent<Collider2D>()){
-							string dialogMessage = (mode==0)?"セーブしますか？":"ロードしますか？";
-							tmpSaveData          = _object;
-							dialogPanelComponent.show(dialogMessage, yesCallBack, noCallBack);
-						}
+				foreach(GameObject _object in dataBoxs){
+					if(_object.GetComponent<DataBox>().gameData==null&&mode!=0){
+						continue;
+					}
+					if(col == _object.GetComponent<Collider2D>()){
+						string dialogMessage = (mode==0)?"セーブしますか？":"ロードしますか？";
+						tmpSaveData          = _object;
+						dialogPanelComponent.show(dialogMessage, yesCallBack, noCallBack);
 					}
 				}
 			}
@@ -95,14 +90,15 @@ public class SaveLoadManager : MonoBehaviour {
 			sceneComponent.panelComponent.isFlap = true;
 			sceneComponent.fade();
 			action_flg = true;
-
-			// データボックス非表示
-			dataBoxes.SetActive(false);
 		}
 		dialogPanelComponent.hide();
 	}
 
 	public void noCallBack(){
 		dialogPanelComponent.hide();
+	}
+
+	public void onBackBtnClicked(){
+		SceneManager.UnloadScene("SaveLoad");
 	}
 }
