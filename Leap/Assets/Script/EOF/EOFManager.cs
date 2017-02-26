@@ -25,6 +25,7 @@ public class EOFManager : MonoBehaviour {
 			if(!sceneComponent.panelComponent.isFade){
 				ScriptEngine scriptEngine        = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 				scriptEngine.moveLoadedSceneName = "Title";
+				scriptEngine.bgm.stop_();
 				sceneComponent.moveScene("LOAD");
 			}
 			return;

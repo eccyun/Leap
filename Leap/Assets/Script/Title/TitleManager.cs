@@ -18,8 +18,10 @@ public class TitleManager : MonoBehaviour {
 		sceneComponent    = GameObject.Find("Panel").GetComponent<SceneComponent> ();
 		scriptEngine      = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 		gameDataComponent = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
-		action_flg     = false;
-		moveSceneName  = "";
+		action_flg        = false;
+		moveSceneName     = "";
+
+		scriptEngine.bgm.play_("time-leap");
 	}
 
 	void Update () {
@@ -57,6 +59,7 @@ public class TitleManager : MonoBehaviour {
 			}
 		}else{
 			if(!sceneComponent.panelComponent.isFade){
+				scriptEngine.bgm.stop_();
 				sceneComponent.moveScene(moveSceneName);
 			}
 		}

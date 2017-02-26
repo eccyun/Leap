@@ -3,13 +3,15 @@ using System.Collections;
 
 public class EndingManager : MonoBehaviour {
 	private SceneComponent  sceneComponent;
-	private int    panelCount  = 1;
-	private float  maxWaitTime = 5.0f;
-	private float  waitTime    = 0.0f;
-	public  int    maxPanelCount;
+	private ScriptEngine    scriptEngine;
+	private int             panelCount  = 1;
+	private float           maxWaitTime = 5.0f;
+	private float           waitTime    = 0.0f;
+	public  int             maxPanelCount;
 
 	void Start () {
 		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
+		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
 	}
 
 	void Update () {
@@ -31,6 +33,7 @@ public class EndingManager : MonoBehaviour {
 		panelCount++;
 
 		if(panelCount>maxPanelCount){
+			scriptEngine.bgm.stop_();
 			sceneComponent.moveScene("Load");
 			return;
 		}

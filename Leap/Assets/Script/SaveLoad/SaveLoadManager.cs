@@ -18,6 +18,8 @@ public class SaveLoadManager : MonoBehaviour {
 
 	public  GameObject           dialogPanel;
 	public  GameObject           dataBoxes;
+	public  ScriptEngine         scriptEngine;
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,7 @@ public class SaveLoadManager : MonoBehaviour {
 		gameDataComponent      = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
 		dialogPanelComponent   = dialogPanel.GetComponent<DialogPanelComponent>();
 		sceneComponent         = panelObject.GetComponent<SceneComponent> ();
+		scriptEngine           = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 		action_flg             = false;
 
 		if(GameObject.Find("GameMenuManager")){
@@ -74,6 +77,7 @@ public class SaveLoadManager : MonoBehaviour {
 			}
 		}else{
 			if(!sceneComponent.panelComponent.isFade){
+				scriptEngine.bgm.stop_();
 				sceneComponent.moveScene("LOAD");
 			}
 		}
@@ -85,8 +89,7 @@ public class SaveLoadManager : MonoBehaviour {
 			// セーブ
 			gameDataComponent._save(identifier);
 		}else{
-			ScriptEngine scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
-			GameData     data_        = tmpSaveData.GetComponent<DataBox>().gameData;
+			GameData     data_ = tmpSaveData.GetComponent<DataBox>().gameData;
 			scriptEngine.setLoadGameData(data_);
 
 			sceneComponent.panelComponent.isFlap = true;
