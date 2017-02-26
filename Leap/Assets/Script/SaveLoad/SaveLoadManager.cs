@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SaveLoadManager : MonoBehaviour {
 
@@ -36,7 +37,7 @@ public class SaveLoadManager : MonoBehaviour {
 
 			// セーブの場合、キャプションを切り替える
 			if(mode==0){
-				GameObject.Find("caption").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/SaveLoad/save-caption");
+				GameObject.Find("caption").GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/SaveLoad/save-caption");
 			}
 		}else{
 			gameMenuManager = null;
