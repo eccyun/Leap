@@ -19,6 +19,8 @@ public class DialogPanelComponent : MonoBehaviour {
 	public void show(string captionText, Delegate yesCallBack = null, Delegate noCallBack = null){
 		// Game Sort
 		GameObject viewCanvas                          = GameObject.Find("ViewCanvas");
+
+Debug.Log(viewCanvas.GetComponent<Canvas>().sortingOrder);
 		viewCanvas.GetComponent<Canvas>().sortingOrder = 0;
 
 		this.gameObject.SetActive(true);

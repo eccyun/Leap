@@ -11,7 +11,6 @@ public class SaveLoadManager : MonoBehaviour {
 	private GameDataComponent    gameDataComponent;
 	private int                  mode;       // 0 だったらセーブ 1 だったらロード
 	private bool                 action_flg;
-	private GameObject           backBtn;
 	private GameObject[]         dataBoxs;
 	private DialogPanelComponent dialogPanelComponent;
 	private GameObject           tmpSaveData;
@@ -24,7 +23,6 @@ public class SaveLoadManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameObject panelObject = GameObject.Find("Panel");
-		backBtn                = GameObject.FindGameObjectWithTag("backBtn");
 		gameDataComponent      = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
 		dialogPanelComponent   = dialogPanel.GetComponent<DialogPanelComponent>();
 		sceneComponent         = panelObject.GetComponent<SceneComponent> ();
@@ -54,27 +52,6 @@ public class SaveLoadManager : MonoBehaviour {
 			if(dialogPanelComponent.gameObject.activeSelf){
 				return;
 			}
-
-			if(Input.GetMouseButtonDown(0)){
-				Camera     main     = GameObject.Find("Main Camera").GetComponent<Camera>();
-				Vector3    touchPos = main.ScreenToWorldPoint(Input.mousePosition);
-				Collider2D col      = Physics2D.OverlapPoint(touchPos);
-
-				if(col == backBtn.GetComponent<Collider2D>()){
-					SceneManager.UnloadScene("SaveLoad");
-				}else{
-					foreach(GameObject _object in dataBoxs){
-						if(_object.GetComponent<DataBox>().gameData==null&&mode!=0){
-							continue;
-						}
-						if(col == _object.GetComponent<Collider2D>()){
-							string dialogMessage = (mode==0)?"セーブしますか？":"ロードしますか？";
-							tmpSaveData          = _object;
-							dialogPanelComponent.show(dialogMessage, yesCallBack, noCallBack);
-						}
-					}
-				}
-			}
 		}else{
 			if(!sceneComponent.panelComponent.isFade){
 				scriptEngine.bgm.stop_();
@@ -101,5 +78,21 @@ public class SaveLoadManager : MonoBehaviour {
 
 	public void noCallBack(){
 		dialogPanelComponent.hide();
+	}
+
+	public void onTapBackBtn(){
+		SceneManager.UnloadScene("SaveLoad");
+	}
+
+	public void onTap_(GameObject object_){
+Debug.Log("abc");
+
+		if(object_.GetComponent<DataBox>().gameData==null&&mode!=0){
+			return;
+		}
+
+		string dialogMessage = (mode==0)?"セーブしますか？":"ロードしますか？";
+		tmpSaveData          = object_;
+		dialogPanelComponent.show(dialogMessage, yesCallBack, noCallBack);
 	}
 }
