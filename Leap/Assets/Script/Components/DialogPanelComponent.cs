@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
 public class DialogPanelComponent : MonoBehaviour {
-	public delegate void Delegate();
+	public  delegate void Delegate();
 	private Delegate yesClicked_;
 	private Delegate noClicked_;
 
@@ -17,6 +17,10 @@ public class DialogPanelComponent : MonoBehaviour {
 	}
 
 	public void show(string captionText, Delegate yesCallBack = null, Delegate noCallBack = null){
+		// Game Sort
+		GameObject viewCanvas                          = GameObject.Find("ViewCanvas");
+		viewCanvas.GetComponent<Canvas>().sortingOrder = 0;
+
 		this.gameObject.SetActive(true);
 
 		GameObject caption = this.gameObject.transform.FindChild("Caption").gameObject;
@@ -34,6 +38,9 @@ public class DialogPanelComponent : MonoBehaviour {
 	}
 
 	public void hide(){
+		// Game Sort
+		GameObject viewCanvas                          = GameObject.Find("ViewCanvas");
+		viewCanvas.GetComponent<Canvas>().sortingOrder = 110;
 		this.gameObject.SetActive(false);
 	}
 

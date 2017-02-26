@@ -25,25 +25,6 @@ public class GameMenuManager : MonoBehaviour {
 			if(dialogPanelComponent.gameObject.activeSelf){
 				return;
 			}
-
-			if(Input.GetMouseButtonDown(0)){
-				Vector3    touchPos = camera.ScreenToWorldPoint(Input.mousePosition);
-				Collider2D col      = Physics2D.OverlapPoint(touchPos);
-
-				if(col==GameObject.Find("back_game").GetComponent<Collider2D>()){
-					mainGameManager.isUpdateStop = false;
-					SceneManager.UnloadScene("GameMenu");
-				}else if(col==GameObject.Find("menu_save").GetComponent<Collider2D>()||col==GameObject.Find("menu_load").GetComponent<Collider2D>()){
-					if(col==GameObject.Find("menu_save").GetComponent<Collider2D>()){
-						pushBtnName = "menu_save";
-					}else if(col==GameObject.Find("menu_load").GetComponent<Collider2D>()){
-						pushBtnName = "menu_load";
-					}
-					sceneComponent.pushScene("SaveLoad");
-				}else if(col==GameObject.Find("back_title").GetComponent<Collider2D>()){
-					dialogPanelComponent.show("ゲームを終了しますか？", yesCallBack, noCallBack);
-				}
-			}
 		}else{
 			if(!sceneComponent.panelComponent.isFade){
 				ScriptEngine scriptEngine        = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
@@ -62,5 +43,24 @@ public class GameMenuManager : MonoBehaviour {
 
 	public void noCallBack(){
 		dialogPanelComponent.hide();
+	}
+
+	public void onTapGameBack(){
+		mainGameManager.isUpdateStop = false;
+ 		SceneManager.UnloadScene("GameMenu");
+	}
+
+	public void onTapGameSave(){
+		pushBtnName = "menu_save";
+		sceneComponent.pushScene("SaveLoad");
+	}
+
+	public void onTapGameLoad(){
+		pushBtnName = "menu_load";
+		sceneComponent.pushScene("SaveLoad");
+	}
+
+	public void onTapBackTitle(){
+		dialogPanelComponent.show("ゲームを終了しますか？", yesCallBack, noCallBack);
 	}
 }
