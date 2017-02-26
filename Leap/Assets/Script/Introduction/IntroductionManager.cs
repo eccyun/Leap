@@ -4,19 +4,20 @@ using System.Collections;
 
 public class IntroductionManager : MonoBehaviour {
 	SceneComponent sceneComponent;
-	GameObject     drawSprite;
 	Camera         main;
 	int            moveCount;
 
-	private float maxWaitTime;
-	private float waitTime;
+	public GameObject drawSprite;
+	public GameObject bg;
+
+	private float      maxWaitTime;
+	private float      waitTime;
 
 	// Use this for initialization
 	void Start () {
 		maxWaitTime    = 10.0f;
 		waitTime       = 0.0f;
-		sceneComponent = GetComponent<SceneComponent> ();
-		drawSprite     = GameObject.FindGameObjectWithTag("MainImage");
+		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
 		moveCount      = 1;
 	}
 
@@ -42,19 +43,16 @@ public class IntroductionManager : MonoBehaviour {
 
 		if(Input.GetMouseButtonDown(0) && !sceneComponent.panelComponent.isFade){
 			if(col == drawSprite.GetComponent<Collider2D>()){
-				SpriteRenderer renderer  = drawSprite.GetComponent<SpriteRenderer>();
-				MainImage      mainImage = drawSprite.GetComponent<MainImage>();
-
 				if(moveCount < 3){
-					sceneComponent.panelComponent.isFlap            = true;
+					sceneComponent.panelComponent.isFlap = true;
 					sceneComponent.fade("out");
-					mainImage.GetComponent<SpriteRenderer>().sprite = null;
+					bg.GetComponent<Image>().sprite = null;
 				}
 
 				if(moveCount==1){
-					mainImage.GetComponent<SpriteRenderer>().sprite = mainImage.navigation_2;
+					bg.GetComponent<Image>().sprite = bg.GetComponent<MainImage>().navigation_2;
 				}else if(moveCount==2){
-					mainImage.GetComponent<SpriteRenderer>().sprite = mainImage.navigation_3;
+					bg.GetComponent<Image>().sprite = bg.GetComponent<MainImage>().navigation_3;
 				}
 				moveCount++;
 			}
