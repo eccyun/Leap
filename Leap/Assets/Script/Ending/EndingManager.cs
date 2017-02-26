@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class EndingManager : MonoBehaviour {
 	private SceneComponent  sceneComponent;
@@ -31,7 +32,7 @@ public class EndingManager : MonoBehaviour {
 	}
 
 	public void callBack(){
-		GameObject.Find("ending-"+panelCount).GetComponent<SpriteRenderer>().enabled = false;
+		GameObject.Find("ending-"+panelCount).GetComponent<Image>().enabled = false;
 		panelCount++;
 
 		if(panelCount>maxPanelCount){
@@ -39,6 +40,6 @@ public class EndingManager : MonoBehaviour {
 			sceneComponent.moveScene("Load");
 			return;
 		}
-		GameObject.Find("ending-"+panelCount).GetComponent<SpriteRenderer>().enabled = true;
+		GameObject.Find("ending-"+panelCount).GetComponent<Image>().enabled = true;
 	}
 }
