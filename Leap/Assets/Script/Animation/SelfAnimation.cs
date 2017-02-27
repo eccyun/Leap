@@ -41,15 +41,15 @@ public class SelfAnimation : MonoBehaviour {
 					sound_flg = true;
 				}
 
-				if(mainGameManager.GameUI.active){
-					mainGameManager.canvas.SetActive(false);
-
-					for (int i=0; i<mainGameManager.game_ui.Length; i++) {
-						mainGameManager.game_ui[i].SetActive(false);
-					}
-
-					mainGameManager.isUpdateStop = true;
-				}
+				// if(mainGameManager.GameUI.active){
+				// 	mainGameManager.canvas.SetActive(false);
+				//
+				// 	for (int i=0; i<mainGameManager.game_ui.Length; i++) {
+				// 		mainGameManager.game_ui[i].SetActive(false);
+				// 	}
+				//
+				// 	mainGameManager.isUpdateStop = true;
+				// }
 
 				transform.Translate (0, 0.03f, 0);
 				if (transform.position.y > 8.0f) {
