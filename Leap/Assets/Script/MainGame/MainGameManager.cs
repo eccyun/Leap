@@ -194,9 +194,8 @@ public class MainGameManager : MonoBehaviour {
 				}else if(script[2]=="left"){
 					img = character_left;
 				}
-
-				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
-				renderer.sprite         = Resources.Load<Sprite>("Sprite/character/"+script[1]);
+				img.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/character/"+script[1]);
+				img.GetComponent<Image>().color  = new Color(0.0f, 0.0f, 0.0f, 1.0f);
 			}else if(script[0]=="# BG"){
 				SpriteRenderer renderer = background_image.GetComponent<SpriteRenderer>();
 				renderer.sprite         = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
@@ -281,13 +280,13 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	private void dispHideCharacter(){
-		SpriteRenderer renderer = null;
-		renderer                = character_center.GetComponent<SpriteRenderer>();
-		renderer.sprite         = null;
-		renderer                = character_right.GetComponent<SpriteRenderer>();
-		renderer.sprite         = null;
-		renderer                = character_left.GetComponent<SpriteRenderer>();
-		renderer.sprite         = null;
+		character_center.GetComponent<Image>().sprite = null;
+		character_center.GetComponent<Image>().color  = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+		character_right.GetComponent<Image>().sprite  = null;
+		character_right.GetComponent<Image>().color   = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+		character_left.GetComponent<Image>().sprite   = null;
+		character_left.GetComponent<Image>().color    = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+
 		GameUI.SetActive(false);
 	}
 
