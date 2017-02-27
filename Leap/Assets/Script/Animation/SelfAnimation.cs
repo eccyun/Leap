@@ -43,7 +43,11 @@ public class SelfAnimation : MonoBehaviour {
 
 				if(mainGameManager.GameUI.active){
 					mainGameManager.canvas.SetActive(false);
-					mainGameManager.GameUI.SetActive(false);
+
+					for (int i=0; i<mainGameManager.game_ui.Length; i++) {
+						mainGameManager.game_ui[i].SetActive(false);
+					}
+
 					mainGameManager.isUpdateStop = true;
 				}
 

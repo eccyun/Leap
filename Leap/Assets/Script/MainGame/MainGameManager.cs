@@ -7,15 +7,15 @@ public class MainGameManager : MonoBehaviour {
 	private SceneComponent    sceneComponent;
 	private Camera            camera;
 
-	private string[]    script;
-	private bool        isLoading;
-	private bool        isEnding;
-	private bool        isWait;
-	private bool        isMoveTitle;
-	private bool        isMoveEOF;
+	private string[]     script;
+	private bool         isLoading;
+	private bool         isEnding;
+	private bool         isWait;
+	private bool         isMoveTitle;
+	private bool         isMoveEOF;
 
-	private float       maxWaitTime;
-	private float       waitTime;
+	private float        maxWaitTime;
+	private float        waitTime;
 	private GameObject[] stillPrefab;
 
 	// public
@@ -25,11 +25,13 @@ public class MainGameManager : MonoBehaviour {
 	public  GameObject  nameTagObject;
 
 	public GameObject canvas;
-	public GameObject GameUI;
 	public GameObject character_center;
 	public GameObject character_right;
 	public GameObject character_left;
 	public GameObject background_image;
+
+	public GameObject[] game_ui;
+	public GameObject[] character_ui;
 
 	// ゲームメニューを開く処理
 	IEnumerator beforeGameMenuOpen(){
@@ -55,6 +57,9 @@ public class MainGameManager : MonoBehaviour {
 		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
 		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
 		camera         = GameObject.Find("Main Camera").GetComponent<Camera>();
+
+		game_ui      = GameObject.FindGameObjectsWithTag("GameUI");
+		character_ui = GameObject.FindGameObjectsWithTag("Character");
 
 		// シーン情報初期化
 		if(!scriptEngine.load_flg){
@@ -109,7 +114,10 @@ public class MainGameManager : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)){
 			if(isFull){
 				canvas.SetActive(true);
-				GameUI.SetActive(true);
+				// ゲーム上のUI要素を非表示にする
+				for (int i=0; i<game_ui.Length; i++) {
+					game_ui[i].SetActive(true);
+				}
 				isFull = false;
 				return;
 			}
@@ -126,7 +134,10 @@ public class MainGameManager : MonoBehaviour {
 				return;
 			}else if(col==GameObject.Find("full").GetComponent<Collider2D>()){
 				canvas.SetActive(false);
-				GameUI.SetActive(false);
+				// ゲーム上のUI要素を非表示にする
+				for (int i=0; i<game_ui.Length; i++) {
+					game_ui[i].SetActive(false);
+				}
 				isFull = true;
 				return;
 			}else if(col==GameObject.Find("menu").GetComponent<Collider2D>()){
@@ -134,7 +145,10 @@ public class MainGameManager : MonoBehaviour {
 				StartCoroutine(beforeGameMenuOpen());
 
 				canvas.SetActive(false);
-				GameUI.SetActive(false);
+				// ゲーム上のUI要素を非表示にする
+				for (int i=0; i<game_ui.Length; i++) {
+					game_ui[i].SetActive(false);
+				}
 
 				sceneComponent.pushScene("GameMenu");
 				isUpdateStop = true;
@@ -161,7 +175,11 @@ public class MainGameManager : MonoBehaviour {
 		// データを確認する
 		if(script != null){
 			if(script[0]=="# MSG"){
-				GameUI.SetActive(true);
+				// ゲーム上のUI要素を非表示にする
+				for (int i=0; i<game_ui.Length; i++) {
+					game_ui[i].SetActive(true);
+				}
+
 				string[] tmpTextLog = new string[2];
 
 				// テキストを送る
@@ -248,7 +266,10 @@ public class MainGameManager : MonoBehaviour {
 			}else if(script[0] == "# WAIT"){
 				isWait      = true;
 				maxWaitTime = float.Parse(script[1]);
-				GameUI.SetActive(false);
+				// ゲーム上のUI要素を非表示にする
+				for (int i=0; i<game_ui.Length; i++) {
+					game_ui[i].SetActive(false);
+				}
 			}else if(script[0] == "# ANIMATION"){
 				// アニメーションセット
 				for (int i=0; i<scriptEngine.animationObjects.Length; i++) {
@@ -258,7 +279,10 @@ public class MainGameManager : MonoBehaviour {
 					}
 				}
 			}else if(script[0] == "EOF;"){
-				GameUI.SetActive(false);
+				// ゲーム上のUI要素を非表示にする
+				for (int i=0; i<game_ui.Length; i++) {
+					game_ui[i].SetActive(false);
+				}
 				sceneComponent.fade("normal", 0.01f, "white", outGameFade);
 				isMoveEOF = true;
 			}
@@ -266,11 +290,15 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	public void spriteDisp(bool flg=false){
+		// キャンバス
 		canvas.SetActive(flg);
-		GameUI.SetActive(flg);
+
+		// ゲーム上のUI要素を非表示にする
+		for (int i=0; i<game_ui.Length; i++) {
+			game_ui[i].SetActive(flg);
+		}
 
 		// キャラクターの立ち絵 非表示切り替え
-		GameObject[] character_ui = GameObject.FindGameObjectsWithTag("Character");
 		for (int i=0; i<character_ui.Length; i++) {
 			character_ui[i].SetActive(flg);
 		}
@@ -278,6 +306,7 @@ public class MainGameManager : MonoBehaviour {
 		// 背景の非表示切り替え
 		background_image.SetActive(flg);
 
+		// プレハブ
 		for (int i=0; i<stillPrefab.Length; i++) {
 			stillPrefab[i].SetActive(flg);
 		}
@@ -291,7 +320,10 @@ public class MainGameManager : MonoBehaviour {
 		character_left.GetComponent<Image>().sprite   = null;
 		character_left.GetComponent<Image>().color    = new Color(0.0f, 0.0f, 0.0f, 0.0f);
 
-		GameUI.SetActive(false);
+		// ゲーム上のUI要素を非表示にする
+		for (int i=0; i<game_ui.Length; i++) {
+			game_ui[i].SetActive(false);
+		}
 	}
 
 	public void moveEOF(){
