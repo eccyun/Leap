@@ -110,63 +110,11 @@ public class MainGameManager : MonoBehaviour {
 			return;
 		}
 
-		// タッチイベント
-		if(Input.GetMouseButtonDown(0)){
-			if(isFull){
-				canvas.SetActive(true);
-				// ゲーム上のUI要素を非表示にする
-				for (int i=0; i<game_ui.Length; i++) {
-					game_ui[i].SetActive(true);
-				}
-				isFull = false;
-				return;
-			}
-
-			Vector3    touchPos = camera.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D col      = Physics2D.OverlapPoint(touchPos);
-
-			if(col==GameObject.Find("log").GetComponent<Collider2D>()){
-				sceneComponent.pushScene("BackLog");
-
-				// 画面を非表示に
-				spriteDisp(false);
-				isUpdateStop = true;
-				return;
-			}else if(col==GameObject.Find("full").GetComponent<Collider2D>()){
-				canvas.SetActive(false);
-				// ゲーム上のUI要素を非表示にする
-				for (int i=0; i<game_ui.Length; i++) {
-					game_ui[i].SetActive(false);
-				}
-				isFull = true;
-				return;
-			}else if(col==GameObject.Find("menu").GetComponent<Collider2D>()){
-				// 現状のスクリーンショットを取る
-				StartCoroutine(beforeGameMenuOpen());
-
-				canvas.SetActive(false);
-				// ゲーム上のUI要素を非表示にする
-				for (int i=0; i<game_ui.Length; i++) {
-					game_ui[i].SetActive(false);
-				}
-
-				sceneComponent.pushScene("GameMenu");
-				isUpdateStop = true;
-				return;
-			}else{
-				if(text.GetComponent<TextManager>().animation){
-					text.GetComponent<TextManager>().setFullText();
-				}else{
-					text.GetComponent<TextManager>().setText("");
-					nameTagObject.GetComponent<Text>().text = "";
-					scriptEngine.stop_flg = false;
-				}
-			}
-		}
-
 		if(isFull){
 			return;
 		}
+
+		/* ここまでが停止チェック処理 */
 
 		// UI表示
 		spriteDisp(true);
@@ -336,5 +284,55 @@ public class MainGameManager : MonoBehaviour {
 
 	public void outGameFade(){
 		GameObject.Find("Panel").GetComponent<PanelComponent>().isFade = false;
+	}
+
+	public void onTapLog(){
+		sceneComponent.pushScene("BackLog");
+		// 画面を非表示に
+		spriteDisp(false);
+		isUpdateStop = true;
+	}
+
+	public void onTapFull(){
+		canvas.SetActive(false);
+		// ゲーム上のUI要素を非表示にする
+		for (int i=0; i<game_ui.Length; i++) {
+			game_ui[i].SetActive(false);
+		}
+		isFull = true;
+	}
+
+	public void onTapMenu(){
+		// 現状のスクリーンショットを取る
+		StartCoroutine(beforeGameMenuOpen());
+
+		canvas.SetActive(false);
+		// ゲーム上のUI要素を非表示にする
+		for (int i=0; i<game_ui.Length; i++) {
+			game_ui[i].SetActive(false);
+		}
+
+		sceneComponent.pushScene("GameMenu");
+		isUpdateStop = true;
+	}
+
+	public void onTapDisplay(){
+		if(isFull){
+			canvas.SetActive(true);
+			// ゲーム上のUI要素を非表示にする
+			for (int i=0; i<game_ui.Length; i++) {
+				game_ui[i].SetActive(true);
+			}
+			isFull = false;
+			return;
+		}
+
+		if(text.GetComponent<TextManager>().animation){
+			text.GetComponent<TextManager>().setFullText();
+		}else{
+			text.GetComponent<TextManager>().setText("");
+			nameTagObject.GetComponent<Text>().text = "";
+			scriptEngine.stop_flg = false;
+		}
 	}
 }
