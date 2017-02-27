@@ -26,7 +26,6 @@ public class MainGameManager : MonoBehaviour {
 
 	public GameObject canvas;
 	public GameObject GameUI;
-	public GameObject CharacterUI;
 	public GameObject character_center;
 	public GameObject character_right;
 	public GameObject character_left;
@@ -197,8 +196,7 @@ public class MainGameManager : MonoBehaviour {
 				img.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/character/"+script[1]);
 				img.GetComponent<Image>().color  = new Color(0.0f, 0.0f, 0.0f, 1.0f);
 			}else if(script[0]=="# BG"){
-				SpriteRenderer renderer = background_image.GetComponent<SpriteRenderer>();
-				renderer.sprite         = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
+				background_image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
 			}else if(script[0]=="# STILL-IMG"){
 				// 部分絵の表示
 				GameObject     still    = GameObject.Find(script[1]);
@@ -241,8 +239,7 @@ public class MainGameManager : MonoBehaviour {
 				}else{
 					img = GameObject.Find("character_"+script[1]);
 				}
-				SpriteRenderer renderer = img.GetComponent<SpriteRenderer>();
-				renderer.sprite = null;
+				img.GetComponent<Image>().sprite = null;
 			}else if(script[0]=="# EFFECT" && !scriptEngine.load_flg){
 				GameObject  audio       = GameObject.Find("Effect");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
@@ -271,7 +268,14 @@ public class MainGameManager : MonoBehaviour {
 	public void spriteDisp(bool flg=false){
 		canvas.SetActive(flg);
 		GameUI.SetActive(flg);
-		CharacterUI.SetActive(flg);
+
+		// キャラクターの立ち絵 非表示切り替え
+		GameObject[] character_ui = GameObject.FindGameObjectsWithTag("Character");
+		for (int i=0; i<character_ui.Length; i++) {
+			character_ui[i].SetActive(flg);
+		}
+
+		// 背景の非表示切り替え
 		background_image.SetActive(flg);
 
 		for (int i=0; i<stillPrefab.Length; i++) {
