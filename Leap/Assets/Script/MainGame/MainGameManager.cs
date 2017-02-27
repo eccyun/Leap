@@ -25,6 +25,8 @@ public class MainGameManager : MonoBehaviour {
 	public  GameObject  nameTagObject;
 
 	public GameObject canvas;
+	public GameObject viewCanvas;
+
 	public GameObject character_center;
 	public GameObject character_right;
 	public GameObject character_left;
@@ -160,7 +162,7 @@ public class MainGameManager : MonoBehaviour {
 					img = character_left;
 				}
 				img.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/character/"+script[1]);
-				img.GetComponent<Image>().color  = new Color(0.0f, 0.0f, 0.0f, 1.0f);
+				img.GetComponent<Image>().color  = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 			}else if(script[0]=="# BG"){
 				background_image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
 			}else if(script[0]=="# STILL-IMG"){
@@ -240,6 +242,7 @@ public class MainGameManager : MonoBehaviour {
 	public void spriteDisp(bool flg=false){
 		// キャンバス
 		canvas.SetActive(flg);
+		viewCanvas.SetActive(flg);
 
 		// ゲーム上のUI要素を非表示にする
 		for (int i=0; i<game_ui.Length; i++) {
@@ -262,11 +265,11 @@ public class MainGameManager : MonoBehaviour {
 
 	private void dispHideCharacter(){
 		character_center.GetComponent<Image>().sprite = null;
-		character_center.GetComponent<Image>().color  = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+		character_center.GetComponent<Image>().color  = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 		character_right.GetComponent<Image>().sprite  = null;
-		character_right.GetComponent<Image>().color   = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+		character_right.GetComponent<Image>().color   = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 		character_left.GetComponent<Image>().sprite   = null;
-		character_left.GetComponent<Image>().color    = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+		character_left.GetComponent<Image>().color    = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 
 		// ゲーム上のUI要素を非表示にする
 		for (int i=0; i<game_ui.Length; i++) {
@@ -295,6 +298,7 @@ public class MainGameManager : MonoBehaviour {
 
 	public void onTapFull(){
 		canvas.SetActive(false);
+		viewCanvas.SetActive(false);
 		// ゲーム上のUI要素を非表示にする
 		for (int i=0; i<game_ui.Length; i++) {
 			game_ui[i].SetActive(false);
@@ -307,6 +311,7 @@ public class MainGameManager : MonoBehaviour {
 		StartCoroutine(beforeGameMenuOpen());
 
 		canvas.SetActive(false);
+		viewCanvas.SetActive(false);
 		// ゲーム上のUI要素を非表示にする
 		for (int i=0; i<game_ui.Length; i++) {
 			game_ui[i].SetActive(false);
@@ -319,6 +324,8 @@ public class MainGameManager : MonoBehaviour {
 	public void onTapDisplay(){
 		if(isFull){
 			canvas.SetActive(true);
+			viewCanvas.SetActive(true);
+
 			// ゲーム上のUI要素を非表示にする
 			for (int i=0; i<game_ui.Length; i++) {
 				game_ui[i].SetActive(true);
