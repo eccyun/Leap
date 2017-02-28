@@ -13,7 +13,7 @@ public class PanelComponent : MonoBehaviour {
 	public float  green;
 	public float  alfa;
 	public float  range;
-	private bool orderEditFlg;
+	private bool  orderEditFlg;
 
 	public void setAlfa(float value){
 		alfa = value;
@@ -41,7 +41,9 @@ public class PanelComponent : MonoBehaviour {
 			}
 		}
 
-		orderEdit(0);
+		if(!scriptEngine.load_flg){
+			orderEdit(0);
+		}
 		orderEditFlg = false;
 	}
 

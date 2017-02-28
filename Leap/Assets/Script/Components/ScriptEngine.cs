@@ -130,6 +130,8 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 
 					PanelComponent panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
 					panelComponent.isFade         = true;
+					panelComponent.orderEdit(0);
+
 					load_flg = false;
 					stop_flg = true;
 				}
