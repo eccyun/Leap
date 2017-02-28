@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SaveLoadManager : MonoBehaviour {
-
 	private GameMenuManager      gameMenuManager;
 	private GameDataComponent    gameDataComponent;
 	private int                  mode;       // 0 だったらセーブ 1 だったらロード

@@ -70,6 +70,12 @@ public class MainGameManager : MonoBehaviour {
 
 		// スクリプトの読みこみ
 		scriptEngine.readScenarioFile();
+
+		// スチルのセット
+		if(scriptEngine.stillPrefab!=null){
+			scriptEngine.stillPrefab.transform.SetParent(viewCanvas.transform.FindChild("ViewPanel").gameObject.transform, false);
+			scriptEngine.stillPrefab.transform.SetSiblingIndex(4);
+		}
 		stillPrefab = GameObject.FindGameObjectsWithTag("Still");
 	}
 
@@ -167,20 +173,20 @@ public class MainGameManager : MonoBehaviour {
 				background_image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
 			}else if(script[0]=="# STILL-IMG"){
 				// 部分絵の表示
-				GameObject     still    = GameObject.Find(script[1]);
-				SpriteRenderer renderer = still.GetComponent<SpriteRenderer>();
+				GameObject still  = GameObject.Find(script[1]);
+				Image      image_ = still.GetComponent<Image>();
 
 				// Spriteを表示
 				if(script[2]=="show"){
 					if(script[3] == "false"){
 						still.GetComponent<SpriteScript>().alfa = 1.0f;
-						renderer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+						image_.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 					}
-					renderer.enabled = true;
+					image_.enabled = true;
 				}else if(script[2]=="hide"){
-					renderer.enabled = false;
+					image_.enabled = false;
 					still.GetComponent<SpriteScript>().alfa = 0.0f;
-					renderer.color   = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+					image_.color   = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 			}else if(script[0]=="# BLACK" && !scriptEngine.load_flg){
 				float fadeRange = float.Parse(script[1]);

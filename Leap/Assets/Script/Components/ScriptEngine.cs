@@ -8,6 +8,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
 
 public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
+	public  delegate void Delegate();
+
 	public  List<string>      listScript;  // スクリプトファイルから読み込んだ命令群を格納
 	public  int               cnt;         // スクリプトのカウンタ
 	public  int               loadCnt;     // ロードした時に進めたいカウンタ
@@ -17,10 +19,9 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 	public  GameObject        stillPrefab; // スチルのプレハブ
 	public  bool              stop_flg;    // テキストの読みこみを止めるかを判定 trueなら止める
 	public  bool              load_flg;
-	public  delegate void Delegate();
-	public  string        moveLoadedSceneName;
-	public  GameObject[]  animationObjects;
-	public  BGMComponent  bgm;
+	public  string            moveLoadedSceneName;
+	public  GameObject[]      animationObjects;
+	public  BGMComponent      bgm;
 
 	public void Awake(){
         if(this != Instance){
@@ -68,7 +69,8 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		// スチルデータのセット
 		stillPrefab = (GameObject)Resources.Load (stillName);
 		if(stillPrefab != null){
-			Instantiate(stillPrefab, Vector3.zero, Quaternion.identity);
+			stillPrefab = (GameObject)Instantiate(stillPrefab, Vector3.zero, Quaternion.identity);
+			// アニメーションのオブジェクトを取得する
 			animationObjects = GameObject.FindGameObjectsWithTag("Animation");
 		}
 
