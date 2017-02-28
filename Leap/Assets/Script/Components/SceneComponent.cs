@@ -4,14 +4,10 @@ using UnityEngine.UI;
 
 public class SceneComponent : MonoBehaviour {
 	public  PanelComponent panelComponent;
-
 	public  delegate void Delegate();
 	private Delegate callBack;
 
 	public void Start(){
-		if(GameObject.Find("Panel")){
-			panelComponent = GameObject.Find("Panel").GetComponent<PanelComponent> ();
-		}
 	}
 
 	/*

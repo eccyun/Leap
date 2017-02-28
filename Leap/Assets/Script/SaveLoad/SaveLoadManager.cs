@@ -20,10 +20,10 @@ public class SaveLoadManager : MonoBehaviour {
 	public  GameObject           dataBoxes;
 	public  GameObject			 caption_;
 	public  ScriptEngine         scriptEngine;
+	public  GameObject           panelObject;
 
 	// Use this for initialization
 	void Start () {
-		GameObject panelObject = GameObject.Find("Panel");
 		gameDataComponent      = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
 		dialogPanelComponent   = dialogPanel.GetComponent<DialogPanelComponent>();
 		sceneComponent         = panelObject.GetComponent<SceneComponent> ();
@@ -67,7 +67,7 @@ public class SaveLoadManager : MonoBehaviour {
 			// セーブ
 			gameDataComponent._save(identifier);
 		}else{
-			GameData     data_ = tmpSaveData.GetComponent<DataBox>().gameData;
+			GameData data_ = tmpSaveData.GetComponent<DataBox>().gameData;
 			scriptEngine.setLoadGameData(data_);
 
 			sceneComponent.panelComponent.isFlap = true;
