@@ -31,6 +31,7 @@ public class MainGameManager : MonoBehaviour {
 	public GameObject character_right;
 	public GameObject character_left;
 	public GameObject background_image;
+	public GameObject panel;
 
 	public GameObject[] game_ui;
 	public GameObject[] character_ui;
@@ -57,8 +58,8 @@ public class MainGameManager : MonoBehaviour {
 
 		// 変数の初期化
 		scriptEngine   = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine> ();
-		sceneComponent = GameObject.Find("Panel").GetComponent<SceneComponent> ();
 		camera         = GameObject.Find("Main Camera").GetComponent<Camera>();
+		sceneComponent = panel.GetComponent<SceneComponent> ();
 
 		game_ui      = GameObject.FindGameObjectsWithTag("GameUI");
 		character_ui = GameObject.FindGameObjectsWithTag("Character");
@@ -292,7 +293,7 @@ public class MainGameManager : MonoBehaviour {
 	}
 
 	public void outGameFade(){
-		GameObject.Find("Panel").GetComponent<PanelComponent>().isFade = false;
+		panel.GetComponent<PanelComponent>().isFade = false;
 	}
 
 	public void onTapLog(){
@@ -304,7 +305,7 @@ public class MainGameManager : MonoBehaviour {
 
 	public void onTapFull(){
 		canvas.SetActive(false);
-		viewCanvas.SetActive(false);
+
 		// ゲーム上のUI要素を非表示にする
 		for (int i=0; i<game_ui.Length; i++) {
 			game_ui[i].SetActive(false);
