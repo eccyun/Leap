@@ -18,6 +18,7 @@ public class SaveLoadManager : MonoBehaviour {
 
 	public  GameObject           dialogPanel;
 	public  GameObject           dataBoxes;
+	public  GameObject			 caption_;
 	public  ScriptEngine         scriptEngine;
 
 	// Use this for initialization
@@ -35,7 +36,7 @@ public class SaveLoadManager : MonoBehaviour {
 
 			// セーブの場合、キャプションを切り替える
 			if(mode==0){
-				GameObject.Find("caption").GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/SaveLoad/save-caption");
+				caption_.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/SaveLoad/save-caption");
 			}
 		}else{
 			gameMenuManager = null;
