@@ -324,8 +324,6 @@ public class MainGameManager : MonoBehaviour {
 		// 現状のスクリーンショットを取る
 		StartCoroutine(beforeGameMenuOpen());
 
-		canvas.SetActive(false);
-		viewCanvas.SetActive(false);
 		// ゲーム上のUI要素を非表示にする
 		for (int i=0; i<game_ui.Length; i++) {
 			game_ui[i].SetActive(false);
