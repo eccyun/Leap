@@ -168,8 +168,15 @@ public class MainGameManager : MonoBehaviour {
 				}else if(script[2]=="left"){
 					img = character_left;
 				}
-				img.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/character/"+script[1]);
-				img.GetComponent<Image>().color  = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+				// 画像セット
+				Image i_  = img.GetComponent<Image>();
+				i_.sprite = Resources.Load<Sprite>("Sprite/character/"+script[1]);
+				i_.color  = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+				// サイズの指定
+				RectTransform r_ = img.GetComponent<RectTransform>();
+				r_.sizeDelta     = new Vector2(i_.sprite.textureRect.width, i_.sprite.textureRect.height);
 			}else if(script[0]=="# BG"){
 				background_image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
 			}else if(script[0]=="# STILL-IMG"){
