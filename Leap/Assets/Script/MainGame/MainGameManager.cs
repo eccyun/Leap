@@ -170,13 +170,16 @@ public class MainGameManager : MonoBehaviour {
 				}
 
 				// 画像セット
-				Image i_  = img.GetComponent<Image>();
-				i_.sprite = Resources.Load<Sprite>("Sprite/character/"+script[1]);
-				i_.color  = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+				Sprite s_ = Resources.Load<Sprite>("Sprite/character/"+script[1]);
 
 				// サイズの指定
 				RectTransform r_ = img.GetComponent<RectTransform>();
-				r_.sizeDelta     = new Vector2(i_.sprite.textureRect.width, i_.sprite.textureRect.height);
+				r_.sizeDelta     = new Vector2(s_.rect.width, s_.rect.height);
+
+				// 画像セット
+				Image  i_ = img.GetComponent<Image>();
+				i_.sprite = s_;
+				i_.color  = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 			}else if(script[0]=="# BG"){
 				background_image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
 			}else if(script[0]=="# STILL-IMG"){
@@ -222,6 +225,7 @@ public class MainGameManager : MonoBehaviour {
 					img = GameObject.Find("character_"+script[1]);
 				}
 				img.GetComponent<Image>().sprite = null;
+				img.GetComponent<Image>().color  = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 			}else if(script[0]=="# EFFECT" && !scriptEngine.load_flg){
 				GameObject  audio       = GameObject.Find("Effect");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
