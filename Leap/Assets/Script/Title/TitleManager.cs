@@ -10,9 +10,6 @@ public class TitleManager : MonoBehaviour {
 
 	private bool           action_flg;
 	private string         moveSceneName;
-	public  GameObject     startBtn;
-	public  GameObject     quickStartBtn;
-	public  GameObject     continueBtn;
 
 	void Start () {
 		sceneComponent    = GameObject.Find("Panel").GetComponent<SceneComponent> ();
@@ -50,13 +47,18 @@ public class TitleManager : MonoBehaviour {
 	public void onTapGameQuickStart(){
 		// 中断したデータから再開する
 		GameData qData = gameDataComponent.getQuickStartData();
-		scriptEngine.setLoadGameData(qData);
+		if(qData!=null){
+			scriptEngine.setLoadGameData(qData);
 
-		// 画面遷移
-		moveSceneName = "LOAD";
-		sceneComponent.panelComponent.isFlap = true;
-		sceneComponent.fade();
-		action_flg = true;
+			// 画面遷移
+			moveSceneName = "LOAD";
+			sceneComponent.panelComponent.isFlap = true;
+			sceneComponent.fade();
+			action_flg = true;
+		}else{
+			// クイックスタートデータがない場合、最初から
+			onTapGameStart();
+		}
 	}
 
 	public void onTapGameLoad(){
