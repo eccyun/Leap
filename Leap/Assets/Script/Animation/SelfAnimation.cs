@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SelfAnimation : MonoBehaviour {
-	private SpriteRenderer  renderer;
+	private Image           image_;
 	private float           alfa;
 	public  float           range;
 	public  bool            run_flg;
@@ -13,8 +14,8 @@ public class SelfAnimation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		renderer     = GetComponent<SpriteRenderer>();
-		alfa         = renderer.color.a;
+		image_       = GetComponent<Image>();
+		alfa         = image_.color.a;
 		scriptEngine = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 	}
 
@@ -24,16 +25,18 @@ public class SelfAnimation : MonoBehaviour {
 				if(alfa>=1.0f){
 					range = range*-1;
 				}
-				alfa           += range;
-				renderer.color  = new Color(1.0f, 1.0f, 1.0f, alfa);
+				alfa        += range;
+				image_.color = new Color(1.0f, 1.0f, 1.0f, alfa);
 
 				if(alfa<=0.4f){
 					range = range*-1;
 				}
 
-				transform.Translate (0, -0.05f, 0);
-				if (transform.position.y < -18.5f ) {
-					transform.position = new Vector3 (0, 32.0f, 9);
+				Vector3 vec = image_.GetComponent<RectTransform>().localPosition;
+				image_.GetComponent<RectTransform>().localPosition = new Vector3(0, vec.y-3, 9);
+
+				if (image_.GetComponent<RectTransform>().localPosition.y < -1320 ) {
+					image_.GetComponent<RectTransform>().localPosition = new Vector3 (0, 2380, 9);
 				}
 			}else if(this.name=="18-bg-animation"){
 				if(!sound_flg){
@@ -41,18 +44,19 @@ public class SelfAnimation : MonoBehaviour {
 					sound_flg = true;
 				}
 
-				// if(mainGameManager.GameUI.active){
-				// 	mainGameManager.canvas.SetActive(false);
-				//
-				// 	for (int i=0; i<mainGameManager.game_ui.Length; i++) {
-				// 		mainGameManager.game_ui[i].SetActive(false);
-				// 	}
-				//
-				// 	mainGameManager.isUpdateStop = true;
-				// }
+				if(mainGameManager.canvas.active){
+					mainGameManager.canvas.SetActive(false);
 
-				transform.Translate (0, 0.03f, 0);
-				if (transform.position.y > 8.0f) {
+					for (int i=0; i<mainGameManager.game_ui.Length; i++) {
+						mainGameManager.game_ui[i].SetActive(false);
+					}
+
+					mainGameManager.isUpdateStop = true;
+				}
+
+				Vector3 vec = image_.GetComponent<RectTransform>().localPosition;
+				image_.GetComponent<RectTransform>().localPosition = new Vector3(0, vec.y+3, 9);
+				if (image_.GetComponent<RectTransform>().localPosition.y > 600) {
 					run_flg                      = false;
 					mainGameManager.isUpdateStop = false;
 				}
