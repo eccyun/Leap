@@ -181,7 +181,9 @@ public class MainGameManager : MonoBehaviour {
 				i_.sprite = s_;
 				i_.color  = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 			}else if(script[0]=="# BG"){
-				background_image.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
+				Image i_  = background_image.GetComponent<Image>();
+				i_.sprite = Resources.Load<Sprite>("Sprite/Background/"+script[1]);
+				i_.color  = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 			}else if(script[0]=="# STILL-IMG"){
 				// 部分絵の表示
 				GameObject still  = GameObject.Find(script[1]);
@@ -221,11 +223,12 @@ public class MainGameManager : MonoBehaviour {
 				GameObject img;
 				if(script[1]=="bg"){
 					img = background_image;
+					img.GetComponent<Image>().color  = new Color(0.0f, 0.0f, 0.0f, 0.0f);
 				}else{
 					img = GameObject.Find("character_"+script[1]);
+					img.GetComponent<Image>().color  = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 				}
 				img.GetComponent<Image>().sprite = null;
-				img.GetComponent<Image>().color  = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 			}else if(script[0]=="# EFFECT" && !scriptEngine.load_flg){
 				GameObject  audio       = GameObject.Find("Effect");
 				AudioSource audioSource = audio.GetComponent<AudioSource>();
