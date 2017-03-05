@@ -24,15 +24,15 @@ public class SaveLoadManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameDataComponent      = GameObject.Find("GameDataComponent").GetComponent<GameDataComponent>();
+		scriptEngine           = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 		dialogPanelComponent   = dialogPanel.GetComponent<DialogPanelComponent>();
 		sceneComponent         = panelObject.GetComponent<SceneComponent> ();
-		scriptEngine           = GameObject.Find("ScriptEngine").GetComponent<ScriptEngine>();
 		action_flg             = false;
 
-		if(GameObject.Find("GameMenuManager")){
-			gameMenuManager = GameObject.Find("GameMenuManager").GetComponent<GameMenuManager>();
+		GameObject tmp_ = GameObject.Find("GameMenuManager");
+		if(tmp_!=null){
+			gameMenuManager = tmp_.GetComponent<GameMenuManager>();
 			mode            = (gameMenuManager.pushBtnName=="menu_save")?0:1;
-
 			// セーブの場合、キャプションを切り替える
 			if(mode==0){
 				caption_.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprite/SaveLoad/save-caption");

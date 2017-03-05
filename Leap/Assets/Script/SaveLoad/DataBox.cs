@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 
 public class DataBox : MonoBehaviour {
-	public int        identifier;
-	public GameData   gameData;
-
+	public   int        identifier;
+	public   GameData   gameData;
+	private  bool       disp_flg;
 
 	public void dispDataBox(){
 		// 日付
@@ -46,5 +46,7 @@ public class DataBox : MonoBehaviour {
 		float s_y = (textureHeight/2) - ((int)rt.rect.height/2);
 
 		GetComponent<Image>().sprite = Sprite.Create(texture, new Rect(s_x, s_y, rt.rect.width, rt.rect.height), new Vector2(0.0f, 0.0f), 71.0f);
+
+		disp_flg = true;
 	}
 }
