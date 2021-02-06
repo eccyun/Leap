@@ -99,11 +99,6 @@ public class MainGameManager : MonoBehaviour {
 		// ロード判定
 		if(isLoading || isEnding || isMoveTitle || isMoveEOF){
 			if(sceneComponent.panelComponent != null && !sceneComponent.panelComponent.isFade){
-				// BGM停止
-				if(!isMoveEOF){
-					scriptEngine.bgm.stop_();
-				}
-
 				// 遷移処理
 				if(isLoading){
 					sceneComponent.moveScene("Load");

@@ -10,8 +10,6 @@ public class SelfAnimation : MonoBehaviour {
 	public  MainGameManager mainGameManager;
 	public  ScriptEngine    scriptEngine;
 
-	private bool sound_flg;
-
 	// Use this for initialization
 	void Start () {
 		image_       = GetComponent<Image>();
@@ -39,11 +37,6 @@ public class SelfAnimation : MonoBehaviour {
 					image_.GetComponent<RectTransform>().localPosition = new Vector3 (0, 2380, 9);
 				}
 			}else if(this.name=="18-bg-animation"){
-				if(!sound_flg){
-					scriptEngine.bgm.play_("leap2-overture");
-					sound_flg = true;
-				}
-
 				if(mainGameManager.canvas.active){
 					mainGameManager.canvas.SetActive(false);
 
