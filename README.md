@@ -1,1 +1,1 @@
-# Leap 〜ときをこえて〜 for Android
+# Leap 〜ときをこえて〜
