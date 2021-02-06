@@ -74,7 +74,7 @@ public class MainGameManager : MonoBehaviour {
 
 		// スチルのセット
 		if(scriptEngine.stillPrefab!=null){
-			scriptEngine.stillPrefab.transform.SetParent(viewCanvas.transform.FindChild("ViewPanel").gameObject.transform, false);
+			scriptEngine.stillPrefab.transform.SetParent(viewCanvas.transform.Find("ViewPanel").gameObject.transform, false);
 			scriptEngine.stillPrefab.transform.SetSiblingIndex(4);
 		}
 		stillPrefab = GameObject.FindGameObjectsWithTag("Still");

@@ -25,9 +25,9 @@ public class DialogPanelComponent : MonoBehaviour {
 
 		this.gameObject.SetActive(true);
 
-		GameObject caption = this.gameObject.transform.FindChild("Caption").gameObject;
-		GameObject yesBtn  = this.gameObject.transform.FindChild("Yes").gameObject;
-		GameObject noBtn   = this.gameObject.transform.FindChild("No").gameObject;
+		GameObject caption = this.gameObject.transform.Find("Caption").gameObject;
+		GameObject yesBtn  = this.gameObject.transform.Find("Yes").gameObject;
+		GameObject noBtn   = this.gameObject.transform.Find("No").gameObject;
 
 		// イベントをセットする
 		noClicked_  = noCallBack;

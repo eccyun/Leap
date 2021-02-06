@@ -11,13 +11,13 @@ public class DataBox : MonoBehaviour {
 
 	public void dispDataBox(){
 		// 日付
-		GameObject saveDate     = transform.FindChild("SaveDate").gameObject;
+		GameObject saveDate     = transform.Find("SaveDate").gameObject;
 		Text       saveDateText = saveDate.GetComponent<Text>();
 		saveDateText.enabled    = true;
 		saveDateText.text       = gameData.saveDate;
 
 		// ゲーム中の本文
-		GameObject abridge     = transform.FindChild("Abridge").gameObject;
+		GameObject abridge     = transform.Find("Abridge").gameObject;
 		Text       abridgeText = abridge.GetComponent<Text>();
 		abridgeText.enabled    = true;
 
