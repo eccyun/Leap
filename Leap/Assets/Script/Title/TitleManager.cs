@@ -44,6 +44,11 @@ public class TitleManager : MonoBehaviour {
 		action_flg = true;
 	}
 
+	public void onTapTwitterIcon(){
+		// Twitterへ
+		Application.OpenURL("https://twitter.com/eccyun/");
+	}
+
 	public void onTapGameQuickStart(){
 		// 中断したデータから再開する
 		GameData qData = gameDataComponent.getQuickStartData();

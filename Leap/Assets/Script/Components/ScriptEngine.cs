@@ -76,6 +76,13 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 
 #if UNITY_EDITOR
 		FileInfo f = new FileInfo(Application.streamingAssetsPath+"/Scenario/"+fileName);
+#elif UNITY_IOS
+		FileInfo f = new FileInfo(Application.dataPath+"/Raw/Scenario/"+fileName);
+#elif UNITY_ANDROID
+		StartCoroutine(readScenarioFileAndroid(fileName));
+#endif
+
+#if UNITY_EDITOR || UNITY_IOS
 		try{
 			// 一行毎読み込み
 			using (StreamReader sr = new StreamReader(f.OpenRead(), Encoding.UTF8)){
@@ -87,8 +94,6 @@ public class ScriptEngine : SingletonMonoBehaviour<ScriptEngine> {
 		}catch (Exception e){
 			// エラー処理
 		}
-#elif UNITY_ANDROID
-		StartCoroutine(readScenarioFileAndroid(fileName));
 #endif
 	}
 
