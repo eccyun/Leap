@@ -22,7 +22,7 @@ public class BackLogManager : MonoBehaviour {
 
 		// コンテントの高さを変える
 		RectTransform contentTransform = (RectTransform)content_.transform;
-		contentTransform.sizeDelta     = new Vector2(contentTransform.sizeDelta.x, (scriptEngine.textLogs.Count * cellHeight)+5.0f); // 高さを変更する.
+		contentTransform.sizeDelta     = new Vector2(contentTransform.sizeDelta.x, (scriptEngine.textLogs.Count * 300)+5.0f); // 高さを変更する.
 
 		// eachでまわしてスクロールビューを作る
 		for (int i = 0; i < scriptEngine.textLogs.Count; i++){
@@ -54,5 +54,10 @@ public class BackLogManager : MonoBehaviour {
 				SceneManager.UnloadScene("BackLog");
 			}
 		}
+	}
+
+	public void onTapGameBack(){
+		mainGameManager.isUpdateStop = false;
+ 		SceneManager.UnloadScene("BackLog");
 	}
 }
