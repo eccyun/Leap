@@ -49,7 +49,7 @@ public class SelfAnimation : MonoBehaviour {
 
 				Vector3 vec = image_.GetComponent<RectTransform>().localPosition;
 				image_.GetComponent<RectTransform>().localPosition = new Vector3(0, vec.y+3, 9);
-				if (image_.GetComponent<RectTransform>().localPosition.y > 600) {
+				if (image_.GetComponent<RectTransform>().localPosition.y > 1553) {
 					run_flg                      = false;
 					mainGameManager.isUpdateStop = false;
 				}
